@@ -1,3 +1,4 @@
+include ':kotlindemo'
 include ':algorithm'
 rootProject.name='awesomeDemos'
 include ':app'
