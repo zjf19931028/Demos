@@ -1,3 +1,4 @@
+include ':rxjavademo'
 include ':jetpackdemo'
 include ':customviewdemo'
 include ':audiorecorddemo'

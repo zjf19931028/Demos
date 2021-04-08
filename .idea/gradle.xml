@@ -20,6 +20,7 @@
             <option value="$PROJECT_DIR$/jetpackdemo" />
             <option value="$PROJECT_DIR$/kotlindemo" />
             <option value="$PROJECT_DIR$/okhttpdemo" />
+            <option value="$PROJECT_DIR$/rxjavademo" />
             <option value="$PROJECT_DIR$/servicedemo" />
           </set>
         </option>

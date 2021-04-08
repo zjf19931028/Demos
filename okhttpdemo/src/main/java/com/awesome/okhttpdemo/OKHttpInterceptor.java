@@ -19,7 +19,7 @@ import okhttp3.ResponseBody;
  */
 public class OKHttpInterceptor {
     private OkHttpClient mOkHttpClient = new OkHttpClient.Builder()
-            .addInterceptor(new com.future.message.okhttp.baseuse.LoggingInterceptor())
+            .addInterceptor(new LoggingInterceptor())
             .build();
 
     void get(String url) {
