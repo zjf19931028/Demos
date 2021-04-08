@@ -5,6 +5,7 @@
       <module name="awesomeDemos.app" target="1.8" />
       <module name="awesomeDemos.audiorecorddemo" target="1.8" />
       <module name="awesomeDemos.bluetoothdemo" target="1.8" />
+      <module name="awesomeDemos.customviewdemo" target="1.8" />
       <module name="awesomeDemos.kotlindemo" target="1.8" />
       <module name="awesomeDemos.okhttpdemo" target="1.8" />
       <module name="awesomeDemos.servicedemo" target="1.8" />
