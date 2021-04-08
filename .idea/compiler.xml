@@ -13,6 +13,7 @@
       <module name="awesomeDemos.retrofitdemo" target="1.8" />
       <module name="awesomeDemos.rxjavademo" target="1.8" />
       <module name="awesomeDemos.servicedemo" target="1.8" />
+      <module name="awesomeDemos.uidemo" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

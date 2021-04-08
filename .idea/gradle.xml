@@ -24,6 +24,7 @@
             <option value="$PROJECT_DIR$/retrofitdemo" />
             <option value="$PROJECT_DIR$/rxjavademo" />
             <option value="$PROJECT_DIR$/servicedemo" />
+            <option value="$PROJECT_DIR$/uidemo" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
