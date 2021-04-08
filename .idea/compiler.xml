@@ -10,6 +10,7 @@
       <module name="awesomeDemos.customviewdemo" target="1.8" />
       <module name="awesomeDemos.jetpackdemo" target="1.8" />
       <module name="awesomeDemos.kotlindemo" target="1.8" />
+      <module name="awesomeDemos.mvvmdemo" target="1.8" />
       <module name="awesomeDemos.okhttpdemo" target="1.8" />
       <module name="awesomeDemos.retrofitdemo" target="1.8" />
       <module name="awesomeDemos.rxjavademo" target="1.8" />
