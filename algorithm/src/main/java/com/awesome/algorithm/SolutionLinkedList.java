@@ -1,7 +1,6 @@
-package com.future.message.algorithm;
+package com.awesome.algorithm;
 
 import com.future.message.algorithm.bean.ListNode;
-import com.future.message.util.ShowLogUtil;
 
 import java.util.Deque;
 import java.util.LinkedList;
@@ -67,7 +66,7 @@ public class SolutionLinkedList {
         int length = 0;
         while (node != null) {
             length++;
-            ShowLogUtil.info("node.val=" + node.val);
+//            ShowLogUtil.info("node.val=" + node.val);
             node = node.next;
         }
         return length;
@@ -118,3 +117,35 @@ public class SolutionLinkedList {
         return prev;
     }
 }
+
+
+/**
+ *    private void doListNode() {
+ *         ListNode listNode1 = new ListNode(1);
+ *         ListNode listNode2 = new ListNode(2);
+ *         ListNode listNode3 = new ListNode(3);
+ *         ListNode listNode4 = new ListNode(4);
+ *         ListNode listNode5 = new ListNode(5);
+ *         listNode1.next = listNode2;
+ *         listNode2.next = listNode3;
+ *         listNode3.next = listNode4;
+ *         listNode4.next = listNode5;
+ *         SolutionLinkedList.removeNthFromEnd(listNode1, 3);
+ *
+ *         //        ListNode l1 = new ListNode(1);
+ * //        ListNode l2 = new ListNode(1);
+ * //        ListNode l3 = new ListNode(1);
+ * //        ListNode l4 = new ListNode(1);
+ * //        ListNode l5 = new ListNode(1);
+ * //        ListNode l6 = new ListNode(1);
+ * //        l1.next = l2;
+ * //        l2.next = l3;
+ * //        l3.next = l4;
+ * //        l4.next = l5;
+ * //        l5.next = l6;
+ * //        l6.next = null;
+ * //        boolean hasCycle = SolutionLinkedList.hasCycle(l1);
+ * //        ShowLogUtil.info("hasCycle=" + hasCycle);
+ *     }
+ */
+

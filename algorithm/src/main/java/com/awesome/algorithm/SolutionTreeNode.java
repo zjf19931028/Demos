@@ -1,7 +1,7 @@
-package com.future.message.algorithm;
+package com.awesome.algorithm;
+
 
 import com.future.message.algorithm.bean.TreeNode;
-import com.future.message.util.ShowLogUtil;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -15,6 +15,7 @@ import java.util.Queue;
  * Date: 2021/3/5 13:01
  * Description:
  */
+
 public class SolutionTreeNode {
     // 前序遍历
     // 递归
@@ -180,3 +181,60 @@ public class SolutionTreeNode {
 //    public static boolean ergodic(TreeNode root) {
 //    }
 }
+/**
+ * private void doTreeNode() {
+ *         TreeNode root = new TreeNode();
+ *         root.val = 3;
+ *         TreeNode left = new TreeNode();
+ *         left.val = 9;
+ *         TreeNode right = new TreeNode();
+ *         right.val = 20;
+ *         TreeNode leftLeft = new TreeNode();
+ *         leftLeft.val = 9;
+ *         TreeNode leftLeftLeft = new TreeNode();
+ *         leftLeftLeft.val = 9;
+ *         TreeNode leftLeftRight = new TreeNode();
+ *         leftLeftRight.val = 100;
+ *         TreeNode rightLeft = new TreeNode();
+ *         rightLeft.val = 15;
+ *         TreeNode rightRight = new TreeNode();
+ *         rightRight.val = 7;
+ *         root.left = left;
+ *         root.right = right;
+ *         root.left.left = leftLeft;
+ *         root.left.left.left = leftLeftLeft;
+ *         root.left.left.right = leftLeftRight;
+ *         root.right.left = rightLeft;
+ *         root.right.right = rightRight;
+ *         List<List<Integer>> lists = SolutionTreeNode.levelOrder(root);
+ *         for (int i = 0; i < lists.size(); i++) {
+ *             for (int j = 0; j < lists.get(i).size(); j++) {
+ *                 ShowLogUtil.info("i=" + i + ",j=" + j + "," + lists.get(i).get(j));
+ *             }
+ *         }
+ *
+ *
+ *         //        TreeNode root = new TreeNode();
+ * //        root.val = 3;
+ * //        TreeNode left = new TreeNode();
+ * //        left.val = 9;
+ * //        TreeNode right = new TreeNode();
+ * //        right.val = 20;
+ * //        root.left = left;
+ * //        root.right = right;
+ * //        TreeNode rightLeft = new TreeNode();
+ * //        rightLeft.val = 15;
+ * //        TreeNode rightRight = new TreeNode();
+ * //        rightRight.val = 7;
+ * //        root.right.left = rightLeft;
+ * //        root.right.right = rightRight;
+ *
+ * //        List<List<Integer>> lists = SolutionTree.levelOrder(root);
+ * //        for (int i = 0; i < lists.size(); i++) {
+ * //            ShowLogUtil.info(" ");
+ * //            for (int j = 0; j < lists.get(i).size(); j++) {
+ * //                ShowLogUtil.info("i=" + i + ",j=" + j +","+ lists.get(i).get(j));
+ * //            }
+ * //        }
+ *     }
+ */

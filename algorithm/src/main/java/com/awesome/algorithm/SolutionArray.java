@@ -1,11 +1,5 @@
-package com.future.message.algorithm;
+package com.awesome.algorithm;
 
-import android.os.Build;
-import android.text.TextUtils;
-
-import androidx.annotation.RequiresApi;
-
-import com.future.message.util.ShowLogUtil;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -160,7 +154,6 @@ public class SolutionArray {
     // 排序+双指针
     // 时间复杂度
     // 空间复杂度min(m,n)
-    @RequiresApi(api = Build.VERSION_CODES.N)
     public static int[] intersect(int[] nums1, int[] nums2) {
 
         if (nums1.length > nums2.length) {
@@ -222,7 +215,7 @@ public class SolutionArray {
         for (int i = digits.length - 1; i >= 0; i--) {
             digits[i]++;
             digits[i] = digits[i] % 10;
-            ShowLogUtil.info("[" + i + "]=" + digits[i]);
+//            ShowLogUtil.info("[" + i + "]=" + digits[i]);
             if (digits[i] != 0) return digits;
         }
         digits = new int[digits.length + 1];
@@ -356,3 +349,62 @@ public class SolutionArray {
         }
     }
 }
+
+
+/**
+ *     private void doQueue() {
+ *
+ * //        MyQueue q = new MyQueue();
+ * //        q.enQueue(5);
+ * //        q.enQueue(3);
+ * //        if (q.isEmpty() == false) {
+ * //            ShowLogUtil.info(q.Front());
+ * //        }
+ * //        q.deQueue();
+ * //        if (q.isEmpty() == false) {
+ * //            ShowLogUtil.info(q.Front());
+ * //        }
+ * //        q.deQueue();
+ * //        if (q.isEmpty() == false) {
+ * //            ShowLogUtil.info(q.Front());
+ * //        }
+ * //        // 1. Initialize a queue.
+ * //        Queue<Integer> q = new LinkedList();
+ * //        // 2. Get the first element - return null if queue is empty.
+ * //        ShowLogUtil.info("The first element is: " + q.peek());
+ * //        // 3. Push new element.
+ * //        q.offer(5);
+ * //        q.offer(13);
+ * //        q.offer(8);
+ * //        q.offer(6);
+ * //        // 4. Pop an element.
+ * //        q.poll();
+ * //        // 5. Get the first element.
+ * //        ShowLogUtil.info("The first element is: " + q.peek());
+ * //        // 7. Get the size of the queue.
+ * //        ShowLogUtil.info("The size is: " + q.size());
+ * //        MyCircularQueue obj = new MyCircularQueue(5);
+ * //        boolean param_1 = obj.enQueue(1);
+ * //        boolean param_7 = obj.enQueue(1);
+ * //        boolean param_8 = obj.enQueue(1);
+ * //        boolean param_9 = obj.enQueue(1);
+ * //        boolean param_10 = obj.enQueue(1);
+ * //        boolean param_11 = obj.enQueue(1);
+ * //        ShowLogUtil.info("param_1="+param_1);
+ * //        ShowLogUtil.info("param_7="+param_7);
+ * //        ShowLogUtil.info("param_8="+param_8);
+ * //        ShowLogUtil.info("param_9="+param_9);
+ * //        ShowLogUtil.info("param_10="+param_10);
+ * //        ShowLogUtil.info("param_11="+param_11);
+ * //        boolean param_2 = obj.deQueue();
+ * //        ShowLogUtil.info("param_2="+param_2);
+ * //        int param_3 = obj.Front();
+ * //        ShowLogUtil.info("param_3="+param_3);
+ * //        int param_4 = obj.Rear();
+ * //        ShowLogUtil.info("param_4="+param_4);
+ * //        boolean param_5 = obj.isEmpty();
+ * //        ShowLogUtil.info("param_5="+param_5);
+ * //        boolean param_6 = obj.isFull();
+ * //        ShowLogUtil.info("param_6="+param_6);
+ *     }
+ */

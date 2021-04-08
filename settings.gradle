@@ -1,3 +1,4 @@
+include ':audiorecorddemo'
 include ':bluetoothdemo'
 include ':okhttpdemo'
 include ':javadomo'

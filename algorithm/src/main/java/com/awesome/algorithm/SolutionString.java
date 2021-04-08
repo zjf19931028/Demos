@@ -1,8 +1,4 @@
-package com.future.message.algorithm;
-
-import android.text.TextUtils;
-
-import com.future.message.util.ShowLogUtil;
+package com.awesome.algorithm;
 
 import java.util.HashMap;
 import java.util.Map;

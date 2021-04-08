@@ -1,7 +1,5 @@
 package com.awesome.okhttpdemo;
 
-import com.future.message.util.ShowLogUtil;
-
 import org.jetbrains.annotations.NotNull;
 
 import java.io.IOException;
@@ -23,14 +21,14 @@ public class LoggingInterceptor implements Interceptor {
     public Response intercept(@NotNull Chain chain) throws IOException {
         Request request = chain.request();
         long startTime = System.nanoTime();
-        ShowLogUtil.info("request.url()=" + request.url());
-        ShowLogUtil.info("chain.connection()=" + chain.connection());
-        ShowLogUtil.info("request.headers()=" + request.headers());
+//        ShowLogUtil.info("request.url()=" + request.url());
+//        ShowLogUtil.info("chain.connection()=" + chain.connection());
+//        ShowLogUtil.info("request.headers()=" + request.headers());
         Response response = chain.proceed(request);
         long endTime = System.nanoTime();
-        ShowLogUtil.info("response.request().url=" + response.request().url());
-        ShowLogUtil.info("endTime-startTime=" + (endTime - startTime));
-        ShowLogUtil.info("response.headers=" + response.headers());
+//        ShowLogUtil.info("response.request().url=" + response.request().url());
+//        ShowLogUtil.info("endTime-startTime=" + (endTime - startTime));
+//        ShowLogUtil.info("response.headers=" + response.headers());
         return response;
     }
 }
