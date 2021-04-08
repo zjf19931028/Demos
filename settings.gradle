@@ -1,3 +1,4 @@
+include ':aidldemo'
 include ':retrofitdemo'
 include ':rxjavademo'
 include ':jetpackdemo'
