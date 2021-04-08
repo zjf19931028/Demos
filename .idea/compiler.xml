@@ -3,6 +3,7 @@
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel target="1.7">
       <module name="awesomeDemos.aidldemo" target="1.8" />
+      <module name="awesomeDemos.animationdemo" target="1.8" />
       <module name="awesomeDemos.app" target="1.8" />
       <module name="awesomeDemos.audiorecorddemo" target="1.8" />
       <module name="awesomeDemos.bluetoothdemo" target="1.8" />

@@ -1,3 +1,4 @@
+include ':animationdemo'
 include ':uidemo'
 include ':aidldemo'
 include ':retrofitdemo'
