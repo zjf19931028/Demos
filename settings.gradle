@@ -1,3 +1,4 @@
+include ':jetpackdemo'
 include ':customviewdemo'
 include ':audiorecorddemo'
 include ':bluetoothdemo'
