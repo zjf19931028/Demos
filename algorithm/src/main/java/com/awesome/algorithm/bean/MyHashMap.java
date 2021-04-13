@@ -1,6 +1,5 @@
-package com.future.message.algorithm.bean;
+package com.awesome.algorithm.bean;
 
-import com.future.message.util.ShowLogUtil;
 
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -62,11 +61,11 @@ public class MyHashMap {
             Pair pair = (Pair) it.next();
             if (pair.getKey() == key) {
                 pair.setValue(value);
-                ShowLogUtil.info("put=" + key + ",value=" + value);
+//                ShowLogUtil.info("put=" + key + ",value=" + value);
                 return;
             }
         }
-        ShowLogUtil.info("put=" + key + ",value=" + value);
+//        ShowLogUtil.info("put=" + key + ",value=" + value);
         data[hash].addLast(new Pair(key, value));
     }
 
@@ -76,7 +75,7 @@ public class MyHashMap {
         while (it.hasNext()) {
             Pair pair = (Pair) it.next();
             if (pair.getKey() == key) {
-                ShowLogUtil.info("get=" + key + ",value=" + pair.getValue());
+//                ShowLogUtil.info("get=" + key + ",value=" + pair.getValue());
                 return pair.getValue();
             }
         }
@@ -90,7 +89,7 @@ public class MyHashMap {
             Pair pair = (Pair) it.next();
             if (pair.getKey() == key) {
                 data[hash].remove(pair);
-                ShowLogUtil.info("remove=" + key);
+//                ShowLogUtil.info("remove=" + key);
                 return;
             }
         }

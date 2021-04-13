@@ -441,92 +441,92 @@ public class EncryptUtil {
      * @param encryptFile
      * @param aesSecret
      */
-    public static void encryptFile(File originalFile, File encryptFile, String aesSecret) {
-        FileInputStream in = null;
-        FileOutputStream out = null;
-        try {
-            if (!encryptFile.exists()) {
-                encryptFile.getParentFile().mkdirs();
-            }
-            encryptFile.createNewFile();
-            in = new FileInputStream(originalFile);
-            byte[] original = new byte[in.available()];
-            in.read(original);
-            byte[] head = ByteArrayUtil.int2ByteArray((int) originalFile.length());
-            byte[] encrypt = com.future.message.util.EncryptUtil.aesEncrypt(aesSecret, original);
-            out = new FileOutputStream(encryptFile);
-            out.write(head);
-            out.flush();
-            out.write(encrypt);
-            out.flush();
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-            if (in != null) {
-                try {
-                    in.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-            if (out != null) {
-                try {
-                    out.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-        }
-    }
-
-    /**
-     * 解密
-     *
-     * @param encryptFile
-     * @param aesSecret
-     */
-    public static void decryptFile(File encryptFile,String aesSecret) {
-        // 解密文件
-        File decryptFile = new File(FilePathUtil.getMediaRecorderDecryptLocalPath());
-        ShowLogUtil.info("desSecret--->start");
-        FileInputStream fileInputStream = null;
-        FileOutputStream fileOutputStream = null;
-        try {
-            if (!decryptFile.exists()) {
-                decryptFile.getParentFile().mkdirs();
-            }
-            decryptFile.createNewFile();
-            fileInputStream = new FileInputStream(encryptFile);
-            byte[] head = new byte[4];
-            fileInputStream.read(head);
-            ShowLogUtil.info("head.length--->" + head.length);
-            byte[] original = new byte[fileInputStream.available()];
-            ShowLogUtil.info("original.length--->" + original.length);
-            fileInputStream.read(original);
-            byte[] decrypt = com.future.message.util.EncryptUtil.aesDecrypt(aesSecret, original);
-            ShowLogUtil.info("decrypt.length--->" + decrypt.length);
-            fileOutputStream = new FileOutputStream(decryptFile);
-            fileOutputStream.write(decrypt);
-            fileOutputStream.flush();
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-            if (fileInputStream != null) {
-                try {
-                    fileInputStream.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-            if (fileOutputStream != null) {
-                try {
-                    fileOutputStream.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-        }
-        ShowLogUtil.info("decryptFile.length()--->" + decryptFile.length());
-    }
+//    public static void encryptFile(File originalFile, File encryptFile, String aesSecret) {
+//        FileInputStream in = null;
+//        FileOutputStream out = null;
+//        try {
+//            if (!encryptFile.exists()) {
+//                encryptFile.getParentFile().mkdirs();
+//            }
+//            encryptFile.createNewFile();
+//            in = new FileInputStream(originalFile);
+//            byte[] original = new byte[in.available()];
+//            in.read(original);
+//            byte[] head = ByteArrayUtil.int2ByteArray((int) originalFile.length());
+//            byte[] encrypt = com.future.message.util.EncryptUtil.aesEncrypt(aesSecret, original);
+//            out = new FileOutputStream(encryptFile);
+//            out.write(head);
+//            out.flush();
+//            out.write(encrypt);
+//            out.flush();
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        } finally {
+//            if (in != null) {
+//                try {
+//                    in.close();
+//                } catch (IOException e) {
+//                    e.printStackTrace();
+//                }
+//            }
+//            if (out != null) {
+//                try {
+//                    out.close();
+//                } catch (IOException e) {
+//                    e.printStackTrace();
+//                }
+//            }
+//        }
+//    }
+//
+//    /**
+//     * 解密
+//     *
+//     * @param encryptFile
+//     * @param aesSecret
+//     */
+//    public static void decryptFile(File encryptFile,String aesSecret) {
+//        // 解密文件
+//        File decryptFile = new File(FilePathUtil.getMediaRecorderDecryptLocalPath());
+//        ShowLogUtil.info("desSecret--->start");
+//        FileInputStream fileInputStream = null;
+//        FileOutputStream fileOutputStream = null;
+//        try {
+//            if (!decryptFile.exists()) {
+//                decryptFile.getParentFile().mkdirs();
+//            }
+//            decryptFile.createNewFile();
+//            fileInputStream = new FileInputStream(encryptFile);
+//            byte[] head = new byte[4];
+//            fileInputStream.read(head);
+//            ShowLogUtil.info("head.length--->" + head.length);
+//            byte[] original = new byte[fileInputStream.available()];
+//            ShowLogUtil.info("original.length--->" + original.length);
+//            fileInputStream.read(original);
+//            byte[] decrypt = com.future.message.util.EncryptUtil.aesDecrypt(aesSecret, original);
+//            ShowLogUtil.info("decrypt.length--->" + decrypt.length);
+//            fileOutputStream = new FileOutputStream(decryptFile);
+//            fileOutputStream.write(decrypt);
+//            fileOutputStream.flush();
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        } finally {
+//            if (fileInputStream != null) {
+//                try {
+//                    fileInputStream.close();
+//                } catch (IOException e) {
+//                    e.printStackTrace();
+//                }
+//            }
+//            if (fileOutputStream != null) {
+//                try {
+//                    fileOutputStream.close();
+//                } catch (IOException e) {
+//                    e.printStackTrace();
+//                }
+//            }
+//        }
+//        ShowLogUtil.info("decryptFile.length()--->" + decryptFile.length());
+//    }
 
 }

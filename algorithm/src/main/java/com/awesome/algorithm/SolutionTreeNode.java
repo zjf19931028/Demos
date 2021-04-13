@@ -1,7 +1,8 @@
 package com.awesome.algorithm;
 
 
-import com.future.message.algorithm.bean.TreeNode;
+
+import com.awesome.algorithm.bean.TreeNode;
 
 import java.util.ArrayList;
 import java.util.Arrays;

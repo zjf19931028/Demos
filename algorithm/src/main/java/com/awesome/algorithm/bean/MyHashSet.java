@@ -1,4 +1,4 @@
-package com.future.message.algorithm.bean;
+package com.awesome.algorithm.bean;
 
 import java.util.Iterator;
 import java.util.LinkedList;

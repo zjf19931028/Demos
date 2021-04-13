@@ -1,6 +1,7 @@
 package com.awesome.algorithm;
 
-import com.future.message.algorithm.bean.ListNode;
+
+import com.awesome.algorithm.bean.ListNode;
 
 import java.util.Deque;
 import java.util.LinkedList;
