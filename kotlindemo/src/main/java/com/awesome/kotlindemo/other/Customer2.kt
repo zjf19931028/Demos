@@ -1,7 +1,4 @@
-package com.awesome.kotlindemo
-
-import androidx.annotation.IntDef
-import java.lang.annotation.Inherited
+package com.awesome.kotlindemo.other
 
 /**
  * Author: JfangZ

@@ -10,7 +10,12 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        InitOrderDemo("Jane")
+
+    }
+
+
+
+
 
 //        Beginner().main()
 //        var customer = Customer("Jane", "23234@qq.com")
@@ -25,8 +30,6 @@ class MainActivity : AppCompatActivity() {
 //        Beginner().apply {
 //            x = 9
 //        }
-    }
-
 //        Fruit();
 //        Fruit("violet");
 //        Fruit("violet","Grape");

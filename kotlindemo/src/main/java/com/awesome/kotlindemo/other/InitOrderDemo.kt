@@ -1,4 +1,4 @@
-package com.awesome.kotlindemo
+package com.awesome.kotlindemo.other
 
 import com.awesome.sdk.util.ShowLogUtil
 
