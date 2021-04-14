@@ -8,6 +8,7 @@ import java.util.List;
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Query;
+import rx.Observable;
 
 /**
  * Author: JfangZ
@@ -22,4 +23,7 @@ public interface APIService {
     //http://www.imooc.com/api/teacher?type=4&num=10
     @GET("api/teacher")/*api/teacher?type=4&num=10*/
     Call<Teacher> getCall(@Query("type") String type, @Query("num")String num);
+
+    @GET("api/teacher")/*api/teacher?type=4&num=10*/
+    Observable<Teacher> getInfoRx(@Query("type") String type, @Query("num")String num);
 }

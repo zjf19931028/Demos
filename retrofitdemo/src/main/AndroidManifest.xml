@@ -15,9 +15,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AwesomeDemos"
         tools:replace="android:name">
-<!--        <activity android:name=".java.SecondActivity"></activity>-->
-<!--        <activity android:name=".kotlin.MainActivity">-->
-        <activity android:name=".java.SecondActivity">
+        <!-- <activity android:name=".java.SecondActivity"></activity> -->
+        <!-- <activity android:name=".kotlin.MainActivity"> -->
+        <!-- <activity android:name=".java.ThirdActivity"> -->
+        <activity android:name=".java.ThirdActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
