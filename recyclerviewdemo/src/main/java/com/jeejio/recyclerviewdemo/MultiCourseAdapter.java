@@ -56,7 +56,7 @@ public class MultiCourseAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
 
     @Override
     public int getItemCount() {
-        if (mCourseList.size() == 0) {
+        if (mCourseList == null || mCourseList.size() == 0) {
             return 1;
         }
         return mCourseList.size();
@@ -64,7 +64,7 @@ public class MultiCourseAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
 
     @Override
     public int getItemViewType(int position) {
-        if (mCourseList.size() == 0) {
+        if (mCourseList == null || mCourseList.size() == 0) {
             return EMPTY_VIEW;
         } else {
             return CONTENT_VIEW;
