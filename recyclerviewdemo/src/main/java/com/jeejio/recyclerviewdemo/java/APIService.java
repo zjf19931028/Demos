@@ -20,5 +20,5 @@ public interface APIService {
     Call<Teacher> getCall(@Query("type") String type, @Query("num")String num);
 
     @GET("api/teacher")/*api/teacher?type=4&num=10*/
-    Observable<Teacher> getInfoRx(@Query("type") String type, @Query("num")String num);
+    Observable<Teacher> getInfoRx(@Query("type") int type, @Query("num")int num);
 }

@@ -23,9 +23,15 @@ public class MultiCourseAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
     private final int EMPTY_VIEW = 1;
     private final int CONTENT_VIEW = 2;
     private List<Course> mCourseList;
+    private int mEmptyCount=1;
 
     public MultiCourseAdapter(List<Course> courseList) {
         mCourseList = courseList;
+    }
+
+    public MultiCourseAdapter(List<Course> courseList,int emptyCount) {
+        mCourseList = courseList;
+        mEmptyCount = emptyCount;
     }
 
     @NonNull
@@ -57,7 +63,7 @@ public class MultiCourseAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
     @Override
     public int getItemCount() {
         if (mCourseList == null || mCourseList.size() == 0) {
-            return 1;
+            return mEmptyCount;
         }
         return mCourseList.size();
     }
