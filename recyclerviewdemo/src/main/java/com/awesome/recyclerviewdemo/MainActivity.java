@@ -11,10 +11,11 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
-import com.awesome.sdk.util.NetUtil;
 import com.awesome.recyclerviewdemo.java.APIService;
 import com.awesome.recyclerviewdemo.java.Course;
 import com.awesome.recyclerviewdemo.java.Teacher;
+import com.awesome.sdk.net.RxClient;
+import com.google.gson.Gson;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.listener.OnLoadMoreListener;
@@ -22,6 +23,7 @@ import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.WeakHashMap;
 
 import rx.Observer;
 import rx.android.schedulers.AndroidSchedulers;
@@ -98,12 +100,17 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void getRequest() {
-        NetUtil.SINGLETON
-                .getService(APIService.class, BASE_URL)
-                .getInfoRx(mPage, PAGE_SIZE)
+        WeakHashMap<String, Object> params = new WeakHashMap<>();
+        params.put("type", mPage);
+        params.put("num", PAGE_SIZE);
+        RxClient.builder()
+                .url("api/teacher")
+                .params(params)
+                .build()
+                .get()
                 .subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Observer<Teacher>() {
+                .subscribe(new Observer<Object>() {
                     @Override
                     public void onCompleted() {
                         mSmartRefreshLayout.finishRefresh();
@@ -119,7 +126,10 @@ public class MainActivity extends AppCompatActivity {
                     }
 
                     @Override
-                    public void onNext(Teacher teacher) {
+                    public void onNext(Object o) {
+                        Gson gson = new Gson();
+                        String s = gson.toJson(o);
+                        Teacher teacher = gson.fromJson(s, Teacher.class);
                         courses.addAll(teacher.getData());
                         mAdapter.notifyDataSetChanged();
                         for (int i = 0; i < teacher.getData().size(); i++) {
