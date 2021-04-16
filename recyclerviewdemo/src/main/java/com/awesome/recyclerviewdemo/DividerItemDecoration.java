@@ -1,4 +1,4 @@
-package com.jeejio.recyclerviewdemo;
+package com.awesome.recyclerviewdemo;
 
 import android.graphics.Canvas;
 import android.graphics.Paint;

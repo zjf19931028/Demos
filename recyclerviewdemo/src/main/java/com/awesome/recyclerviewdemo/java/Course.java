@@ -1,4 +1,4 @@
-package com.jeejio.recyclerviewdemo.java;
+package com.awesome.recyclerviewdemo.java;
 
 /**
  * Author: JfangZ
@@ -15,7 +15,8 @@ public class Course {
     private int learner;
 
 
-    public Course() {
+    public Course(String name) {
+        this.name = name;
     }
 
     public Course(int id, String name, String picSmall, String picBig, String description, int learner) {

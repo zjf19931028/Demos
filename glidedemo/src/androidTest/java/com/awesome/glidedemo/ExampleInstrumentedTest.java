@@ -1,4 +1,4 @@
-package com.jeejio.recyclerviewdemo;
+package com.awesome.glidedemo;
 
 import android.content.Context;
 
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
     public void useAppContext() {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-        assertEquals("com.jeejio.recyclerviewdemo", appContext.getPackageName());
+        assertEquals("com.awesome.glidedemo", appContext.getPackageName());
     }
 }

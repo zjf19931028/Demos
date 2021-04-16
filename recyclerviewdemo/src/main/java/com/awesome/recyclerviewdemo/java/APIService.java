@@ -1,4 +1,4 @@
-package com.jeejio.recyclerviewdemo.java;
+package com.awesome.recyclerviewdemo.java;
 
 import retrofit2.Call;
 import retrofit2.http.GET;

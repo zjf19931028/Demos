@@ -1,4 +1,4 @@
-package com.jeejio.recyclerviewdemo.java;
+package com.awesome.recyclerviewdemo.java;
 
 import java.util.List;
 

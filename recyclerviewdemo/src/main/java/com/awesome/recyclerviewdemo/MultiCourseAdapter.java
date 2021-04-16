@@ -1,4 +1,4 @@
-package com.jeejio.recyclerviewdemo;
+package com.awesome.recyclerviewdemo;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,7 +9,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.jeejio.recyclerviewdemo.java.Course;
+import com.bumptech.glide.Glide;
+import com.awesome.recyclerviewdemo.java.Course;
 
 import java.util.List;
 
@@ -57,6 +58,7 @@ public class MultiCourseAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
         } else if (holder instanceof ContentViewHolder) {
             Course course = mCourseList.get(position);
             ((ContentViewHolder) holder).mTextView.setText(course.getName());
+            Glide.with(App.getInstance().getApplicationContext()).load(course.getPicSmall()).into(((ContentViewHolder) holder).mImageView);
         }
     }
 

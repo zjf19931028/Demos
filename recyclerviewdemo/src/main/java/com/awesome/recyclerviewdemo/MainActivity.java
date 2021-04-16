@@ -1,4 +1,4 @@
-package com.jeejio.recyclerviewdemo;
+package com.awesome.recyclerviewdemo;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -8,11 +8,13 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.TextView;
 
 import com.awesome.sdk.util.NetUtil;
-import com.jeejio.recyclerviewdemo.java.APIService;
-import com.jeejio.recyclerviewdemo.java.Course;
-import com.jeejio.recyclerviewdemo.java.Teacher;
+import com.awesome.recyclerviewdemo.java.APIService;
+import com.awesome.recyclerviewdemo.java.Course;
+import com.awesome.recyclerviewdemo.java.Teacher;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.listener.OnLoadMoreListener;
@@ -28,10 +30,11 @@ import rx.schedulers.Schedulers;
 public class MainActivity extends AppCompatActivity {
 
     private RecyclerView mRecyclerView;
-    private List<Course> courses = new ArrayList<>();
     private SmartRefreshLayout mSmartRefreshLayout;
-        private MultiCourseAdapter mAdapter;
-//    private CourseAdapter mAdapter;
+    private TextView mTvAdd;
+    //    private MultiCourseAdapter mAdapter;
+    private CourseAdapter mAdapter;
+    private List<Course> courses = new ArrayList<>();
     private int mPage = 2;
     private final String BASE_URL = "http://www.imooc.com/";
     private final int PAGE_SIZE = 10;
@@ -42,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         mRecyclerView = findViewById(R.id.recycleView);
         mSmartRefreshLayout = findViewById(R.id.smartRefreshLayout);
+        mTvAdd = findViewById(R.id.tv_add);
         initListener();
         initData();
     }
@@ -62,6 +66,13 @@ public class MainActivity extends AppCompatActivity {
                 getRequest();
             }
         });
+        mTvAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                courses.add(new Course("I'm writing a itemAnimation."));
+                mAdapter.notifyItemInserted(0);
+            }
+        });
     }
 
     private void initData() {
@@ -76,14 +87,14 @@ public class MainActivity extends AppCompatActivity {
         mRecyclerView.addItemDecoration(new DividerItemDecoration.Builder().setPaintColor(Color.RED)
                 .setDividerMarginLeft(40).setViewMarginTop(100).setViewMarginBottom(100).build());
         // 单布局
-//        mAdapter = new CourseAdapter(courses);
-//        mRecyclerView.setAdapter(mAdapter);
+        mAdapter = new CourseAdapter(courses);
+        mRecyclerView.setAdapter(mAdapter);
 
         // 多布局
-        mAdapter = new MultiCourseAdapter(new ArrayList<>(),10);
+//        mAdapter = new MultiCourseAdapter(new ArrayList<>(),10);
 //        mAdapter = new MultiCourseAdapter(courses);
-        mRecyclerView.setAdapter(mAdapter);
-        getRequest();
+//        mRecyclerView.setAdapter(mAdapter);
+//        getRequest();
     }
 
     private void getRequest() {

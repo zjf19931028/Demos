@@ -1,6 +1,5 @@
-package com.jeejio.recyclerviewdemo;
+package com.awesome.recyclerviewdemo;
 
-import android.media.Image;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,7 +9,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.jeejio.recyclerviewdemo.java.Course;
+import com.awesome.recyclerviewdemo.java.Course;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package com.jeejio.recyclerviewdemo;
+package com.awesome.recyclerviewdemo;
 
 import org.junit.Test;
 

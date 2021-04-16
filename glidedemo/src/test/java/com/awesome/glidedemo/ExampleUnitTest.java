@@ -1,4 +1,4 @@
-package com.jeejio.glidedemo;
+package com.awesome.glidedemo;
 
 import org.junit.Test;
 
