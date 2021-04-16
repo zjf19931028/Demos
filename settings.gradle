@@ -1,3 +1,4 @@
+include ':arouterdemo'
 include ':jsondemo'
 include ':fragmentdemo'
 include ':glidedemo'
