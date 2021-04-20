@@ -34,8 +34,8 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView mRecyclerView;
     private SmartRefreshLayout mSmartRefreshLayout;
     private TextView mTvAdd;
-    //    private MultiCourseAdapter mAdapter;
-    private CourseAdapter mAdapter;
+        private MultiCourseAdapter mAdapter;
+//    private CourseAdapter mAdapter;
     private List<Course> courses = new ArrayList<>();
     private int mPage = 2;
     private final String BASE_URL = "http://www.imooc.com/";
@@ -88,15 +88,15 @@ public class MainActivity extends AppCompatActivity {
         // 自定义ItemDecoration
         mRecyclerView.addItemDecoration(new DividerItemDecoration.Builder().setPaintColor(Color.RED)
                 .setDividerMarginLeft(40).setViewMarginTop(100).setViewMarginBottom(100).build());
-        // 单布局
-        mAdapter = new CourseAdapter(courses);
-        mRecyclerView.setAdapter(mAdapter);
+//        // 单布局
+//        mAdapter = new CourseAdapter(courses);
+//        mRecyclerView.setAdapter(mAdapter);
 
         // 多布局
 //        mAdapter = new MultiCourseAdapter(new ArrayList<>(),10);
-//        mAdapter = new MultiCourseAdapter(courses);
-//        mRecyclerView.setAdapter(mAdapter);
-//        getRequest();
+        mAdapter = new MultiCourseAdapter(courses);
+        mRecyclerView.setAdapter(mAdapter);
+        getRequest();
     }
 
     private void getRequest() {

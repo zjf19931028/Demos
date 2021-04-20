@@ -22,6 +22,9 @@ import rx.Observer;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 
+/**
+ * retrofit+rxjava网络请求
+ */
 public class ThirdActivity extends AppCompatActivity {
 
     @Override

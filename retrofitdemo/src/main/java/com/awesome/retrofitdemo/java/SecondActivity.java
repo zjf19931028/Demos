@@ -14,6 +14,9 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
+/**
+ * retrofit网络请求
+ */
 public class SecondActivity extends AppCompatActivity {
 
     @Override
