@@ -17,6 +17,7 @@
       <module name="awesomeDemos.dialogdemo" target="1.8" />
       <module name="awesomeDemos.fragmentdemo" target="1.8" />
       <module name="awesomeDemos.glidedemo" target="1.8" />
+      <module name="awesomeDemos.hiltdemo" target="1.8" />
       <module name="awesomeDemos.jetpackdemo" target="1.8" />
       <module name="awesomeDemos.jsondemo" target="1.8" />
       <module name="awesomeDemos.kotlindemo" target="1.8" />
