@@ -1,3 +1,5 @@
+include ':contentresoverdemo'
+include ':contentproviderdemo'
 include ':arouterdemo'
 include ':jsondemo'
 include ':fragmentdemo'
