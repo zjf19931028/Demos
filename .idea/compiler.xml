@@ -13,6 +13,7 @@
       <module name="awesomeDemos.contentproviderdemo" target="1.8" />
       <module name="awesomeDemos.contentresoverdemo" target="1.8" />
       <module name="awesomeDemos.customviewdemo" target="1.8" />
+      <module name="awesomeDemos.daggerdemo" target="1.8" />
       <module name="awesomeDemos.fragmentdemo" target="1.8" />
       <module name="awesomeDemos.glidedemo" target="1.8" />
       <module name="awesomeDemos.jetpackdemo" target="1.8" />

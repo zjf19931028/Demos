@@ -1,3 +1,4 @@
+include ':daggerdemo'
 include ':butterknifedemo'
 include ':contentresoverdemo'
 include ':contentproviderdemo'
