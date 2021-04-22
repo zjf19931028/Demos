@@ -1,14 +1,11 @@
 package com.awesome.demos;
 
 import android.os.Bundle;
-import android.util.Log;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.lifecycle.Lifecycle;
-import androidx.lifecycle.LifecycleObserver;
-import androidx.lifecycle.LifecycleOwner;
-import androidx.lifecycle.OnLifecycleEvent;
+
+import com.awesome.javadomo.designpattern.User;
 
 /**
  * Author: JfangZ
@@ -21,7 +18,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        getLifecycle().addObserver(new MyLifeCycleObserver());
+        User.observer3();
+//        getLifecycle().addObserver(new MyLifeCycleObserver());
     }
 
 

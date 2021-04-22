@@ -1,4 +1,4 @@
-package com.awesome.javadomo.designpattern;
+package com.awesome.javadomo.designpattern.singleton;
 
 /**
  * Author: JfangZ
