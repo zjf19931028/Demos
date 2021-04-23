@@ -23,6 +23,7 @@
       <module name="awesomeDemos.jetpackdemo" target="1.8" />
       <module name="awesomeDemos.jsondemo" target="1.8" />
       <module name="awesomeDemos.kotlindemo" target="1.8" />
+      <module name="awesomeDemos.mvpdemo" target="1.8" />
       <module name="awesomeDemos.mvvmdemo" target="1.8" />
       <module name="awesomeDemos.okhttpdemo" target="1.8" />
       <module name="awesomeDemos.recyclerviewdemo" target="1.8" />
