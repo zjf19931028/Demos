@@ -1,4 +1,4 @@
-package com.animation.animationdemo;
+package com.awesome.animationdemo;
 
 import android.content.Context;
 
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
     public void useAppContext() {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-        assertEquals("com.animation.animationdemo", appContext.getPackageName());
+        assertEquals("com.awesome.animationdemo", appContext.getPackageName());
     }
 }

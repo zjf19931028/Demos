@@ -9,29 +9,27 @@
     android:id="@+id/container"
     tools:context=".MainActivity">
     <TextView
-        android:id="@+id/tv_tweenedAnimation"
+        android:id="@+id/tv_explode"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TweenedAnimation帧动画"
+        android:text="explode"
+        android:padding="10dp"
+        android:background="#ff00ff"/>
+    <TextView
+        android:id="@+id/tv_slide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="slide"
         android:padding="10dp"
         android:layout_marginTop="30dp"
         android:background="#ff00ff"/>
     <TextView
-        android:id="@+id/tv_viewAnimator"
+        android:id="@+id/tv_fade"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="ViewAnimator属性动画"
-        android:layout_marginTop="30dp"
-        android:padding="10dp"
-        android:background="#ff00ff"/>
-    <TextView
-        android:id="@+id/tv_transition"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="transition"
+        android:text="fade"
         android:padding="10dp"
         android:layout_marginTop="30dp"
         android:background="#ff00ff"/>
-
 
 </LinearLayout>

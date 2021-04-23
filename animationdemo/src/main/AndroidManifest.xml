@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.animation.animationdemo">
+    package="com.awesome.animationdemo">
 
     <application
         android:allowBackup="true"
@@ -9,6 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AwesomeDemos">
+        <activity android:name=".TweenedAnimationActivity"></activity>
+        <activity android:name=".TransitionPreActivity" />
+        <activity android:name=".ViewAnimatorActivity" />
+        <activity android:name=".TransitionActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

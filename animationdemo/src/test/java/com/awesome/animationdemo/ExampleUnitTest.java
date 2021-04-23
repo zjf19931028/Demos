@@ -1,4 +1,4 @@
-package com.animation.animationdemo;
+package com.awesome.animationdemo;
 
 import org.junit.Test;
 
