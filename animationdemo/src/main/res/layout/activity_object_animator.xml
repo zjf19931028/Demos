@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ObjectAnimatorActivity">
+
+    <TextView
+        android:id="@+id/tv_translate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="平移动画" />
+
+    <ImageView
+        android:id="@+id/iv_translate"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@mipmap/cloud" />
+
+    <TextView
+        android:id="@+id/tv_scale"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="缩放动画" />
+
+    <ImageView
+        android:id="@+id/iv_scale"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@mipmap/cloud" />
+
+    <TextView
+        android:id="@+id/tv_alpha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="渐变动画" />
+
+    <ImageView
+        android:id="@+id/iv_alpha1"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@mipmap/cloud" />
+    <ImageView
+        android:id="@+id/iv_alpha2"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@mipmap/cloud" />
+
+</LinearLayout>

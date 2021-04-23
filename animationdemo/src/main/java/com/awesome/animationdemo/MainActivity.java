@@ -8,6 +8,7 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private TextView mTvTweenedAnimation;
+    private TextView mTvObjectAnimator;
     private TextView mTvViewAnimator;
     private TextView mTvTransition;
     @Override
@@ -15,9 +16,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mTvTweenedAnimation = findViewById(R.id.tv_tweenedAnimation);
+        mTvObjectAnimator = findViewById(R.id.tv_objectAnimator);
         mTvViewAnimator = findViewById(R.id.tv_viewAnimator);
         mTvTransition= findViewById(R.id.tv_transition);
         mTvTweenedAnimation.setOnClickListener(this);
+        mTvObjectAnimator.setOnClickListener(this);
         mTvViewAnimator.setOnClickListener(this);
         mTvTransition.setOnClickListener(this);
     }
@@ -28,6 +31,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (v.getId()) {
             case R.id.tv_tweenedAnimation:
                 intent.setClass(this, TweenedAnimationActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.tv_objectAnimator:
+                intent.setClass(this, ObjectAnimatorActivity.class);
                 startActivity(intent);
                 break;
             case R.id.tv_viewAnimator:
