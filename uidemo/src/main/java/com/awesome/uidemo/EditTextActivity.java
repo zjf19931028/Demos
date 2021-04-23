@@ -17,19 +17,21 @@ public class EditTextActivity extends AppCompatActivity {
 
     private EditText mEditText;
 
-    @SuppressLint("ResourceType")
-    @RequiresApi(api = Build.VERSION_CODES.Q)
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_text);
         mEditText = findViewById(R.id.editView);
-        Drawable handleLeft = mEditText.getTextSelectHandleLeft();
-        Drawable handleRight = mEditText.getTextSelectHandleRight();
-        handleLeft.setColorFilter(Color.YELLOW, PorterDuff.Mode.SRC_ATOP);
-        handleRight.setColorFilter(Color.YELLOW, PorterDuff.Mode.SRC_ATOP);
-        mEditText.setTextSelectHandleLeft(handleLeft);
-        mEditText.setTextSelectHandleRight(handleRight);
+        Drawable handleLeft = null;
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.Q) {
+            handleLeft = mEditText.getTextSelectHandleLeft();
+            Drawable handleRight = mEditText.getTextSelectHandleRight();
+            handleLeft.setColorFilter(Color.YELLOW, PorterDuff.Mode.SRC_ATOP);
+            handleRight.setColorFilter(Color.YELLOW, PorterDuff.Mode.SRC_ATOP);
+            mEditText.setTextSelectHandleLeft(handleLeft);
+            mEditText.setTextSelectHandleRight(handleRight);
+        }
         mEditText.setHighlightColor(Color.YELLOW);
     }
 }
