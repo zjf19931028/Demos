@@ -15,13 +15,14 @@
         android:theme="@style/Theme.AwesomeDemos"
         android:usesCleartextTraffic="true"
         tools:replace="android:name">
-<!--        <activity android:name=".PointNineActivity"></activity>-->
+<!--        <activity android:name=".TextViewLinkActivity"></activity>-->
+        <!-- <activity android:name=".PointNineActivity"></activity> -->
         <!-- <activity android:name=".EditTextActivity"></activity> -->
         <!-- <activity android:name=".CollapsingToolbarActivity"></activity> -->
         <!-- <activity android:name=".MainActivity"></activity> -->
         <!-- <activity android:name=".LottieActivity"></activity> -->
         <activity
-            android:name=".PointNineActivity"
+            android:name=".TextViewLinkActivity"
             android:theme="@style/MainStyle">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

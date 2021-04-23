@@ -14,6 +14,7 @@
       <module name="awesomeDemos.contentresoverdemo" target="1.8" />
       <module name="awesomeDemos.customviewdemo" target="1.8" />
       <module name="awesomeDemos.daggerdemo" target="1.8" />
+      <module name="awesomeDemos.designpatterndemo" target="1.8" />
       <module name="awesomeDemos.dialogdemo" target="1.8" />
       <module name="awesomeDemos.fragmentdemo" target="1.8" />
       <module name="awesomeDemos.glidedemo" target="1.8" />

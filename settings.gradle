@@ -1,3 +1,4 @@
+include ':designpatterndemo'
 include ':dialogdemo'
 include ':daggerdemo'
 include ':butterknifedemo'

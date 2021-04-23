@@ -5,7 +5,7 @@ import android.os.Bundle;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.awesome.javadomo.designpattern.User;
+import com.awesome.designpatterndemo.User;
 
 /**
  * Author: JfangZ
