@@ -26,6 +26,7 @@
       <module name="awesomeDemos.mvpdemo" target="1.8" />
       <module name="awesomeDemos.mvvmdemo" target="1.8" />
       <module name="awesomeDemos.okhttpdemo" target="1.8" />
+      <module name="awesomeDemos.playerdemo" target="1.8" />
       <module name="awesomeDemos.recyclerviewdemo" target="1.8" />
       <module name="awesomeDemos.retrofitdemo" target="1.8" />
       <module name="awesomeDemos.rxjavademo" target="1.8" />

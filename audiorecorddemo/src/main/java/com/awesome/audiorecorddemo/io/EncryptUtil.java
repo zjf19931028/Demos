@@ -1,7 +1,5 @@
 package com.awesome.audiorecorddemo.io;
 
-import com.awesome.audiorecorddemo.ShowLogUtil;
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;

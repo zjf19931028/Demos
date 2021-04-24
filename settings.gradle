@@ -1,3 +1,4 @@
+include ':playerdemo'
 include ':designpatterndemo'
 include ':mvpdemo'
 include ':dialogdemo'

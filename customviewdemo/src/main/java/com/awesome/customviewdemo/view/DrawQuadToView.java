@@ -1,4 +1,4 @@
-package com.awesome.customviewdemo;
+package com.awesome.customviewdemo.view;
 
 import android.content.Context;
 import android.graphics.Canvas;
