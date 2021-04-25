@@ -1,8 +1,10 @@
-package com.awesome.demos;
+package com.awesome.javademo.activitys;
+
+import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.os.Bundle;
+import com.awesome.javademo.R;
 
 public class AlgorithmActivity extends AppCompatActivity {
 

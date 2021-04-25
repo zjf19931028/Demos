@@ -1,41 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
-    <bytecodeTargetLevel target="1.7">
+    <bytecodeTargetLevel target="1.8">
       <module name="algorithm" target="1.7" />
-      <module name="awesomeDemos.aidldemo" target="1.8" />
-      <module name="awesomeDemos.animationdemo" target="1.8" />
-      <module name="awesomeDemos.app" target="1.8" />
-      <module name="awesomeDemos.arouterdemo" target="1.8" />
-      <module name="awesomeDemos.audiorecorddemo" target="1.8" />
-      <module name="awesomeDemos.bluetoothdemo" target="1.8" />
-      <module name="awesomeDemos.butterknifedemo" target="1.8" />
-      <module name="awesomeDemos.contentproviderdemo" target="1.8" />
-      <module name="awesomeDemos.contentresoverdemo" target="1.8" />
-      <module name="awesomeDemos.customviewdemo" target="1.8" />
-      <module name="awesomeDemos.daggerdemo" target="1.8" />
-      <module name="awesomeDemos.designpatterndemo" target="1.8" />
-      <module name="awesomeDemos.dialogdemo" target="1.8" />
-      <module name="awesomeDemos.fragmentdemo" target="1.8" />
-      <module name="awesomeDemos.glidedemo" target="1.8" />
-      <module name="awesomeDemos.hiltdemo" target="1.8" />
-      <module name="awesomeDemos.hookdemo" target="1.8" />
-      <module name="awesomeDemos.javademo" target="1.8" />
-      <module name="awesomeDemos.jetpackdemo" target="1.8" />
-      <module name="awesomeDemos.jsondemo" target="1.8" />
-      <module name="awesomeDemos.kotlindemo" target="1.8" />
-      <module name="awesomeDemos.mvpdemo" target="1.8" />
-      <module name="awesomeDemos.mvvmdemo" target="1.8" />
-      <module name="awesomeDemos.okhttpdemo" target="1.8" />
-      <module name="awesomeDemos.playerdemo" target="1.8" />
-      <module name="awesomeDemos.recyclerviewdemo" target="1.8" />
-      <module name="awesomeDemos.retrofitdemo" target="1.8" />
-      <module name="awesomeDemos.rxjavademo" target="1.8" />
-      <module name="awesomeDemos.servicedemo" target="1.8" />
-      <module name="awesomeDemos.tinkerdemo" target="1.8" />
-      <module name="awesomeDemos.uidemo" target="1.8" />
-      <module name="awesomeDemos.viewpagerdemo" target="1.8" />
-      <module name="awesomeDemos.wlandemo" target="1.8" />
       <module name="javadomo" target="1.7" />
     </bytecodeTargetLevel>
   </component>
