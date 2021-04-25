@@ -1,15 +1,13 @@
-package com.awesome.viewpagerdemo;
+package com.awesome.viewpagerdemo.viewpager;
 
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.viewpager.widget.PagerAdapter;
 
 import com.awesome.sdk.util.ShowLogUtil;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -31,7 +29,7 @@ public class BannerAdapter extends PagerAdapter {
     }
 
     /**
-     * 是否为同一张图片
+     * 是否为同一View
      *
      * @param view
      * @param object

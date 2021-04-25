@@ -90,7 +90,7 @@ public class ListFragment extends Fragment {
     @Override
     public void onDetach() {
         super.onDetach();
-        ShowLogUtil.info("onDestroy " + "Activity和Fragment解除关联时");
+        ShowLogUtil.info("onDetach " + "Activity和Fragment解除关联时");
     }
 
 

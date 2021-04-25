@@ -41,6 +41,7 @@ public class MyTextView extends TextView {
         return dispatchTouchEvent;
     }
 
+
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         ShowLogUtil.info("View onTouchEvent");

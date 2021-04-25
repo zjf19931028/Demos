@@ -1,4 +1,8 @@
-package com.awesome.viewpagerdemo;
+package com.awesome.viewpagerdemo.viewpager;
+
+import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -6,11 +10,8 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
-import android.os.Bundle;
-import android.view.View;
-import android.widget.ImageView;
-
 import com.awesome.sdk.util.ShowLogUtil;
+import com.awesome.viewpagerdemo.R;
 
 import java.util.ArrayList;
 import java.util.List;

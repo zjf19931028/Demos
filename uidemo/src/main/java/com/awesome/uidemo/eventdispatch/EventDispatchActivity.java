@@ -14,6 +14,7 @@ import com.awesome.uidemo.R;
  * 重要元素：Activity、ViewGroup、View
  * 传递顺序：蛇形走位
  * 停止传递原因：有方法返回true，不再向下传递
+ * onInterceptTouchEvent：仅ViewGroup有onInterceptTouchEvent，返回true时，忽略View的处理
  */
 public class EventDispatchActivity extends AppCompatActivity {
 

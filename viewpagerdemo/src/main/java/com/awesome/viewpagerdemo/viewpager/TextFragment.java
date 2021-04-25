@@ -1,4 +1,4 @@
-package com.awesome.viewpagerdemo;
+package com.awesome.viewpagerdemo.viewpager;
 
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -10,6 +10,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+
+import com.awesome.viewpagerdemo.R;
 
 /**
  * Author: JfangZ
