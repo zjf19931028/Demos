@@ -31,4 +31,11 @@ public abstract class BaseActivity<P extends BaseContract.Presenter> extends Act
     public void setPresenter(P presenter) {
         mPresenter = presenter;
     }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (mPresenter != null)
+            mPresenter.destroy();
+    }
 }

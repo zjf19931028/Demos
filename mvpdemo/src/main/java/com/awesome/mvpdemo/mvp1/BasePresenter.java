@@ -2,6 +2,8 @@ package com.awesome.mvpdemo.mvp1;
 
 /**
  * Created by Alice on 2021/4/24
+ * P层持有V层引用，创建V层对象，在构造中赋值
+ * 使用get方法获取属性
  */
 public class BasePresenter<V extends BaseContract.View> implements BaseContract.Presenter {
     private V mView;
