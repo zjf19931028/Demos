@@ -1,7 +1,7 @@
-package com.awesome.algorithm;
+package com.awesome.javademo.algorithm;
 
 
-import com.awesome.algorithm.bean.ListNode;
+import com.awesome.javademo.algorithm.bean.ListNode;
 
 import java.util.Deque;
 import java.util.LinkedList;

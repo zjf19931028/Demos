@@ -1,3 +1,4 @@
+include ':javademo'
 include ':viewpagerdemo'
 include ':playerdemo'
 include ':designpatterndemo'

@@ -1,4 +1,4 @@
-package com.awesome.algorithm;
+package com.awesome.javademo.algorithm;
 
 import java.util.HashMap;
 import java.util.Map;

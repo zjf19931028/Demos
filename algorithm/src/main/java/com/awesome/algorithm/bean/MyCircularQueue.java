@@ -1,4 +1,4 @@
-package com.awesome.algorithm.bean;
+package com.awesome.javademo.algorithm.bean;
 
 import java.util.ArrayList;
 import java.util.List;

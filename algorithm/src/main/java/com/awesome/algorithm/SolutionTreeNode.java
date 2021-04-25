@@ -1,8 +1,8 @@
-package com.awesome.algorithm;
+package com.awesome.javademo.algorithm;
 
 
 
-import com.awesome.algorithm.bean.TreeNode;
+import com.awesome.javademo.algorithm.bean.TreeNode;
 
 import java.util.ArrayList;
 import java.util.Arrays;
