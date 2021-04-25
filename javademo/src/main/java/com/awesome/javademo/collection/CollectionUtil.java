@@ -139,6 +139,7 @@ public class CollectionUtil {
 //            ShowLogUtil.info(i);
 //        }
 
+        //给TreeMap赋值
 //        TreeMap<Integer, Integer> treeMap = new TreeMap<>(new Comparator<Integer>() {
 //            @Override
 //            public int compare(Integer o1, Integer o2) {
@@ -151,29 +152,39 @@ public class CollectionUtil {
 //        treeMap.put(9, 12);
 //        treeMap.put(13, 16);
 //        treeMap.put(1, 20);
+
+        //TreeMap键遍历
 //        Set<Integer> keySet = treeMap.keySet();
+        //TreeMap键的foreach遍历
 //        for (Integer i : keySet) {
 //            ShowLogUtil.info("key=" + i + ",value=" + treeMap.get(i));
 //        }
+        //TreeMap键的Iterator遍历
 //        Iterator<Integer> it = keySet.iterator();
 //        while (it.hasNext()) {
 //            Integer i = it.next();
 //            ShowLogUtil.info("key=" + i + ",value=" + treeMap.get(i));
 //        }
+        //TreeMap值遍历
 //        Collection<Integer> values = treeMap.values();
+        //TreeMap值的foreach遍历
 //        for (Integer i : values) {
 //            ShowLogUtil.info("value=" + i);
 //        }
+        //TreeMap值的Iterator遍历
 //        Iterator<Integer> itValue = values.iterator();
 //        while (itValue.hasNext()) {
 //            Integer i = itValue.next();
 //            ShowLogUtil.info("value=" + i);
 //        }
 
+        //TreeMap键值对遍历
 //        Set<Map.Entry<Integer, Integer>> entries = treeMap.entrySet();
+        //TreeMap键值对的foreach遍历
 //        for (Map.Entry<Integer, Integer> map : entries) {
 //            ShowLogUtil.info("key=" + map.getKey()+",value=" + map.getValue());
 //        }
+        //TreeMap键值对的Iterator遍历
 //        Iterator<Map.Entry<Integer, Integer>> it = entries.iterator();
 //        while (it.hasNext()){
 //            Map.Entry<Integer, Integer> entry = it.next();
