@@ -21,10 +21,16 @@ import javax.net.ssl.TrustManagerFactory;
 import javax.net.ssl.X509TrustManager;
 
 /**
- * @author vision
- * @function support the sslsocket
+ * 支持 sslsocket
+ * Https相关完全解析 https://blog.csdn.net/lmj623565791/article/details/48129405 auther：hongyang
  */
+
 public class HttpsUtils {
+
+    /**
+     * 信认指定定https的证书
+     * @return
+     */
     public static SSLSocketFactory getSslSocketFactory(InputStream[] certificates, InputStream bksFile, String password) {
         try {
             TrustManager[] trustManagers = prepareTrustManager(certificates);
@@ -43,6 +49,11 @@ public class HttpsUtils {
         }
     }
 
+    /**
+     * 准备一个信任管理类数组
+     * @param certificates
+     * @return
+     */
     private static TrustManager[] prepareTrustManager(InputStream... certificates) {
         if (certificates == null || certificates.length <= 0)
             return null;
@@ -84,6 +95,12 @@ public class HttpsUtils {
 
     }
 
+    /**
+     * 客户端的key
+     * @param bksFile    nks证书文件
+     * @param password   证书密码
+     * @return
+     */
     private static KeyManager[] prepareKeyManager(InputStream bksFile, String password) {
         try {
             if (bksFile == null || password == null)
@@ -112,6 +129,11 @@ public class HttpsUtils {
         return null;
     }
 
+    /**
+     * 选择X509TrustManager的信任管理类
+     * @param trustManagers
+     * @return
+     */
     private static X509TrustManager chooseTrustManager(TrustManager[] trustManagers) {
         for (TrustManager trustManager : trustManagers) {
             if (trustManager instanceof X509TrustManager) {
@@ -121,6 +143,9 @@ public class HttpsUtils {
         return null;
     }
 
+    /**
+     * 我的信任管理类
+     */
     private static class MyTrustManager implements X509TrustManager {
         private X509TrustManager defaultTrustManager;
         private X509TrustManager localTrustManager;
@@ -152,11 +177,17 @@ public class HttpsUtils {
         }
     }
 
-
+    /**
+     * 信任所有https的证书，包括自定义和官方的证书
+     * @return
+     */
     public static SSLSocketFactory initSSLSocketFactory() {
+        // step1：创建加密上下文
         SSLContext sslContext = null;
         try {
+            // 算法与服务器保持一致，服务器使用SSL或TSL算法
             sslContext = SSLContext.getInstance("SSL");
+            // step2：创建信任管理类
             X509TrustManager[] xTrustArray = new X509TrustManager[]
                     {initTrustManager()};
             sslContext.init(null,
@@ -167,6 +198,10 @@ public class HttpsUtils {
         return sslContext.getSocketFactory();
     }
 
+    /**
+     * 创建一个信任管理类
+     * @return  信任管理类
+     */
     public static X509TrustManager initTrustManager() {
         X509TrustManager mTrustManager = new X509TrustManager() {
             @Override

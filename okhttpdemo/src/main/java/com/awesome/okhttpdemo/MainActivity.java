@@ -21,21 +21,22 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 //        new OKHttpHelper().getSync("http://www.wanandroid.com/");
 //        new OKHttpHelper().getAsync("http://www.wanandroid.com/");
-        OkHttpClient mOkHttpClient = new OkHttpClient.Builder()
-                .addInterceptor(new LoggingInterceptor())
-                .build();
-        final Call call = mOkHttpClient.newCall(CommonRequest.createGetRequest("http://www.wanandroid.com/", null));
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    Response response = call.execute();
-                    String string = response.body().string();
-                    ShowLogUtil.info(string);
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-        }).start();
+        new OKHttpHelper().getAsync("https://kyfw.12306.cn/otn/");
+//        OkHttpClient mOkHttpClient = new OkHttpClient.Builder()
+//                .addInterceptor(new LoggingInterceptor())
+//                .build();
+//        final Call call = mOkHttpClient.newCall(CommonRequest.createGetRequest("http://www.wanandroid.com/", null));
+//        new Thread(new Runnable() {
+//            @Override
+//            public void run() {
+//                try {
+//                    Response response = call.execute();
+//                    String string = response.body().string();
+//                    ShowLogUtil.info(string);
+//                } catch (IOException e) {
+//                    e.printStackTrace();
+//                }
+//            }
+//        }).start();
     }
 }

@@ -65,7 +65,7 @@ public class OKHttpHelper {
         call.enqueue(new Callback() {
             @Override
             public void onFailure(@NotNull Call call, @NotNull IOException e) {
-
+                ShowLogUtil.info("onFailure");
             }
 
             @Override

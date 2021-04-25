@@ -11,7 +11,7 @@ import okhttp3.RequestBody;
  * Author: JfangZ
  * Email: zhangjingfang@jeejio.com
  * Date: 2021/4/25 17:34
- * Description:
+ * Description:request封装
  */
 public class CommonRequest {
     public static Request createPostRequest(String url, RequestParams params) {
