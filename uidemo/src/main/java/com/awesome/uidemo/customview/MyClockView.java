@@ -15,6 +15,7 @@ import com.awesome.sdk.util.ShowLogUtil;
 
 /**
  * Created by Alice on 2021/3/21
+ * 时钟
  */
 public class MyClockView extends View {
     private Paint mPaint;

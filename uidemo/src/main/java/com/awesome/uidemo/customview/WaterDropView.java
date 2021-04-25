@@ -15,7 +15,7 @@ import androidx.annotation.Nullable;
  * Author: JfangZ
  * Email: zhangjingfang@jeejio.com
  * Date: 2021/3/19 16:56
- * Description:
+ * Description:水滴
  */
 public class WaterDropView extends View {
     private Paint mPaint;

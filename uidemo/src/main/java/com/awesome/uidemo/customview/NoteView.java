@@ -14,6 +14,7 @@ import com.awesome.uidemo.R;
 
 /**
  * Created by Alice on 2021/3/21
+ * 笔记本
  */
 public class NoteView extends EditText {
 

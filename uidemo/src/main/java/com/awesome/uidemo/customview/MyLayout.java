@@ -36,16 +36,15 @@ public class MyLayout extends ViewGroup {
     public MyLayout(Context context, AttributeSet attrs) {
         super(context, attrs);
         addImg = new ImageView(context);
-        addImg.setImageResource(R.mipmap.wawa_red);
+        addImg.setImageResource(R.mipmap.ic_launcher);
         addView(addImg);
-
     }
 
 
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
-        Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.mipmap.wawa_red);
+        Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher);
         int widthSize = MeasureSpec.getSize(widthMeasureSpec);
         rowCount = widthSize/ bitmap.getWidth();
     }
@@ -60,7 +59,7 @@ public class MyLayout extends ViewGroup {
             int bottom = top + getWidth() / rowCount;
             ShowLogUtil.info("left=" + left + ",top=" + top + ",right=" + right + ",bottom=" + bottom);
             view.layout(left, top, right, bottom);
-            view.setImageResource(R.mipmap.wawa_red);
+            view.setImageResource(R.mipmap.ic_launcher);
             view.setBackgroundColor(Color.BLACK);
             if (i == (getChildCount() - 1)) {
                 view.setOnClickListener(mOnClickListener);

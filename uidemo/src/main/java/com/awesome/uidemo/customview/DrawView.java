@@ -18,7 +18,7 @@ import com.awesome.uidemo.R;
 /**
  * Created by Alice on 2021/3/21
  */
-public class LayoutView extends View {
+public class DrawView extends View {
     private Paint mPaint;
 
     private RectF mRect;
@@ -31,12 +31,12 @@ public class LayoutView extends View {
     private Bitmap mBitmap;
 
 
-    public LayoutView(Context context) {
+    public DrawView(Context context) {
         super(context);
         initPaint();
     }
 
-    public LayoutView(Context context, @Nullable AttributeSet attrs) {
+    public DrawView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
         initPaint();
     }
