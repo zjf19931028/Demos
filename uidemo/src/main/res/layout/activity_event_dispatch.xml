@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.awesome.uidemo.eventdispatch.MyLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".eventdispatch.EventDispatchActivity">
+
+    <com.awesome.uidemo.eventdispatch.MyTextView
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:background="#ccffcc"
+        android:gravity="center"
+        android:text="是谁消费了我的点击" />
+
+</com.awesome.uidemo.eventdispatch.MyLinearLayout>

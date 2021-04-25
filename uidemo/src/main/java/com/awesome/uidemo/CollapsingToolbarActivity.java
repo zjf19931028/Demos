@@ -9,6 +9,9 @@ import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.jaeger.library.StatusBarUtil;
 
+/**
+ * 折叠标题栏
+ */
 public class CollapsingToolbarActivity extends AppCompatActivity {
     private CollapsingToolbarLayout collapsingToolbarLayout;
     private AppBarLayout appBarLayout;

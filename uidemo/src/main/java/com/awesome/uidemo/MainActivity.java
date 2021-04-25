@@ -12,13 +12,9 @@ import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.jaeger.library.StatusBarUtil;
 
 public class MainActivity extends AppCompatActivity {
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-
     }
 }

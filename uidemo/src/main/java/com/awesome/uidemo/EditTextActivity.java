@@ -13,6 +13,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 
+/**
+ * EditText选中文字样式
+ */
 public class EditTextActivity extends AppCompatActivity {
 
     private EditText mEditText;

@@ -7,6 +7,9 @@ import android.view.View;
 
 import com.airbnb.lottie.LottieAnimationView;
 
+/**
+ * 第三方动画
+ */
 public class LottieActivity extends AppCompatActivity {
 
     private LottieAnimationView mAnimationView1;
