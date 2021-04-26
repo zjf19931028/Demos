@@ -43,9 +43,27 @@ public class CommonCallback implements Callback {
 
     private Handler mDeliveryHandler;
 
+    /**
+     *
+     * @param disposeDataHandle  网络请求的返回信息处理
+     */
     public CommonCallback(DisposeDataHandle disposeDataHandle) {
         mListener = disposeDataHandle.getListener();
         mClass = disposeDataHandle.getClazz();
+        mDeliveryHandler = new Handler(Looper.getMainLooper());
+    }
+
+    /**
+     * OkHttp封装
+     * step1-6:创建自定义回调实体类。使用回调对象，解析实体类。
+     */
+    /**
+     * OkHttp封装
+     * step2-3。封装回调的实现类，需要"回调对象"、"解析实体类"。
+     */
+    public CommonCallback(DisposeDataListener listener, Class<?> aClass) {
+        mListener = listener;
+        mClass = aClass;
         mDeliveryHandler = new Handler(Looper.getMainLooper());
     }
 

@@ -67,19 +67,33 @@ public class CommonOkHttpClient {
         return mOkHttpClient;
     }
 
+//    /**
+//     * 发送具体的http/https请求
+//     *
+//     * @param url               网络请求的具体url
+//     * @param params            网络请求的参数
+//     * @param disposeDataHandle 网络请求的返回信息处理
+//     * @return
+//     */
+//    public static Call get(String url, RequestParams params, DisposeDataHandle disposeDataHandle) {
+//        Request request = CommonRequest.createGetRequest(url, params);
+//        Call call = mOkHttpClient.newCall(request);
+//        call.enqueue(new CommonCallback(disposeDataHandle));
+//        return call;
+//    }
+
     /**
-     * 发送具体的http/https请求
-     *
-     * @param url
-     * @param params
-     * @param disposeDataHandle
-     * @return
+     * OkHttp封装
+     * step1-4:调用一个get网络请求的过程。传递"url"、"参数类"，创建Request类；传递"回调对象"、"解析实体类"，创建回调的实现类。
      */
-    public static Call get(String url, RequestParams params, DisposeDataHandle disposeDataHandle) {
+    /**
+     * OkHttp封装
+     * step2-1:调用一个get网络请求的过程。去封装一个Request类，需要url、参数：封装一个参数类；去封装一个回调的实现类。
+     */
+    public static void get(String url, RequestParams params, DisposeDataListener listener, Class<?> aClass) {
         Request request = CommonRequest.createGetRequest(url, params);
         Call call = mOkHttpClient.newCall(request);
-        call.enqueue(new CommonCallback(disposeDataHandle));
-        return call;
+        call.enqueue(new CommonCallback(listener, aClass));
     }
 
     public static Call post(String url, RequestParams params, DisposeDataHandle disposeDataHandle) {

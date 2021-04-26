@@ -16,6 +16,11 @@ public class DisposeDataHandle {
         mListener = listener;
     }
 
+    /**
+     * 重载构造方法
+     * @param listener 回调监听
+     * @param aClass   数据解析实体类
+     */
     public DisposeDataHandle(DisposeDataListener listener, Class<?> aClass) {
         mListener = listener;
         mClass = aClass;

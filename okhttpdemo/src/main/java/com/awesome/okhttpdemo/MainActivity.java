@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
+import com.awesome.okhttpdemo.app.RequestCenter;
 import com.awesome.okhttpdemo.okhttp.CommonOkHttpClient;
 import com.awesome.okhttpdemo.okhttp.listener.DisposeDataHandle;
 import com.awesome.okhttpdemo.okhttp.listener.DisposeDataListener;
@@ -50,5 +51,27 @@ public class MainActivity extends AppCompatActivity {
 //                        ShowLogUtil.info(reasonObj.toString());
 //                    }
 //                }, null);
+
+        /**
+         * OkHttp封装
+         * step1-1:调用登录方法。传递真实的参数信息，实现回调方法
+         */
+        /**
+         * OkHttp封装
+         * step2-6:调用登录方法。
+         */
+        RequestCenter.login("Jane", "123", new DisposeDataListener() {
+            @Override
+            public void onSuccess(Object responseObj) {
+                ShowLogUtil.info("onSuccess");
+                ShowLogUtil.info(responseObj.toString());
+            }
+
+            @Override
+            public void onFailure(Object reasonObj) {
+                ShowLogUtil.info("onFailure");
+                ShowLogUtil.info(reasonObj.toString());
+            }
+        });
     }
 }

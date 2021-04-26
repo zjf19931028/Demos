@@ -13,6 +13,10 @@ import okhttp3.RequestBody;
  * Date: 2021/4/25 17:34
  * Description:request封装
  */
+/**
+ * OkHttp封装
+ * step2-2。去封装一个Request类，需要url、参数。
+ */
 public class CommonRequest {
     public static Request createPostRequest(String url, RequestParams params) {
         FormBody.Builder builder = new FormBody.Builder();
@@ -28,6 +32,10 @@ public class CommonRequest {
                 .build();
     }
 
+    /**
+     * OkHttp封装
+     * step1-5:创建Request类，使用url、参数类
+     */
     public static Request createGetRequest(String url, RequestParams params) {
         StringBuilder stringBuilder = new StringBuilder(url).append("?");
         if (params != null) {
