@@ -1,6 +1,11 @@
 package com.awesome.okhttpdemo.okhttp;
 
 import com.awesome.okhttpdemo.okhttp.https.HttpsUtils;
+import com.awesome.okhttpdemo.okhttp.listener.DisposeDataHandle;
+import com.awesome.okhttpdemo.okhttp.listener.DisposeDataListener;
+import com.awesome.okhttpdemo.okhttp.request.CommonRequest;
+import com.awesome.okhttpdemo.okhttp.request.RequestParams;
+import com.awesome.okhttpdemo.okhttp.response.CommonCallback;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -10,6 +15,7 @@ import java.util.concurrent.TimeUnit;
 import javax.net.ssl.HostnameVerifier;
 import javax.net.ssl.SSLSession;
 
+import okhttp3.Call;
 import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -52,11 +58,34 @@ public class CommonOkHttpClient {
                 return true;
             }
         });
-        okHttpClientBuilder.sslSocketFactory(HttpsUtils.initSSLSocketFactory(),HttpsUtils.initTrustManager());
+        // 支持ssl socket
+        okHttpClientBuilder.sslSocketFactory(HttpsUtils.initSSLSocketFactory(), HttpsUtils.initTrustManager());
         mOkHttpClient = okHttpClientBuilder.build();
     }
 
     public static OkHttpClient getOkHttpClient() {
         return mOkHttpClient;
+    }
+
+    /**
+     * 发送具体的http/https请求
+     *
+     * @param url
+     * @param params
+     * @param disposeDataHandle
+     * @return
+     */
+    public static Call get(String url, RequestParams params, DisposeDataHandle disposeDataHandle) {
+        Request request = CommonRequest.createGetRequest(url, params);
+        Call call = mOkHttpClient.newCall(request);
+        call.enqueue(new CommonCallback(disposeDataHandle));
+        return call;
+    }
+
+    public static Call post(String url, RequestParams params, DisposeDataHandle disposeDataHandle) {
+        Request request = CommonRequest.createPostRequest(url, params);
+        Call call = mOkHttpClient.newCall(request);
+        call.enqueue(new CommonCallback(disposeDataHandle));
+        return call;
     }
 }

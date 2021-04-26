@@ -21,7 +21,7 @@ import javax.net.ssl.TrustManagerFactory;
 import javax.net.ssl.X509TrustManager;
 
 /**
- * 支持 sslsocket
+ * 支持 ssl socket
  * Https相关完全解析 https://blog.csdn.net/lmj623565791/article/details/48129405 auther：hongyang
  */
 

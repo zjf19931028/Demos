@@ -4,15 +4,14 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-import com.awesome.okhttpdemo.okhttp.request.CommonRequest;
+import com.awesome.okhttpdemo.okhttp.CommonOkHttpClient;
+import com.awesome.okhttpdemo.okhttp.listener.DisposeDataHandle;
+import com.awesome.okhttpdemo.okhttp.listener.DisposeDataListener;
 import com.awesome.sdk.util.ShowLogUtil;
 
-import java.io.IOException;
-
-import okhttp3.Call;
-import okhttp3.OkHttpClient;
-import okhttp3.Response;
-
+/**
+ * get类型网址：http://www.wanandroid.com/     https://kyfw.12306.cn/otn/
+ */
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -21,7 +20,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 //        new OKHttpHelper().getSync("http://www.wanandroid.com/");
 //        new OKHttpHelper().getAsync("http://www.wanandroid.com/");
-        new OKHttpHelper().getAsync("https://kyfw.12306.cn/otn/");
 //        OkHttpClient mOkHttpClient = new OkHttpClient.Builder()
 //                .addInterceptor(new LoggingInterceptor())
 //                .build();
@@ -38,5 +36,19 @@ public class MainActivity extends AppCompatActivity {
 //                }
 //            }
 //        }).start();
+
+//                new DisposeDataListener() {
+//                    @Override
+//                    public void onSuccess(Object responseObj) {
+//                        ShowLogUtil.info("onSuccess");
+//                        ShowLogUtil.info(responseObj.toString());
+//                    }
+//
+//                    @Override
+//                    public void onFailure(Object reasonObj) {
+//                        ShowLogUtil.info("onFailure");
+//                        ShowLogUtil.info(reasonObj.toString());
+//                    }
+//                }, null);
     }
 }
