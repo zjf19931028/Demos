@@ -8,7 +8,5 @@ package com.awesome.javademo.abstracts;
  */
 public abstract class AbstractAnimal {
 
-    public static void eat(){
-
-    }
+    public abstract void eat();
 }
