@@ -27,6 +27,14 @@ import okhttp3.Response;
  * Date: 2021/4/25 18:09
  * Description:
  */
+/**
+ * OkHttpClient封装
+ * step1-4:设置OkHttpClient，调用一个get/post网络请求的过程。传递"url"、"参数类"，创建Request类；传递"回调对象"、"解析实体类"，创建回调的实现类。
+ */
+/**
+ * OkHttpClient封装
+ * step2-1:设置OkHttpClient，调用一个get/post网络请求的过程。去封装一个Request类，需要url、参数：封装一个参数类；去封装一个回调的实现类。
+ */
 public class CommonOkHttpClient {
     private static final int TIME_OUT = 30;
     private static OkHttpClient mOkHttpClient;
@@ -82,14 +90,6 @@ public class CommonOkHttpClient {
 //        return call;
 //    }
 
-    /**
-     * OkHttp封装
-     * step1-4:调用一个get网络请求的过程。传递"url"、"参数类"，创建Request类；传递"回调对象"、"解析实体类"，创建回调的实现类。
-     */
-    /**
-     * OkHttp封装
-     * step2-1:调用一个get网络请求的过程。去封装一个Request类，需要url、参数：封装一个参数类；去封装一个回调的实现类。
-     */
     public static void get(String url, RequestParams params, DisposeDataListener listener, Class<?> aClass) {
         Request request = CommonRequest.createGetRequest(url, params);
         Call call = mOkHttpClient.newCall(request);

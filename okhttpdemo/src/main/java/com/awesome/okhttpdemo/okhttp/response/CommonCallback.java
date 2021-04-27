@@ -30,6 +30,14 @@ import okhttp3.Response;
  * step3：操作这个实现类，创建一个属性为新接口，并在构造中赋值，在复写的方法中调用替换的新接口的方法
  * step4：使用实现类和新接口，可以向外抛出新接口对象，并在方法中创建实现类，构造中传入新街口对象
  */
+/**
+ * Callback封装
+ * step1-6:创建自定义回调实体类。使用回调对象，解析实体类。
+ */
+/**
+ * Callback封装
+ * step2-3。封装回调的实现类，需要"回调对象"、"解析实体类"。
+ */
 public class CommonCallback implements Callback {
     protected static final String RESULT_CODE = "ecode";
     protected static final int RESULT_CODE_VALUE = 0;
@@ -53,14 +61,6 @@ public class CommonCallback implements Callback {
         mDeliveryHandler = new Handler(Looper.getMainLooper());
     }
 
-    /**
-     * OkHttp封装
-     * step1-6:创建自定义回调实体类。使用回调对象，解析实体类。
-     */
-    /**
-     * OkHttp封装
-     * step2-3。封装回调的实现类，需要"回调对象"、"解析实体类"。
-     */
     public CommonCallback(DisposeDataListener listener, Class<?> aClass) {
         mListener = listener;
         mClass = aClass;
@@ -77,6 +77,7 @@ public class CommonCallback implements Callback {
         });
     }
 
+
     @Override
     public void onResponse(@NotNull Call call, @NotNull Response response) throws IOException {
         String string = response.body().string();
@@ -90,6 +91,10 @@ public class CommonCallback implements Callback {
     }
 
 
+    /**
+     * 处理返回信息，不为空转化为json格式
+     * @param responseObj
+     */
     private void handleResponse(Object responseObj) {
         if (responseObj == null || TextUtils.isEmpty(responseObj.toString().trim())) {
             mListener.onFailure(new OkHttpException(NETWORK_ERROR, EMPTY_MSG));

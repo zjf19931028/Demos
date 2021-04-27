@@ -15,6 +15,10 @@ import okhttp3.RequestBody;
  */
 /**
  * OkHttp封装
+ * step1-5:创建Request类，使用url、参数类
+ */
+/**
+ * OkHttp封装
  * step2-2。去封装一个Request类，需要url、参数。
  */
 public class CommonRequest {
@@ -32,10 +36,7 @@ public class CommonRequest {
                 .build();
     }
 
-    /**
-     * OkHttp封装
-     * step1-5:创建Request类，使用url、参数类
-     */
+
     public static Request createGetRequest(String url, RequestParams params) {
         StringBuilder stringBuilder = new StringBuilder(url).append("?");
         if (params != null) {
