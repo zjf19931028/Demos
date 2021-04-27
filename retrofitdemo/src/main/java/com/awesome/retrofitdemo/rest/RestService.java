@@ -14,7 +14,7 @@ import retrofit2.http.Url;
  * Author: JfangZ
  * Email: zhangjingfang@jeejio.com
  * Date: 2021/4/27 17:14
- * Description:
+ * Description: 请求类
  * 推荐：图解http
  */
 public interface RestService {

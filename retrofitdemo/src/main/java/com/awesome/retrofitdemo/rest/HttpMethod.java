@@ -4,7 +4,7 @@ package com.awesome.retrofitdemo.rest;
  * Author: JfangZ
  * Email: zhangjingfang@jeejio.com
  * Date: 2021/4/27 17:27
- * Description:
+ * Description:枚举请求类型
  */
 public enum HttpMethod {
     GET,
