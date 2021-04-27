@@ -8,10 +8,11 @@ package com.awesome.designpatterndemo.singleton;
  * 外部类调用时不会加载内部类，内部类不被加载则不会初始化INSTACE，不会占用内存。只有在调用getInstance()才会初始化Instance.
  */
 public class SingleTon {
+
     private static class SingleTonHolder{
-        public static final SingleTon INSTANCE = new SingleTon();
+        private static final SingleTon INSTANCE = new SingleTon();
     }
-    public SingleTon getInstance(){
+    public static SingleTon getInstance(){
         return SingleTonHolder.INSTANCE;
     }
 }

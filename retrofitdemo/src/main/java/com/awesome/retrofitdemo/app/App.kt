@@ -1,4 +1,4 @@
-package com.awesome.retrofitdemo
+package com.awesome.retrofitdemo.app
 
 import android.app.Application
 import com.awesome.retrofitdemo.kotlin.ServiceFactory
