@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 //        new OKHttpHelper().getSync("http://www.wanandroid.com/");
 //        new OKHttpHelper().getAsync("http://www.wanandroid.com/");
+        // 未封装请求
 //        OkHttpClient mOkHttpClient = new OkHttpClient.Builder()
 //                .addInterceptor(new LoggingInterceptor())
 //                .build();
@@ -60,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
          * OkHttp封装
          * step2-6:调用登录方法。
          */
-        RequestCenter.login("Jane", "123", new DisposeDataListener() {
+        RequestCenter.getList("4", "10", new DisposeDataListener() {
             @Override
             public void onSuccess(Object responseObj) {
                 ShowLogUtil.info("onSuccess");

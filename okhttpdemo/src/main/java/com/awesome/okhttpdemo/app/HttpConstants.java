@@ -7,8 +7,8 @@ package com.awesome.okhttpdemo.app;
  * Description:
  */
 public class HttpConstants {
-    public static final String ROOT_URL = "http://www.wanandroid.com/";
-    public static final String LOGIN_URL = ROOT_URL+"/user/login_phone.php";
+    public static final String ROOT_URL = "http://www.imooc.com/";
+    public static final String LIST_URL = ROOT_URL + "api/teacher";
 
 
 }

@@ -39,8 +39,8 @@ import okhttp3.Response;
  * step2-3。封装回调的实现类，需要"回调对象"、"解析实体类"。
  */
 public class CommonCallback implements Callback {
-    protected static final String RESULT_CODE = "ecode";
-    protected static final int RESULT_CODE_VALUE = 0;
+    protected static final String RESULT_CODE = "status";
+    protected static final int RESULT_CODE_VALUE = 1;
     protected static final String EMPTY_MSG = "空空如也";
 
     protected static final int NETWORK_ERROR = 1;
@@ -100,28 +100,26 @@ public class CommonCallback implements Callback {
             mListener.onFailure(new OkHttpException(NETWORK_ERROR, EMPTY_MSG));
             return;
         }
-        mListener.onSuccess(responseObj);
-        return;
-//        try {
-//            JSONObject result = new JSONObject(responseObj.toString());
-//            // 服务器协商部分
-////            if (result.has(RESULT_CODE) && result.getInt(RESULT_CODE) == RESULT_CODE_VALUE) {
-//                if (mClass == null) {
-//                    mListener.onSuccess(result);
-//                } else {
-//                    Object obj = ResponseEntityToModule.parseJsonObjectToModule(result, mClass);
-//                    if (obj != null) {
-//                        mListener.onSuccess(obj);
-//                    } else {
-//                        mListener.onFailure(new OkHttpException(JSON_ERROR, EMPTY_MSG));
-//                    }
-//                }
-////            }else {
-////                mListener.onFailure(new OkHttpException(OTHER_ERROR, EMPTY_MSG));
-////            }
-//        } catch (JSONException e) {
-//            mListener.onFailure(new OkHttpException(OTHER_ERROR, e.getMessage()));
-//            e.printStackTrace();
-//        }
+        try {
+            JSONObject result = new JSONObject(responseObj.toString());
+            // 服务器协商部分
+            if (result.has(RESULT_CODE) && result.getInt(RESULT_CODE) == RESULT_CODE_VALUE) {
+                if (mClass == null) {
+                    mListener.onSuccess(result);
+                } else {
+                    Object obj = ResponseEntityToModule.parseJsonObjectToModule(result, mClass);
+                    if (obj != null) {
+                        mListener.onSuccess(obj);
+                    } else {
+                        mListener.onFailure(new OkHttpException(JSON_ERROR, EMPTY_MSG));
+                    }
+                }
+            }else {
+                mListener.onFailure(new OkHttpException(OTHER_ERROR, EMPTY_MSG));
+            }
+        } catch (JSONException e) {
+            mListener.onFailure(new OkHttpException(OTHER_ERROR, e.getMessage()));
+            e.printStackTrace();
+        }
     }
 }

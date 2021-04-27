@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 
 import com.awesome.retrofitdemo.R;
+import com.awesome.retrofitdemo.test.Network;
 
 import java.util.List;
 
@@ -67,7 +68,7 @@ public class ThirdActivity extends AppCompatActivity {
                 .addInterceptor(new HttpLoggingInterceptor(new HttpLoggingInterceptor.Logger() {
                     @Override
                     public void log(String message) {
-                        Log.i("Retrofit请求参数","message="+message);
+                        Log.i("Retrofit请求参数", "message=" + message);
                     }
                 }).setLevel(HttpLoggingInterceptor.Level.BODY))
                 .build();

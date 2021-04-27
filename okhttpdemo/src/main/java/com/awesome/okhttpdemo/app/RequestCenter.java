@@ -1,5 +1,6 @@
 package com.awesome.okhttpdemo.app;
 
+import com.awesome.okhttpdemo.app.bean.Teacher;
 import com.awesome.okhttpdemo.okhttp.CommonOkHttpClient;
 import com.awesome.okhttpdemo.okhttp.listener.DisposeDataHandle;
 import com.awesome.okhttpdemo.okhttp.listener.DisposeDataListener;
@@ -36,15 +37,15 @@ public class RequestCenter {
     /**
      * 请求登录接口
      *
-     * @param name     名字参数
-     * @param password 密码参数
+     * @param page 页数
+     * @param pageSize  页数数量
      * @param listener 请求回调
      */
-    public static void login(String name, String password, DisposeDataListener listener) {
+    public static void getList(String page, String pageSize, DisposeDataListener listener) {
         RequestParams params = new RequestParams();
-        params.put("name", name);
-        params.put("password", password);
+        params.put("type", page);
+        params.put("num", pageSize);
 //        sendRequest(HttpConstants.LOGIN_URL, params, listener, null);
-        CommonOkHttpClient.get(HttpConstants.LOGIN_URL, params,listener, null);
+        CommonOkHttpClient.get(HttpConstants.LIST_URL, params,listener, Teacher.class);
     }
 }
