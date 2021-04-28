@@ -99,7 +99,11 @@ public class CommonOkHttpClient {
     public static Call post(String url, RequestParams params, DisposeDataHandle disposeDataHandle) {
         Request request = CommonRequest.createPostRequest(url, params);
         Call call = mOkHttpClient.newCall(request);
-        call.enqueue(new CommonCallback(disposeDataHandle));
+        call.enqueue(getCallback(disposeDataHandle));
         return call;
+    }
+
+    private static CommonCallback getCallback(DisposeDataHandle disposeDataHandle){
+        return new CommonCallback(disposeDataHandle);
     }
 }

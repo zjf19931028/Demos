@@ -33,7 +33,7 @@ public class RetrofitCreator {
     private static final class OkHttpClientHolder {
         private static final int TIME_OUT = 60;
         private static final OkHttpClient OKHTTPCLIENT_HOLDER = new OkHttpClient.Builder()
-                // 构建者模式添加拦截器，降低耦合性
+                // tip：构建者模式添加拦截器，降低耦合性
                 .addInterceptor(new LoggingInterceptor())
                 .connectTimeout(TIME_OUT, TimeUnit.SECONDS)
                 .readTimeout(TIME_OUT, TimeUnit.SECONDS)

@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 //        new OKHttpHelper().getSync("http://www.wanandroid.com/");
 //        new OKHttpHelper().getAsync("http://www.wanandroid.com/");
-        // 未封装请求
+        // 封装Request
 //        OkHttpClient mOkHttpClient = new OkHttpClient.Builder()
 //                .addInterceptor(new LoggingInterceptor())
 //                .build();
@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
 //                }
 //            }
 //        }).start();
-
+        // 封装回调类
 //                new DisposeDataListener() {
 //                    @Override
 //                    public void onSuccess(Object responseObj) {

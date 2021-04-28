@@ -16,11 +16,12 @@
         android:theme="@style/Theme.AwesomeDemos"
         android:usesCleartextTraffic="true"
         tools:replace="android:name">
-<!--        <activity android:name=".encapsulation.activitys.EncapsulationActivity"></activity>-->
+<!--        <activity android:name=".rest.RestActivity"></activity>-->
+        <!-- <activity android:name=".encapsulation.activitys.EncapsulationActivity"></activity> -->
         <!-- <activity android:name=".java.SecondActivity"></activity> -->
         <!-- <activity android:name=".kotlin.MainActivity"> -->
         <!-- <activity android:name=".java.ThirdActivity"> -->
-        <activity android:name=".encapsulation.activitys.EncapsulationActivity">
+        <activity android:name=".rest.activities.RestActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

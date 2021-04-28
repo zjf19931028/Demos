@@ -27,6 +27,7 @@ import okio.BufferedSink;
  * 同步为execute，异步为enqueue
  */
 public class OKHttpHelper {
+    // 未封装请求 step1：创建OkHttpClient对象，设置请求配置
     private OkHttpClient mOkHttpClient = new OkHttpClient();
     // 添加拦截器
 //    private OkHttpClient mOkHttpClient = new OkHttpClient.Builder()
@@ -58,10 +59,13 @@ public class OKHttpHelper {
 
     // 异步GET请求
     void getAsync(String url) {
+        // 未封装请求 step2：创建Request对象，设置url、参数
         Request request = new Request.Builder()
                 .url(url)
                 .build();
+        // 未封装请求 step3：使用OkHttpClient对象设置Request对象生成相应的Call对象
         Call call = mOkHttpClient.newCall(request);
+        // 未封装请求 step4：使用call加入请求队列，返回回调信息
         call.enqueue(new Callback() {
             @Override
             public void onFailure(@NotNull Call call, @NotNull IOException e) {

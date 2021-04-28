@@ -9,7 +9,7 @@ import retrofit2.Response;
  * Author: JfangZ
  * Email: zhangjingfang@jeejio.com
  * Date: 2021/4/27 13:55
- * Description: 替换源码的回调接口及方法
+ * Description: tip 替换源码中的回调2：替换源码的回调接口及方法
  */
 public class CommonCallback<T> implements Callback<T> {
     private DisposeDataListener mListener;

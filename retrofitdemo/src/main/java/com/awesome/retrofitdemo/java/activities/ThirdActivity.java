@@ -1,4 +1,4 @@
-package com.awesome.retrofitdemo.java;
+package com.awesome.retrofitdemo.java.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,15 +6,14 @@ import android.os.Bundle;
 import android.util.Log;
 
 import com.awesome.retrofitdemo.R;
-import com.awesome.retrofitdemo.test.Network;
+import com.awesome.retrofitdemo.java.APIService;
+import com.awesome.retrofitdemo.java.Course;
+import com.awesome.retrofitdemo.java.Teacher;
 
 import java.util.List;
 
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
