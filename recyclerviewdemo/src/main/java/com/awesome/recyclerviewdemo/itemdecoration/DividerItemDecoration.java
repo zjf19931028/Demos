@@ -1,4 +1,4 @@
-package com.awesome.recyclerviewdemo;
+package com.awesome.recyclerviewdemo.itemdecoration;
 
 import android.graphics.Canvas;
 import android.graphics.Paint;

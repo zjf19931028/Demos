@@ -1,5 +1,6 @@
 package com.awesome.recyclerviewdemo;
 
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,7 +10,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.awesome.recyclerviewdemo.java.Course;
+import com.awesome.recyclerviewdemo.net.Course;
 
 import java.util.List;
 
@@ -19,10 +20,10 @@ import java.util.List;
  * Date: 2021/4/14 15:55
  * Description: 单布局适配器
  */
-public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.ViewHolder> {
+public class SingleCourseAdapter extends RecyclerView.Adapter<SingleCourseAdapter.ViewHolder> {
     private List<Course> mCourseList;
 
-    public CourseAdapter(List<Course> courseList) {
+    public SingleCourseAdapter(List<Course> courseList) {
         mCourseList = courseList;
     }
 
@@ -38,6 +39,9 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.ViewHolder
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Course course = mCourseList.get(position);
         holder.mTextView.setText(course.getName());
+        if (position % 2 == 0) {
+            holder.itemView.setBackgroundColor(Color.RED);
+        }
     }
 
     @Override

@@ -3,8 +3,7 @@ package com.awesome.recyclerviewdemo.base;
 import android.view.View;
 
 import com.awesome.recyclerviewdemo.R;
-import com.awesome.recyclerviewdemo.base.RecyclerAdapter;
-import com.awesome.recyclerviewdemo.java.Course;
+import com.awesome.recyclerviewdemo.net.Course;
 
 /**
  * Created by Alice on 2021/4/24

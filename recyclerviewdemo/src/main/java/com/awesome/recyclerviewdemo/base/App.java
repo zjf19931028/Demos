@@ -1,4 +1,4 @@
-package com.awesome.recyclerviewdemo;
+package com.awesome.recyclerviewdemo.base;
 
 import com.awesome.sdk.BaseApplication;
 

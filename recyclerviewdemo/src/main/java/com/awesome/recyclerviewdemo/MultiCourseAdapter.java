@@ -9,8 +9,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.awesome.recyclerviewdemo.base.App;
 import com.bumptech.glide.Glide;
-import com.awesome.recyclerviewdemo.java.Course;
+import com.awesome.recyclerviewdemo.net.Course;
 
 import java.util.List;
 

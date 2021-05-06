@@ -11,9 +11,10 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
-import com.awesome.recyclerviewdemo.java.APIService;
-import com.awesome.recyclerviewdemo.java.Course;
-import com.awesome.recyclerviewdemo.java.Teacher;
+import com.awesome.recyclerviewdemo.itemdecoration.DividerItemDecoration;
+import com.awesome.recyclerviewdemo.itemdecoration.StickyItemDecoration;
+import com.awesome.recyclerviewdemo.net.Course;
+import com.awesome.recyclerviewdemo.net.Teacher;
 import com.awesome.sdk.net.RxClient;
 import com.google.gson.Gson;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
@@ -34,11 +35,10 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView mRecyclerView;
     private SmartRefreshLayout mSmartRefreshLayout;
     private TextView mTvAdd;
-        private MultiCourseAdapter mAdapter;
-//    private CourseAdapter mAdapter;
+    //    private MultiCourseAdapter mAdapter;
+    private SingleCourseAdapter mAdapter;
     private List<Course> courses = new ArrayList<>();
     private int mPage = 2;
-    private final String BASE_URL = "http://www.imooc.com/";
     private final int PAGE_SIZE = 10;
 
     @Override
@@ -53,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initListener() {
+        // 下拉刷新监听
         mSmartRefreshLayout.setOnRefreshListener(new OnRefreshListener() {
             @Override
             public void onRefresh(@NonNull RefreshLayout refreshLayout) {
@@ -61,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
                 getRequest();
             }
         });
+        // 上拉加载监听
         mSmartRefreshLayout.setOnLoadMoreListener(new OnLoadMoreListener() {
             @Override
             public void onLoadMore(@NonNull RefreshLayout refreshLayout) {
@@ -68,6 +70,7 @@ public class MainActivity extends AppCompatActivity {
                 getRequest();
             }
         });
+        // 添加一条数据
         mTvAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -85,20 +88,42 @@ public class MainActivity extends AppCompatActivity {
         // 瀑布流管理器
 //        StaggeredGridLayoutManager layoutManager = new StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL);
         mRecyclerView.setLayoutManager(layoutManager);
-        // 自定义ItemDecoration
-        mRecyclerView.addItemDecoration(new DividerItemDecoration.Builder().setPaintColor(Color.RED)
-                .setDividerMarginLeft(40).setViewMarginTop(100).setViewMarginBottom(100).build());
-//        // 单布局
-//        mAdapter = new CourseAdapter(courses);
+
+        // 自定义分隔ItemDecoration
+//        mRecyclerView.addItemDecoration(new DividerItemDecoration.Builder()
+//                .setPaintColor(Color.RED)
+//                .setDividerMarginLeft(40)
+//                .setViewMarginTop(100)
+//                .setViewMarginBottom(100)
+//                .build());
+        // 自定义粘性ItemDecoration
+        StickyItemDecoration stickyItemDecoration = new StickyItemDecoration() {
+            @Override
+            public String getName(int position) {
+                if (position % 5 == 0) {
+                    return "K";
+                } else {
+                    return "M";
+                }
+            }
+        };
+        stickyItemDecoration.setHeight(100);
+        mRecyclerView.addItemDecoration(stickyItemDecoration);
+
+        // 单布局
+        mAdapter = new SingleCourseAdapter(courses);
+        mRecyclerView.setAdapter(mAdapter);
+        // 多布局的空布局
+//        mAdapter = new MultiCourseAdapter(new ArrayList<>(),10);
+//        mAdapter = new MultiCourseAdapter(courses);
 //        mRecyclerView.setAdapter(mAdapter);
 
-        // 多布局
-//        mAdapter = new MultiCourseAdapter(new ArrayList<>(),10);
-        mAdapter = new MultiCourseAdapter(courses);
-        mRecyclerView.setAdapter(mAdapter);
         getRequest();
     }
 
+    /**
+     * 网络请求
+     */
     private void getRequest() {
         WeakHashMap<String, Object> params = new WeakHashMap<>();
         params.put("type", mPage);
@@ -113,6 +138,7 @@ public class MainActivity extends AppCompatActivity {
                 .subscribe(new Observer<Object>() {
                     @Override
                     public void onCompleted() {
+                        // 停止刷新和加载
                         mSmartRefreshLayout.finishRefresh();
                         mSmartRefreshLayout.finishLoadMore();
                         Log.i("Retrofit", "onCompleted");
@@ -120,6 +146,7 @@ public class MainActivity extends AppCompatActivity {
 
                     @Override
                     public void onError(Throwable e) {
+                        // 停止刷新和加载
                         mSmartRefreshLayout.finishRefresh();
                         mSmartRefreshLayout.finishLoadMore();
                         Log.i("Retrofit", "onError");

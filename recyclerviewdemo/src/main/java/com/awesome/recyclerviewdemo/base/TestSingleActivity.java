@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.awesome.recyclerviewdemo.R;
-import com.awesome.recyclerviewdemo.java.Course;
 
 public class TestSingleActivity extends AppCompatActivity {
 
