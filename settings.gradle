@@ -1,3 +1,4 @@
+include ':qrcode'
 include ':javademo'
 include ':viewpagerdemo'
 include ':playerdemo'

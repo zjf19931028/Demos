@@ -6,6 +6,7 @@ import android.media.AudioRecord;
 import android.media.MediaRecorder;
 
 import com.awesome.audiorecorddemo.io.FilePathUtil;
+import com.awesome.sdk.util.ShowLogUtil;
 
 import java.io.BufferedOutputStream;
 import java.io.DataOutputStream;

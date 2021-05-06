@@ -12,6 +12,8 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 
+import com.awesome.sdk.util.ShowLogUtil;
+
 import static com.awesome.audiorecorddemo.Constant.RECORD_AUDIO_CODE;
 import static com.awesome.audiorecorddemo.Constant.RECORD_AUDIO_PERMISSION;
 
