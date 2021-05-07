@@ -1,4 +1,4 @@
-package com.awesome.uidemo;
+package com.awesome.uidemo.activitys;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,6 +12,8 @@ import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+
+import com.awesome.uidemo.R;
 
 /**
  * EditText选中文字样式
@@ -27,14 +29,14 @@ public class EditTextActivity extends AppCompatActivity {
         setContentView(R.layout.activity_edit_text);
         mEditText = findViewById(R.id.editView);
         Drawable handleLeft = null;
-        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.Q) {
-            handleLeft = mEditText.getTextSelectHandleLeft();
-            Drawable handleRight = mEditText.getTextSelectHandleRight();
-            handleLeft.setColorFilter(Color.YELLOW, PorterDuff.Mode.SRC_ATOP);
-            handleRight.setColorFilter(Color.YELLOW, PorterDuff.Mode.SRC_ATOP);
-            mEditText.setTextSelectHandleLeft(handleLeft);
-            mEditText.setTextSelectHandleRight(handleRight);
-        }
+//        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.Q) {
+//            handleLeft = mEditText.getTextSelectHandleLeft();
+//            Drawable handleRight = mEditText.getTextSelectHandleRight();
+//            handleLeft.setColorFilter(Color.YELLOW, PorterDuff.Mode.SRC_ATOP);
+//            handleRight.setColorFilter(Color.YELLOW, PorterDuff.Mode.SRC_ATOP);
+//            mEditText.setTextSelectHandleLeft(handleLeft);
+//            mEditText.setTextSelectHandleRight(handleRight);
+//        }
         mEditText.setHighlightColor(Color.YELLOW);
     }
 }

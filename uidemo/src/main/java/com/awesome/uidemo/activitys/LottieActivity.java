@@ -1,4 +1,4 @@
-package com.awesome.uidemo;
+package com.awesome.uidemo.activitys;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.airbnb.lottie.LottieAnimationView;
+import com.awesome.uidemo.R;
 
 /**
  * 第三方动画

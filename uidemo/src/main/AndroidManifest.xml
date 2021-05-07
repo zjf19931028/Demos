@@ -4,9 +4,11 @@
     package="com.awesome.uidemo">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
-        android:name=".App"
+        android:name=".other.App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -15,7 +17,9 @@
         android:theme="@style/Theme.AwesomeDemos"
         android:usesCleartextTraffic="true"
         tools:replace="android:name">
-<!--        <activity android:name=".customview.CustomViewActivity"></activity>-->
+<!--        <activity android:name=".textview.InputActivity"></activity>-->
+        <!-- <activity android:name=".activitys.PickPictureActivity"></activity> -->
+        <!-- <activity android:name=".customview.CustomViewActivity"></activity> -->
         <!-- <activity android:name=".EventDispatchActivity"></activity> -->
         <!-- <activity android:name=".TextViewLinkActivity"></activity> -->
         <!-- <activity android:name=".PointNineActivity"></activity> -->
@@ -24,14 +28,23 @@
         <!-- <activity android:name=".MainActivity"></activity> -->
         <!-- <activity android:name=".LottieActivity"></activity> -->
         <activity
-            android:name=".eventdispatch.EventDispatchActivity"
+            android:name=".textview.InputActivity"
             android:theme="@style/MainStyle">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
+        </activity> <!-- Android7 FileProvider 适配 -->
+        <provider
+            android:name=".pickpicture.AppFileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
     </application>
 
 </manifest>

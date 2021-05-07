@@ -1,4 +1,4 @@
-package com.awesome.uidemo;
+package com.awesome.uidemo.other;
 
 import com.awesome.sdk.BaseApplication;
 
