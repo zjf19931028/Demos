@@ -37,7 +37,7 @@ public class MyTextView extends TextView {
     public boolean dispatchTouchEvent(MotionEvent ev) {
         ShowLogUtil.info("View dispatchTouchEvent");
         boolean dispatchTouchEvent = super.dispatchTouchEvent(ev);
-//        ShowLogUtil.info("View dispatchTouchEvent="+dispatchTouchEvent);
+        ShowLogUtil.info("View dispatchTouchEvent="+dispatchTouchEvent);
         return dispatchTouchEvent;
     }
 
@@ -46,7 +46,15 @@ public class MyTextView extends TextView {
     public boolean onTouchEvent(MotionEvent event) {
         ShowLogUtil.info("View onTouchEvent");
         boolean onTouchEvent = super.onTouchEvent(event);
-//        ShowLogUtil.info("View onTouchEvent="+onTouchEvent);
+        switch (event.getAction()){
+            case MotionEvent.ACTION_DOWN:
+                ShowLogUtil.info("ACTION_DOWN");
+                break;
+            case MotionEvent.ACTION_UP:
+                ShowLogUtil.info("ACTION_UP");
+                break;
+        }
+        ShowLogUtil.info("View onTouchEvent="+onTouchEvent);
         return onTouchEvent;
     }
 }

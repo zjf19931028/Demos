@@ -36,23 +36,23 @@ public class MyLinearLayout extends LinearLayout {
     public boolean dispatchTouchEvent(MotionEvent ev) {
         ShowLogUtil.info("ViewGroup dispatchTouchEvent");
         boolean dispatchTouchEvent = super.dispatchTouchEvent(ev);
-//        ShowLogUtil.info("ViewGroup dispatchTouchEvent="+dispatchTouchEvent);
+        ShowLogUtil.info("ViewGroup dispatchTouchEvent="+dispatchTouchEvent);
         return dispatchTouchEvent;
     }
 
-    @Override
-    public boolean onInterceptTouchEvent(MotionEvent ev) {
-        ShowLogUtil.info("ViewGroup onInterceptTouchEvent");
-        boolean interceptTouchEvent = super.onInterceptTouchEvent(ev);
-//        ShowLogUtil.info("ViewGroup interceptTouchEvent="+interceptTouchEvent);
-        return true;
-    }
+//    @Override
+//    public boolean onInterceptTouchEvent(MotionEvent ev) {
+//        ShowLogUtil.info("ViewGroup onInterceptTouchEvent");
+//        boolean interceptTouchEvent = super.onInterceptTouchEvent(ev);
+////        ShowLogUtil.info("ViewGroup onInterceptTouchEvent="+interceptTouchEvent);
+//        return interceptTouchEvent;
+//    }
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         ShowLogUtil.info("ViewGroup onTouchEvent");
         boolean onTouchEvent = super.onTouchEvent(event);
-//        ShowLogUtil.info("ViewGroup onTouchEvent="+onTouchEvent);
+        ShowLogUtil.info("ViewGroup onTouchEvent="+onTouchEvent);
         return onTouchEvent;
     }
 

@@ -28,7 +28,7 @@ public class EventDispatchActivity extends AppCompatActivity {
     public boolean dispatchTouchEvent(MotionEvent ev) {
         ShowLogUtil.info("Activity dispatchTouchEvent");
         boolean dispatchTouchEvent = super.dispatchTouchEvent(ev);
-//        ShowLogUtil.info("Activity dispatchTouchEvent="+dispatchTouchEvent);
+        ShowLogUtil.info("Activity dispatchTouchEvent="+dispatchTouchEvent);
         return dispatchTouchEvent;
     }
 
@@ -36,7 +36,7 @@ public class EventDispatchActivity extends AppCompatActivity {
     public boolean onTouchEvent(MotionEvent event) {
         ShowLogUtil.info("Activity onTouchEvent");
         boolean onTouchEvent = super.onTouchEvent(event);
-//        ShowLogUtil.info("Activity onTouchEvent="+onTouchEvent);
+        ShowLogUtil.info("Activity onTouchEvent="+onTouchEvent);
         return onTouchEvent;
     }
 }
