@@ -15,8 +15,9 @@
         android:theme="@style/Theme.AwesomeDemos"
         android:usesCleartextTraffic="true"
         tools:replace="android:name">
-        <activity android:name=".base.TestSingleActivity"></activity>
-        <activity android:name=".MainActivity">
+<!--        <activity android:name=".base.BaseActivity"></activity>-->
+        <activity android:name=".base.TestSingleActivity" />
+        <activity android:name=".base.BaseActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

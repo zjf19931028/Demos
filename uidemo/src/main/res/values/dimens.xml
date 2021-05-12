@@ -4,4 +4,14 @@
     <dimen name="px12">12dp</dimen>
     <dimen name="px8">8dp</dimen>
     <dimen name="px92">92dp</dimen>
+
+    <dimen name="len_68">68dp</dimen>
+    <dimen name="len_76">76dp</dimen>
+    <dimen name="len_44">44dp</dimen>
+    <dimen name="len_32">32dp</dimen>
+    <dimen name="len_8">8dp</dimen>
+    <dimen name="len_6">6dp</dimen>
+    <dimen name="len_4">4dp</dimen>
+    <dimen name="len_2">2dp</dimen>
+
 </resources>

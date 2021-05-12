@@ -11,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.awesome.recyclerviewdemo.net.Course;
+import com.awesome.sdk.util.ShowLogUtil;
 
 import java.util.List;
 
@@ -30,6 +31,7 @@ public class SingleCourseAdapter extends RecyclerView.Adapter<SingleCourseAdapte
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        ShowLogUtil.info("onCreateViewHolder");
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_course_layout, parent, false);
         ViewHolder viewHolder = new ViewHolder(view);
         return viewHolder;
@@ -37,6 +39,7 @@ public class SingleCourseAdapter extends RecyclerView.Adapter<SingleCourseAdapte
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        ShowLogUtil.info("onBindViewHolder");
         Course course = mCourseList.get(position);
         holder.mTextView.setText(course.getName());
         if (position % 2 == 0) {
@@ -46,6 +49,7 @@ public class SingleCourseAdapter extends RecyclerView.Adapter<SingleCourseAdapte
 
     @Override
     public int getItemCount() {
+        ShowLogUtil.info("getItemCount");
         if (mCourseList == null) return 0;
         return mCourseList.size();
     }

@@ -17,7 +17,8 @@
         android:theme="@style/Theme.AwesomeDemos"
         android:usesCleartextTraffic="true"
         tools:replace="android:name">
-<!--        <activity android:name=".activitys.GestureActivity"></activity>-->
+<!--        <activity android:name=".activitys.ChatActivity"></activity>-->
+        <!-- <activity android:name=".activitys.GestureActivity"></activity> -->
         <!-- <activity android:name=".textview.InputActivity"></activity> -->
         <!-- <activity android:name=".activitys.PickPictureActivity"></activity> -->
         <!-- <activity android:name=".customview.CustomViewActivity"></activity> -->
@@ -29,7 +30,7 @@
         <!-- <activity android:name=".MainActivity"></activity> -->
         <!-- <activity android:name=".LottieActivity"></activity> -->
         <activity
-            android:name=".eventdispatch.EventDispatchActivity"
+            android:name=".activitys.ChatActivity"
             android:theme="@style/MainStyle">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

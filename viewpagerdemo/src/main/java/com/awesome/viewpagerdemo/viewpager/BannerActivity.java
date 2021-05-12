@@ -30,6 +30,8 @@ public class BannerActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mViewPager1 = findViewById(R.id.viewPager1);
+
+        // 每页为View
         List<View> mViews = new ArrayList<>();
         for (int i = 0; i < 9; i++) {
             ImageView imageView = new ImageView(this);
@@ -59,6 +61,7 @@ public class BannerActivity extends AppCompatActivity {
         });
 
 
+        // 每页为Fragment
         Fragment[] fragments = new Fragment[]{
                 TextFragment.newInstance("1"),
                 TextFragment.newInstance("2"),
