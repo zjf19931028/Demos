@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">chatpaneldemo</string>
+    <string name="label_chat_edit_hint">Type something to send…</string>
+
+</resources>

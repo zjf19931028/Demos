@@ -2,7 +2,6 @@ package com.awesome.fragmentdemo;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -17,14 +16,17 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ShowLogUtil.info("MainActivity onCreate ");
+        // 跳转切换视图
         findViewById(R.id.btn_switch).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this,SwitchActivity.class));
+                startActivity(new Intent(MainActivity.this, BottomActivity.class));
             }
         });
-        ListFragment listFragment = new ListFragment();
-        DetailFragment detailFragment = new DetailFragment();
+
+        // 在容器中添加、替换、移除Fragment
+        LifeCycleFragment listFragment = new LifeCycleFragment();
+        TitleFragment detailFragment = new TitleFragment();
         FragmentManager fm = getSupportFragmentManager();
         fm.beginTransaction()
                 .replace(R.id.ll_list_container,listFragment)

@@ -1,5 +1,10 @@
 package com.awesome.javademo.io;
 
+import com.awesome.javademo.activitys.App;
+import com.awesome.sdk.util.ShowLogUtil;
+
+import java.io.File;
+
 /**
  * Author: JfangZ
  * Email:zhangjingfang@jeejio.com
@@ -86,4 +91,14 @@ public class FilePathUtil {
 //                + System.currentTimeMillis()
 //                + ".m4a";
 //    }
+
+    /**
+     * 获取getCacheDir()路径,/data/user/0/包名/cache
+     * @return
+     */
+    public static String getCacheDirPath() {
+        String path = App.getInstance().getApplicationContext().getCacheDir().getAbsolutePath();
+        ShowLogUtil.info("cacheDirPath=" + path);
+        return path;
+    }
 }

@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 
-import com.awesome.sdk.util.ShowLogUtil;
 import com.awesome.uidemo.R;
 
 public class ChatActivity extends AppCompatActivity implements PanelFragment.PanelCallback {

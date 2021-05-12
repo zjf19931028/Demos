@@ -10,17 +10,22 @@ import com.bumptech.glide.Priority;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 
 public class MainActivity extends AppCompatActivity {
-    public static final String URL="https://www.shuimuchangxiang.com/appapi/images/personal/bill.png";
+//    public static final String URL="https://www.shuimuchangxiang.com/appapi/images/personal/bill.png";
+    public static final String URL="http://img.mukewang.com/55249cf30001ae8a06000338-300-170.jpg";
+    private ImageView mIvNet;
+    private ImageView mIvLocal;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ImageView imageView = findViewById(R.id.imageView);
+        mIvNet = findViewById(R.id.iv_net);
+        mIvLocal = findViewById(R.id.iv_local);
+
         Glide.with(this)
-                .load("http://img.mukewang.com/55249cf30001ae8a06000338-300-170.jpg")
+                .load(URL)
                 .centerCrop()
-                .into(imageView);
+                .into(mIvNet);
 
         Glide.with(this)//创建实例
                 .load(URL)//各种资源的url
@@ -32,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
                 .skipMemoryCache(true)//跳过内存缓存，true不会将图片放到内存缓存
                 .diskCacheStrategy(DiskCacheStrategy.NONE)//磁盘缓存
                 .priority(Priority.HIGH)
-                .into(imageView);
+                .into(mIvLocal);
 
     }
 }

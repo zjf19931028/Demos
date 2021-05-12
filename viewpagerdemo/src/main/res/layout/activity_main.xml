@@ -15,7 +15,7 @@
         android:background="#ccffcc"/>
 
     <androidx.viewpager.widget.ViewPager
-        android:id="@+id/viewPager2"
+        android:id="@+id/viewPagerFragment"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:background="#ccccff"/>

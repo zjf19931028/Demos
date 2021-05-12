@@ -23,7 +23,7 @@ import java.util.List;
 public class BannerActivity extends AppCompatActivity {
 
     private ViewPager mViewPager1;
-    private ViewPager mViewPager2;
+    private ViewPager mViewPagerFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,8 +67,8 @@ public class BannerActivity extends AppCompatActivity {
                 TextFragment.newInstance("2"),
                 TextFragment.newInstance("3")
         };
-        mViewPager2 = findViewById(R.id.viewPager2);
-        mViewPager2.setAdapter(new FragmentPagerAdapter(getSupportFragmentManager()) {
+        mViewPagerFragment = findViewById(R.id.viewPagerFragment);
+        mViewPagerFragment.setAdapter(new FragmentPagerAdapter(getSupportFragmentManager()) {
             @NonNull
             @Override
             public Fragment getItem(int position) {
@@ -81,7 +81,7 @@ public class BannerActivity extends AppCompatActivity {
                 return fragments.length;
             }
         });
-        mViewPager2.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+        mViewPagerFragment.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
 

@@ -1,3 +1,4 @@
+include ':chatpaneldemo'
 include ':qrcode'
 include ':javademo'
 include ':viewpagerdemo'
