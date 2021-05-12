@@ -17,7 +17,6 @@
         android:theme="@style/Theme.AwesomeDemos"
         android:usesCleartextTraffic="true"
         tools:replace="android:name">
-<!--        <activity android:name=".activitys.ChatActivity"></activity>-->
         <!-- <activity android:name=".activitys.GestureActivity"></activity> -->
         <!-- <activity android:name=".textview.InputActivity"></activity> -->
         <!-- <activity android:name=".activitys.PickPictureActivity"></activity> -->
@@ -29,15 +28,14 @@
         <!-- <activity android:name=".CollapsingToolbarActivity"></activity> -->
         <!-- <activity android:name=".MainActivity"></activity> -->
         <!-- <activity android:name=".LottieActivity"></activity> -->
-        <activity
-            android:name=".activitys.ChatActivity"
-            android:theme="@style/MainStyle">
+        <!-- Android7 FileProvider 适配 -->
+        <activity android:name=".activitys.GestureActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity> <!-- Android7 FileProvider 适配 -->
+        </activity>
         <provider
             android:name=".pickpicture.AppFileProvider"
             android:authorities="${applicationId}.provider"

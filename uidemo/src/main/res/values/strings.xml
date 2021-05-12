@@ -24,6 +24,4 @@
         barLayout上,这样才有效果,xml中的只是默认设置标题颜色一定要设置在CollapsingToolbarLayout上,不然没用,设置这个标题也要设置在Collap
         singToolbarLayout上,这样才有效果,xml中的只是默认设置标题颜色一定要设置在CollapsingToolbarLayout上,不然没用,设置这个标题也要设</string>
 
-    <string name="label_chat_edit_hint">Type something to send…</string>
-
 </resources>
