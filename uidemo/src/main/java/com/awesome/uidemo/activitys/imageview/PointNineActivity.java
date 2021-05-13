@@ -1,4 +1,4 @@
-package com.awesome.uidemo.imageview;
+package com.awesome.uidemo.activitys.imageview;
 
 import androidx.appcompat.app.AppCompatActivity;
 

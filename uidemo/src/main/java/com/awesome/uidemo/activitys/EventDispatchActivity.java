@@ -1,4 +1,4 @@
-package com.awesome.uidemo.eventdispatch;
+package com.awesome.uidemo.activitys;
 
 import android.os.Bundle;
 import android.view.MotionEvent;

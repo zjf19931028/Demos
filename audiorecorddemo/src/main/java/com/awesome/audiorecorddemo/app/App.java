@@ -1,4 +1,4 @@
-package com.awesome.audiorecorddemo;
+package com.awesome.audiorecorddemo.app;
 
 import android.app.Application;
 

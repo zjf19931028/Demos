@@ -3,7 +3,7 @@ package com.awesome.audiorecorddemo.util;
 import android.content.pm.ApplicationInfo;
 import android.util.Log;
 
-import com.awesome.audiorecorddemo.App;
+import com.awesome.audiorecorddemo.app.App;
 
 /**
  * Author: JfangZ

@@ -1,10 +1,10 @@
-package com.awesome.audiorecorddemo;
+package com.awesome.audiorecorddemo.util;
 
 import android.media.MediaRecorder;
 import android.os.Handler;
 
-import com.awesome.audiorecorddemo.io.EncryptUtil;
-import com.awesome.audiorecorddemo.io.FilePathUtil;
+import com.awesome.audiorecorddemo.util.io.EncryptUtil;
+import com.awesome.audiorecorddemo.util.io.FilePathUtil;
 
 import java.io.File;
 import java.io.IOException;

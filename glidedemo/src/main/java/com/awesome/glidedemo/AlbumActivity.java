@@ -14,17 +14,32 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 
+import com.awesome.glidedemo.pickpicture.BaseActivity;
+import com.awesome.sdk.BaseApplication;
 import com.awesome.sdk.util.ShowLogUtil;
 
 import java.io.FileNotFoundException;
 
-public class AlbumActivity extends AppCompatActivity {
+import static com.awesome.glidedemo.pickpicture.Constant.WRITE_EXTERNAL_CODE;
+import static com.awesome.glidedemo.pickpicture.Constant.WRITE_EXTERNAL_PERMISSION;
+
+
+/**
+ * Author: JfangZ
+ * Email: zhangjingfang@jeejio.com
+ * Date: 2021/5/7 14:35
+ * Description:选择相册文件
+ */
+public class AlbumActivity extends BaseActivity {
     private ImageView imageView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_album);
+        if (!hasPermission(WRITE_EXTERNAL_PERMISSION)) {
+            requestPermission(WRITE_EXTERNAL_CODE, WRITE_EXTERNAL_PERMISSION);
+        }
         imageView= findViewById(R.id.iv_album);
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override

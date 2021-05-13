@@ -1,8 +1,7 @@
-package com.awesome.uidemo.textview;
+package com.awesome.uidemo.activitys.textview;
 
 import android.os.Bundle;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;

@@ -1,4 +1,4 @@
-package com.awesome.uidemo.pickpicture;
+package com.awesome.glidedemo.pickpicture;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -9,7 +9,7 @@ import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.awesome.uidemo.R;
+import com.awesome.glidedemo.R;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 
@@ -19,7 +19,7 @@ import java.util.List;
  * Author: JfangZ
  * Email: zhangjingfang@jeejio.com
  * Date: 2021/5/7 14:35
- * Description:
+ * Description: 选择图片
  */
 public class PickPictureAdapter extends RecyclerView.Adapter<PickPictureAdapter.ViewHolder> {
 

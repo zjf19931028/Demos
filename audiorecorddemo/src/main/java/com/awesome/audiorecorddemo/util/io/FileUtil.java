@@ -1,4 +1,4 @@
-package com.awesome.audiorecorddemo.io;
+package com.awesome.audiorecorddemo.util.io;
 
 import com.awesome.sdk.util.ShowLogUtil;
 

@@ -8,10 +8,11 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
-        android:name=".other.App"
+        android:name=".app.App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AwesomeDemos"
@@ -19,17 +20,16 @@
         tools:replace="android:name">
         <!-- <activity android:name=".activitys.GestureActivity"></activity> -->
         <!-- <activity android:name=".textview.InputActivity"></activity> -->
-        <!-- <activity android:name=".activitys.PickPictureActivity"></activity> -->
         <!-- <activity android:name=".customview.CustomViewActivity"></activity> -->
         <!-- <activity android:name=".eventdispatch.EventDispatchActivity"></activity> -->
         <!-- <activity android:name=".TextViewLinkActivity"></activity> -->
         <!-- <activity android:name=".PointNineActivity"></activity> -->
         <!-- <activity android:name=".EditTextActivity"></activity> -->
         <!-- <activity android:name=".CollapsingToolbarActivity"></activity> -->
-        <!-- <activity android:name=".MainActivity"></activity> -->
+        <!-- <activity android:name=".activitys.MainActivity"></activity> -->
         <!-- <activity android:name=".LottieActivity"></activity> -->
         <!-- Android7 FileProvider 适配 -->
-        <activity android:name=".activitys.GestureActivity">
+        <activity android:name=".activitys.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -1,4 +1,4 @@
-package com.awesome.uidemo.activitys;
+package com.awesome.glidedemo.pickpicture;
 
 import android.app.LoaderManager;
 import android.content.Context;
@@ -9,7 +9,6 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 
 import com.awesome.sdk.util.ShowLogUtil;
-import com.awesome.uidemo.pickpicture.Image;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -55,7 +54,7 @@ public class LoaderCallback implements LoaderManager.LoaderCallbacks<Cursor> {
     }
 
     @Override
-    public void onLoadFinished(android.content.Loader<Cursor> loader, Cursor data) {
+    public void onLoadFinished(Loader<Cursor> loader, Cursor data) {
         // 当Loader加载完成时
         List<Image> images = new ArrayList<>();
         // 判断是否有数据
@@ -99,7 +98,7 @@ public class LoaderCallback implements LoaderManager.LoaderCallbacks<Cursor> {
     }
 
     @Override
-    public void onLoaderReset(android.content.Loader<Cursor> loader) {
+    public void onLoaderReset(Loader<Cursor> loader) {
         // 当Loader销毁或者重置了, 进行界面清空
         mIOnImageList.imageList(new ArrayList<>());
     }

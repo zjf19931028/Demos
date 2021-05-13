@@ -1,4 +1,4 @@
-package com.awesome.uidemo.pickpicture;
+package com.awesome.glidedemo.pickpicture;
 
 
 import androidx.core.content.FileProvider;

@@ -1,24 +1,24 @@
-package com.awesome.uidemo.pickpicture;
+package com.awesome.glidedemo;
 
 import android.app.LoaderManager;
 import android.graphics.Rect;
 import android.os.Bundle;
 import android.view.View;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.awesome.uidemo.R;
-import com.awesome.uidemo.activitys.LoaderCallback;
-
+import com.awesome.glidedemo.pickpicture.BaseActivity;
+import com.awesome.glidedemo.pickpicture.Image;
+import com.awesome.glidedemo.pickpicture.LoaderCallback;
+import com.awesome.glidedemo.pickpicture.PickPictureAdapter;
+import com.awesome.sdk.util.ShowLogUtil;
 import java.util.ArrayList;
 import java.util.List;
-
-import static com.awesome.uidemo.activitys.LoaderCallback.LOADER_ID;
-import static com.awesome.uidemo.pickpicture.Constant.WRITE_EXTERNAL_CODE;
-import static com.awesome.uidemo.pickpicture.Constant.WRITE_EXTERNAL_PERMISSION;
+import static com.awesome.glidedemo.pickpicture.Constant.WRITE_EXTERNAL_CODE;
+import static com.awesome.glidedemo.pickpicture.Constant.WRITE_EXTERNAL_PERMISSION;
+import static com.awesome.glidedemo.pickpicture.LoaderCallback.LOADER_ID;
 
 /**
  * Author: JfangZ
@@ -38,6 +38,7 @@ public class PickPictureActivity extends BaseActivity {
         mRecyclerView = findViewById(R.id.rv_pick_picture);
         if (!hasPermission(WRITE_EXTERNAL_PERMISSION)) {
             requestPermission(WRITE_EXTERNAL_CODE, WRITE_EXTERNAL_PERMISSION);
+            return;
         }
         mRecyclerView.setLayoutManager(new GridLayoutManager(this, 4));
         mRecyclerView.addItemDecoration(new RecyclerView.ItemDecoration() {

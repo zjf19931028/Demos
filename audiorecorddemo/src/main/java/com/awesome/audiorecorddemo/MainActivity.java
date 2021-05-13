@@ -5,17 +5,19 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
-import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 
+import com.awesome.audiorecorddemo.app.App;
+import com.awesome.audiorecorddemo.util.AudioRecordManager;
+import com.awesome.audiorecorddemo.util.MediaRecorderManager;
 import com.awesome.sdk.util.ShowLogUtil;
 
-import static com.awesome.audiorecorddemo.Constant.RECORD_AUDIO_CODE;
-import static com.awesome.audiorecorddemo.Constant.RECORD_AUDIO_PERMISSION;
+import static com.awesome.audiorecorddemo.constant.Constant.RECORD_AUDIO_CODE;
+import static com.awesome.audiorecorddemo.constant.Constant.RECORD_AUDIO_PERMISSION;
 
 public class MainActivity extends AppCompatActivity {
 

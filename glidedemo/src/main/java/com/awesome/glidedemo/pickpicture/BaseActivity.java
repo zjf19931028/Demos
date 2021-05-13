@@ -1,4 +1,4 @@
-package com.awesome.uidemo.pickpicture;
+package com.awesome.glidedemo.pickpicture;
 
 import android.content.pm.PackageManager;
 
@@ -9,10 +9,10 @@ import androidx.core.content.ContextCompat;
 
 import com.awesome.sdk.BaseApplication;
 
-import static com.awesome.uidemo.pickpicture.Constant.CAMERA_CODE;
-import static com.awesome.uidemo.pickpicture.Constant.LOCATION_CODE;
-import static com.awesome.uidemo.pickpicture.Constant.RECORD_AUDIO_CODE;
-import static com.awesome.uidemo.pickpicture.Constant.WRITE_EXTERNAL_CODE;
+import static com.awesome.glidedemo.pickpicture.Constant.CAMERA_CODE;
+import static com.awesome.glidedemo.pickpicture.Constant.LOCATION_CODE;
+import static com.awesome.glidedemo.pickpicture.Constant.RECORD_AUDIO_CODE;
+import static com.awesome.glidedemo.pickpicture.Constant.WRITE_EXTERNAL_CODE;
 
 
 /**

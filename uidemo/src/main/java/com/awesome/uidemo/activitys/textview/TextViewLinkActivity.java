@@ -1,4 +1,4 @@
-package com.awesome.uidemo.textview;
+package com.awesome.uidemo.activitys.textview;
 
 import android.graphics.Color;
 import android.graphics.Typeface;

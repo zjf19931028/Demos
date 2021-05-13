@@ -1,11 +1,11 @@
-package com.awesome.audiorecorddemo;
+package com.awesome.audiorecorddemo.util;
 
 import android.media.AudioFormat;
 import android.media.AudioManager;
 import android.media.AudioRecord;
 import android.media.MediaRecorder;
 
-import com.awesome.audiorecorddemo.io.FilePathUtil;
+import com.awesome.audiorecorddemo.util.io.FilePathUtil;
 import com.awesome.sdk.util.ShowLogUtil;
 
 import java.io.BufferedOutputStream;
