@@ -5,4 +5,5 @@
     android:layout_height="match_parent"
     android:clickable="false"
     android:orientation="vertical"
+    android:background="#eee"
     android:padding="@dimen/len_8" />

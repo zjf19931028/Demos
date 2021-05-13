@@ -72,10 +72,19 @@
             android:tint="@color/textPrimary" />
     </LinearLayout>
 
-    <!--静态创建fragment-->
-    <fragment
-        android:id="@+id/frag_panel"
-        class="com.awesome.chatpaneldemo.activitys.PanelFragment"
-        android:layout_width="match_parent"
-        android:layout_height="350dp" />
+<!--    &lt;!&ndash;静态创建fragment&ndash;&gt;-->
+<!--    <net.qiujuer.widget.airpanel.AirPanelFrameLayout-->
+<!--        android:id="@+id/airPanelSubLayout"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:background="@color/white_alpha_224"-->
+<!--        android:visibility="gone">-->
+
+        <fragment
+            android:id="@+id/frag_panel"
+            class="com.awesome.chatpaneldemo.activitys.PanelFragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+<!--    </net.qiujuer.widget.airpanel.AirPanelFrameLayout>-->
+
 </LinearLayout>

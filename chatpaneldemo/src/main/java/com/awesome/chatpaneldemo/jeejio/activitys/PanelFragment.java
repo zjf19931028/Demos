@@ -1,4 +1,4 @@
-package com.awesome.chatpaneldemo.activitys;
+package com.awesome.chatpaneldemo.jeejio.activitys;
 
 import android.os.Bundle;
 import android.view.KeyEvent;
@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -19,6 +20,7 @@ import com.awesome.chatpaneldemo.R;
 import com.awesome.chatpaneldemo.adapter.FaceAdapter;
 import com.awesome.chatpaneldemo.adapter.RecyclerAdapter;
 import com.awesome.chatpaneldemo.bean.Face;
+import com.awesome.chatpaneldemo.jeejio.widget.FaceRecyclerView;
 import com.awesome.chatpaneldemo.util.Ui;
 import com.awesome.chatpaneldemo.util.UiTool;
 import com.awesome.sdk.util.ShowLogUtil;
@@ -55,8 +57,12 @@ public class PanelFragment extends Fragment {
     // 初始化表情
     private void initFace(View root) {
         final View facePanel = mFacePanel = root.findViewById(R.id.layout_panel_face);
-        View backspace = facePanel.findViewById(R.id.btn_backspace);
-        backspace.setOnClickListener(new View.OnClickListener() {
+        View backspaceView = facePanel.findViewById(R.id.btn_backspace);
+        View sendView = facePanel.findViewById(R.id.btn_send);
+        LinearLayout llDoFace = facePanel.findViewById(R.id.ll_do_face);
+        TabLayout tabLayout = (TabLayout) facePanel.findViewById(R.id.tab);
+        ViewPager viewPager = (ViewPager) facePanel.findViewById(R.id.pager);
+        backspaceView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // 删除逻辑
@@ -69,13 +75,23 @@ public class PanelFragment extends Fragment {
                 callback.getInputEditText().dispatchKeyEvent(event);
             }
         });
-        TabLayout tabLayout = (TabLayout) facePanel.findViewById(R.id.tab);
-        ViewPager viewPager = (ViewPager) facePanel.findViewById(R.id.pager);
+        sendView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
         tabLayout.setupWithViewPager(viewPager);
         // 每一表情显示48dp
         final int minFaceSize = (int) Ui.dipToPx(getResources(), 48);
         final int totalScreen = UiTool.getScreenWidth(getActivity());
         final int spanCount = totalScreen / minFaceSize;
+
+        // 每一表情显示96dp
+        final int sEMinFaceSize = (int) Ui.dipToPx(getResources(), 96);
+        final int sETotalScreen = UiTool.getScreenWidth(getActivity());
+        final int sESpanCount = sETotalScreen / sEMinFaceSize;
+
 
         viewPager.setAdapter(new PagerAdapter() {
             @Override
@@ -91,16 +107,20 @@ public class PanelFragment extends Fragment {
             @NonNull
             @Override
             public Object instantiateItem(@NonNull ViewGroup container, int position) {
+
                 LayoutInflater inflater = LayoutInflater.from(getContext());
                 RecyclerView recyclerView = (RecyclerView) inflater.inflate(R.layout.layout_face_content, container, false);
-                recyclerView.setLayoutManager(new GridLayoutManager(getContext(), spanCount));
+                if (position == 0) {
+                    recyclerView.setLayoutManager(new GridLayoutManager(getContext(), spanCount));
+                } else {
+                    recyclerView.setLayoutManager(new GridLayoutManager(getContext(), sESpanCount));
+                }
 
                 // 设置Adapter
                 List<Face.Bean> faces = Face.all(getContext()).get(position).faces;
                 FaceAdapter adapter = new FaceAdapter(faces, new RecyclerAdapter.AdapterListener<Face.Bean>() {
                     @Override
                     public void onItemClick(RecyclerAdapter.ViewHolder holder, Face.Bean bean) {
-                        ShowLogUtil.info("onItemClick");
                         if (mCallback == null)
                             return;
                         // 表情添加到输入框
@@ -112,7 +132,6 @@ public class PanelFragment extends Fragment {
 
                     @Override
                     public void onItemLongClick(RecyclerAdapter.ViewHolder holder, Face.Bean bean) {
-
                     }
                 });
                 recyclerView.setAdapter(adapter);
@@ -131,6 +150,27 @@ public class PanelFragment extends Fragment {
             @Override
             public CharSequence getPageTitle(int position) {
                 return Face.all(getContext()).get(position).name;
+            }
+        });
+        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                int position = tab.getPosition();
+                if (position == 0) {
+                    llDoFace.setVisibility(View.VISIBLE);
+                } else {
+                    llDoFace.setVisibility(View.GONE);
+                }
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
             }
         });
     }

@@ -20,6 +20,7 @@ import androidx.annotation.Nullable;
 
 import com.awesome.chatpaneldemo.R;
 import com.awesome.chatpaneldemo.util.StreamUtil;
+import com.awesome.sdk.util.ShowLogUtil;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.target.SimpleTarget;
 import com.bumptech.glide.request.transition.Transition;
@@ -58,15 +59,18 @@ public class Face {
             synchronized (Face.class) {
                 if (FACE_TABS == null) {
                     ArrayList<FaceTab> faceTabs = new ArrayList<>();
-                    FaceTab tab = initAssetsFace(context);
-
+                    FaceTab tab = initEmoji(context);
                     if (tab != null) {
                         faceTabs.add(tab);
                     }
-                    tab = initResource(context);
-                    if (tab != null) {
-                        faceTabs.add(tab);
+                    FaceTab tab2 = initSExpression(context);
+                    if (tab2 != null) {
+                        faceTabs.add(tab2);
                     }
+//                    tab = initAssetsFace(context);
+//                    if (tab != null) {
+//                        faceTabs.add(tab);
+//                    }
                     // init map
                     for (FaceTab faceTab : faceTabs) {
                         faceTab.copyToMap(FACE_MAP);
@@ -80,7 +84,7 @@ public class Face {
     }
 
     // 从drawable资源中加载数据并映射到对应的key
-    private static FaceTab initResource(Context context) {
+    private static FaceTab initEmoji(Context context) {
         final ArrayList<Bean> faces = new ArrayList<>();
         final Resources resources = context.getResources();
 
@@ -99,9 +103,29 @@ public class Face {
             faces.add(new Bean(key, resId));
         }
         if (faces.size() == 0) return null;
-        return new FaceTab("NAME", faces.get(0).preview, faces);
+        return new FaceTab("emoji", faces.get(0).preview, faces);
     }
 
+    // 从drawable资源中加载数据并映射到对应的key
+    private static FaceTab initSExpression(Context context) {
+        final ArrayList<Bean> faces = new ArrayList<>();
+        final Resources resources = context.getResources();
+
+        // tip：使用反射拿到资源
+        String packageName = context.getApplicationInfo().packageName;
+        int i = 0;
+        while (i++ < 10) {
+            String key = String.format(Locale.ENGLISH, "se%02d", i);
+            // 根据资源名称去拿资源对应的ID
+            int resId = resources.getIdentifier("iv_mic", "drawable", packageName);
+
+            if (resId == 0) continue;
+            // 添加表情
+            faces.add(new Bean(key, resId));
+        }
+        if (faces.size() == 0) return null;
+        return new FaceTab("小表情", faces.get(0).preview, faces);
+    }
 
     // tip:处理解压文件
     // 从face-t.zip包解析我们的表情
