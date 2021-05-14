@@ -21,4 +21,10 @@
         android:layout_height="wrap_content"
         android:text="AudioRecord录音"/>
 
+    <Button
+        android:id="@+id/btn_teeim_record"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Teeim录音"/>
+
 </LinearLayout>

@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
 
     private Button mBtnMediaRecorder;
     private Button mBtnAudioRecord;
+    private Button mBtnTeeimRecord;
     private View.OnTouchListener mOnTouchListener = new View.OnTouchListener() {
         @Override
         public boolean onTouch(View v, MotionEvent event) {
@@ -73,6 +74,27 @@ public class MainActivity extends AppCompatActivity {
                             break;
                     }
                     break;
+                case R.id.btn_teeim_record:
+                    switch (event.getAction()) {
+//                        case MotionEvent.ACTION_DOWN:
+//                            AmrEncoder.getInstance().start(new AmrEncoder.Callback() {
+//                                @Override
+//                                public void onEncoded(byte[] buffer, long millsec, int dbs) {
+//
+//                                }
+//
+//                                @Override
+//                                public void onEnd() {
+//
+//                                }
+//                            });
+//                            break;
+//
+//                        case MotionEvent.ACTION_UP:
+//                            AmrEncoder.getInstance().stop();
+//                            break;
+                    }
+                    break;
             }
             return false;
         }
@@ -84,9 +106,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         mBtnMediaRecorder = findViewById(R.id.btn_media_recorder);
         mBtnAudioRecord = findViewById(R.id.btn_audio_record);
+        mBtnTeeimRecord = findViewById(R.id.btn_teeim_record);
 
         mBtnMediaRecorder.setOnTouchListener(mOnTouchListener);
         mBtnAudioRecord.setOnTouchListener(mOnTouchListener);
+        mBtnTeeimRecord.setOnTouchListener(mOnTouchListener);
 
     }
 

@@ -4,6 +4,8 @@ import android.media.AudioFormat;
 import android.media.AudioRecord;
 import android.media.MediaRecorder;
 
+import java.io.IOException;
+
 /**
  * Created by kv.h on 14/11/21.
  */

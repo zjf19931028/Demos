@@ -2,7 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.awesome.audiorecorddemo">
-    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
 
     <application
         android:name=".app.App"
@@ -13,7 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AwesomeDemos"
         tools:replace="android:name">
-        <activity android:name=".MainActivity">
+        <activity android:name=".AudioRecordActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -21,5 +22,4 @@
             </intent-filter>
         </activity>
     </application>
-
 </manifest>

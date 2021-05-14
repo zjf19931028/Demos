@@ -29,7 +29,7 @@
         <!-- <activity android:name=".activitys.MainActivity"></activity> -->
         <!-- <activity android:name=".LottieActivity"></activity> -->
         <!-- Android7 FileProvider 适配 -->
-        <activity android:name=".activitys.MainActivity">
+        <activity android:name=".customview.CustomViewActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -37,7 +37,7 @@
             </intent-filter>
         </activity>
         <provider
-            android:name=".pickpicture.AppFileProvider"
+            android:name=".util.AppFileProvider"
             android:authorities="${applicationId}.provider"
             android:exported="false"
             android:grantUriPermissions="true">

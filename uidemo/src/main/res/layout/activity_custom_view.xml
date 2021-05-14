@@ -10,15 +10,15 @@
 <!--        android:layout_width="match_parent"-->
 <!--        android:layout_height="match_parent" />-->
 
-<!--    <com.awesome.uidemo.customview.MyLayout-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent"/>-->
+    <com.awesome.uidemo.customview.MyLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 
 <!--    <com.awesome.uidemo.customview.NoteView-->
 <!--        android:layout_width="match_parent"-->
 <!--        android:layout_height="match_parent" />-->
 
-    <com.awesome.uidemo.customview.DrawView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+<!--    <com.awesome.uidemo.customview.DrawView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent" />-->
 </LinearLayout>

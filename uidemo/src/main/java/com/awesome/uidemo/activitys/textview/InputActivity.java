@@ -8,8 +8,8 @@ import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 
+import com.awesome.sdk.base.BaseActivity;
 import com.awesome.uidemo.R;
-import com.awesome.uidemo.pickpicture.BaseActivity;
 import com.awesome.uidemo.util.KeyboardUtil;
 
 /**

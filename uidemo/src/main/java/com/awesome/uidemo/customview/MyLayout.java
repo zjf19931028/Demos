@@ -44,7 +44,7 @@ public class MyLayout extends ViewGroup {
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
-        Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher);
+        Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.mipmap.wawa_red);
         int widthSize = MeasureSpec.getSize(widthMeasureSpec);
         rowCount = widthSize/ bitmap.getWidth();
     }

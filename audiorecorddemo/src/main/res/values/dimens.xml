@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="len_72">72dp</dimen>
+    <dimen name="len_40">40dp</dimen>
+    <dimen name="len_32">32dp</dimen>
+    <dimen name="len_20">20dp</dimen>
+    <dimen name="len_16">16dp</dimen>
+    <dimen name="len_8">8dp</dimen>
+    <dimen name="len_4">4dp</dimen>
+    <dimen name="len_2">2dp</dimen>
+</resources>

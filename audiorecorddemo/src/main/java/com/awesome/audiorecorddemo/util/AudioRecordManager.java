@@ -4,6 +4,7 @@ import android.media.AudioFormat;
 import android.media.AudioManager;
 import android.media.AudioRecord;
 import android.media.MediaRecorder;
+import android.os.SystemClock;
 
 import com.awesome.audiorecorddemo.util.io.FilePathUtil;
 import com.awesome.sdk.util.ShowLogUtil;
