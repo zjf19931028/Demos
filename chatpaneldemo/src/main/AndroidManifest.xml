@@ -4,7 +4,7 @@
     package="com.awesome.chatpaneldemo">
 
     <application
-        android:name=".activitys.App"
+        android:name=".app.App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -13,9 +13,9 @@
         android:theme="@style/Theme.AwesomeDemos"
         tools:replace="android:name">
 <!--        <activity android:name=".jeejio.activitys.ChatInputActivity"></activity>-->
-        <activity android:name=".activitys.ChatActivity"></activity>
+<!--        <activity android:name=".activitys.ChatActivity"></activity>-->
         <activity
-            android:name=".jeejio.activitys.ChatInputActivity"
+            android:name=".activitys.ChatActivity"
             android:theme="@style/MainStyle">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

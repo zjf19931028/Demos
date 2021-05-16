@@ -1,4 +1,4 @@
-package com.awesome.kotlindemo.other
+package com.awesome.kotlindemo.language.classes.contructor
 
 import android.content.Context
 import android.util.AttributeSet
@@ -8,9 +8,9 @@ import androidx.constraintlayout.widget.ConstraintLayout
  * Author: JfangZ
  * Email: zhangjingfang@jeejio.com
  * Date: 2021/4/2 10:25
- * Description:
+ * Description: 自定义View的构造实现
  */
-class AdvanceLayout : ConstraintLayout {
+class CustomView : ConstraintLayout {
     init {
 
     }

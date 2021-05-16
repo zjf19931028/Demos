@@ -1,4 +1,4 @@
-//package com.awesome.chatpaneldemo.jeejio.kotlin
+//package com.awesome.chatpaneldemo.activitys.jeejio.kotlin
 //
 //import android.content.Context
 //import android.graphics.Canvas

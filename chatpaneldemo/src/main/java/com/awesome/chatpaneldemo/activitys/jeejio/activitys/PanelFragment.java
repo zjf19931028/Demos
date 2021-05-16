@@ -1,4 +1,4 @@
-package com.awesome.chatpaneldemo.jeejio.activitys;
+package com.awesome.chatpaneldemo.activitys.jeejio.activitys;
 
 import android.os.Bundle;
 import android.view.KeyEvent;
@@ -20,10 +20,8 @@ import com.awesome.chatpaneldemo.R;
 import com.awesome.chatpaneldemo.adapter.FaceAdapter;
 import com.awesome.chatpaneldemo.adapter.RecyclerAdapter;
 import com.awesome.chatpaneldemo.bean.Face;
-import com.awesome.chatpaneldemo.jeejio.widget.FaceRecyclerView;
 import com.awesome.chatpaneldemo.util.Ui;
 import com.awesome.chatpaneldemo.util.UiTool;
-import com.awesome.sdk.util.ShowLogUtil;
 import com.google.android.material.tabs.TabLayout;
 
 import java.util.List;

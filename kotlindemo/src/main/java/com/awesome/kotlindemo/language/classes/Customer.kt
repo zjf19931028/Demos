@@ -1,4 +1,4 @@
-package com.awesome.kotlindemo.other
+package com.awesome.kotlindemo.language.classes
 
 import com.awesome.sdk.util.ShowLogUtil
 import java.lang.Exception
@@ -10,12 +10,12 @@ import java.lang.Exception
  * Description:
  */
 class Customer(val name: String, val email: String) {
-
     // 延迟属性
-//    val p: String by lazy{
-//        // 计算该字符串
-//
-//    }
+    val p: String by lazy{
+        // 计算该字符串
+        "str"
+    }
+
     // 函数的默认参数
     fun foo(a: Int = 0, b: String = "") {
         // 创建集合
@@ -36,12 +36,6 @@ class Customer(val name: String, val email: String) {
         ShowLogUtil.info(string?.length ?: "empty")
     }
 
-    fun getString(a: Int): String? {
-        if (a > 0)
-            return "a is valid number"
-        return null
-    }
-
     fun tryCatch() {
         val result = try {
             getString(1)
@@ -50,5 +44,9 @@ class Customer(val name: String, val email: String) {
         }
     }
 
-
+    fun getString(a: Int): String? {
+        if (a > 0)
+            return "a is valid number"
+        return null
+    }
 }

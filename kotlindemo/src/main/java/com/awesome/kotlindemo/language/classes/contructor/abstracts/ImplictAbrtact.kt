@@ -1,4 +1,4 @@
-package com.awesome.kotlindemo.other
+package com.awesome.kotlindemo.language.classes.contructor.abstracts
 
 /**
  * Author: JfangZ
@@ -7,5 +7,5 @@ package com.awesome.kotlindemo.other
  * Description:
  */
 // 隐式继承Any
-class Example {
+class ImplictAbrtact {
 }

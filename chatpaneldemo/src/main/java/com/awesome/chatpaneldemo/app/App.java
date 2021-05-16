@@ -1,4 +1,4 @@
-package com.awesome.chatpaneldemo.activitys;
+package com.awesome.chatpaneldemo.app;
 
 import com.awesome.sdk.BaseApplication;
 

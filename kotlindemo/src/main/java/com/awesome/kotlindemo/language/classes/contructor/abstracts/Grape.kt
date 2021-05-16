@@ -1,4 +1,4 @@
-package com.awesome.kotlindemo.other
+package com.awesome.kotlindemo.language.classes.contructor.abstracts
 
 /**
  * Author: JfangZ

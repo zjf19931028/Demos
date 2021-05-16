@@ -1,4 +1,4 @@
-package com.awesome.kotlindemo.other
+package com.awesome.kotlindemo.language.classes.contructor
 
 /**
  * Author: JfangZ
@@ -7,6 +7,6 @@ package com.awesome.kotlindemo.other
  * Description:
  */
 // 有修饰符或注解时，不可以省略constructor
-class Customer2 public constructor(name: String) {
+class UnIgnore public constructor(name: String) {
     val customerKey = name.toUpperCase()
 }

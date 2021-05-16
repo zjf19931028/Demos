@@ -1,4 +1,4 @@
-package com.awesome.kotlindemo.other
+package com.awesome.kotlindemo.language.classes.contructor.abstracts
 
 /**
  * Author: JfangZ
@@ -10,7 +10,7 @@ package com.awesome.kotlindemo.other
 open class Fruit constructor() {
     // 主构造函数的初始化代码
     init {
-//        println("I'm a Fruit.")
+        println("I'm a Fruit.")
     }
 
     // 二级构造函数

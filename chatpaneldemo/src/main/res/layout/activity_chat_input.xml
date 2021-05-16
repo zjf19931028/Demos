@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:fitsSystemWindows="true"
-    tools:context=".jeejio.activitys.ChatInputActivity">
+    tools:context=".activitys.jeejio.activitys.ChatInputActivity">
 
     <TextView
         android:id="@+id/tv_chat_long_pressed"
@@ -82,7 +82,7 @@
 
     <fragment
         android:id="@+id/frag_panel"
-        class="com.awesome.chatpaneldemo.jeejio.activitys.PanelFragment"
+        class="com.awesome.chatpaneldemo.activitys.jeejio.activitys.PanelFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 

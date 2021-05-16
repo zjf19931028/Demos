@@ -1,6 +1,7 @@
-package com.awesome.kotlindemo.other
+package com.awesome.kotlindemo.language
 
 import com.awesome.sdk.util.ShowLogUtil
+import java.lang.Exception
 
 /**
  * Author: JfangZ
@@ -8,11 +9,11 @@ import com.awesome.sdk.util.ShowLogUtil
  * Date: 2021/4/8 16:48
  * Description:
  */
-class Beginner {
+class BaseLanguage {
     // 关键字val只能赋值一次,相当于final
     val a: Int = 1 //立即赋值
     val b = 2//自动推断出Int类型
-//    val c: Int // 赋值初始值不可以省略
+//    val c: Int // 错误写法，赋值初始值不可以省略
 //    c = 3// 赋值
 
     // 变量使用var，相当于Object
@@ -104,10 +105,9 @@ class Beginner {
         println("jlog sum of $a and $b is ${a + b}")
     }
 
-//    fun parseInt(str: String): Int? {
-//
-
-//    }
+    fun parseInt(str: String): Int? {
+        return 0
+    }
 
     // 关键字is可做类型判断，并且使用完成即强转，类型判断类似instanceof
     fun getStringLength(obj: Any): Int? {
@@ -117,12 +117,14 @@ class Beginner {
     }
 
     fun describe(obj: Any): String =
+            // switch case语句
             when (obj) {
                 1 -> "one"
                 "Hello" -> "Greeting"
                 is Long -> "Long"
                 else -> "Unknown"
             }
+
 
 
 }

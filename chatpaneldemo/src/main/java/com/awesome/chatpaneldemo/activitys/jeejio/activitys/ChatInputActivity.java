@@ -1,11 +1,10 @@
-package com.awesome.chatpaneldemo.jeejio.activitys;
+package com.awesome.chatpaneldemo.activitys.jeejio.activitys;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 
@@ -52,12 +51,7 @@ public class ChatInputActivity extends AppCompatActivity implements PanelFragmen
                 return false;
             }
         });
-//        new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                mPanelFragment.hideAll();
-//            }
-//        });
+
     }
 
     @Override

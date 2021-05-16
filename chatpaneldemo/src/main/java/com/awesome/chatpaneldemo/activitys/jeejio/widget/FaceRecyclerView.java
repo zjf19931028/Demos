@@ -1,13 +1,9 @@
-package com.awesome.chatpaneldemo.jeejio.widget;
+package com.awesome.chatpaneldemo.activitys.jeejio.widget;
 
 import android.content.Context;
 import android.graphics.Color;
-import android.media.Image;
 import android.util.AttributeSet;
 import android.view.Gravity;
-import android.view.LayoutInflater;
-import android.view.ViewGroup;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -20,8 +16,6 @@ import com.awesome.chatpaneldemo.R;
 import com.awesome.chatpaneldemo.adapter.FaceAdapter;
 import com.awesome.chatpaneldemo.adapter.RecyclerAdapter;
 import com.awesome.chatpaneldemo.bean.Face;
-import com.awesome.chatpaneldemo.util.Ui;
-import com.awesome.sdk.util.ShowLogUtil;
 
 import java.util.List;
 

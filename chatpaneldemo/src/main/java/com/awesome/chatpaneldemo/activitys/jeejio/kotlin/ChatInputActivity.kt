@@ -1,4 +1,4 @@
-package com.awesome.chatpaneldemo.jeejio.kotlin
+package com.awesome.chatpaneldemo.activitys.jeejio.kotlin
 //
 //import android.Manifest
 //import android.graphics.Color
