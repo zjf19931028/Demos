@@ -1,4 +1,4 @@
-package com.awesome.audiorecorddemo;
+package com.awesome.audiorecorddemo.activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,15 +11,17 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 
+import com.awesome.audiorecorddemo.R;
 import com.awesome.audiorecorddemo.app.App;
 import com.awesome.audiorecorddemo.util.AudioRecordManager;
 import com.awesome.audiorecorddemo.util.MediaRecorderManager;
+import com.awesome.sdk.base.BaseActivity;
 import com.awesome.sdk.util.ShowLogUtil;
 
-import static com.awesome.audiorecorddemo.constant.Constant.RECORD_AUDIO_CODE;
-import static com.awesome.audiorecorddemo.constant.Constant.RECORD_AUDIO_PERMISSION;
+import static com.awesome.sdk.constant.Constant.RECORD_AUDIO_CODE;
+import static com.awesome.sdk.constant.Constant.RECORD_AUDIO_PERMISSION;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
 
     private Button mBtnMediaRecorder;
     private Button mBtnAudioRecord;
@@ -115,31 +117,4 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-
-    public boolean hasPermission(String... permissions) {
-        for (String permission : permissions) {
-            if (ContextCompat.checkSelfPermission(App.getInstance().getApplicationContext(), permission) != PackageManager.PERMISSION_GRANTED) {
-                return false;
-            }
-        }
-        return true;
-    }
-
-
-    public void requestPermission(int code, String... permissions) {
-        ActivityCompat.requestPermissions(this, permissions, code);
-    }
-
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        switch (requestCode) {
-            case RECORD_AUDIO_CODE:
-                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED)
-                    doRecord();
-                break;
-        }
-    }
-
-    private void doRecord() {
-    }
 }

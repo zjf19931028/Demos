@@ -1,14 +1,12 @@
-package com.awesome.audiorecorddemo;
+package com.awesome.audiorecorddemo.util;
 
-import android.app.Application;
 import android.media.AudioFormat;
 import android.media.AudioRecord;
 import android.media.MediaRecorder;
 import android.os.SystemClock;
 import android.util.Log;
 
-
-import com.awesome.audiorecorddemo.util.ShowLogUtil;
+import com.awesome.sdk.util.ShowLogUtil;
 
 import net.qiujuer.lame.Lame;
 import net.qiujuer.lame.LameAsyncEncoder;

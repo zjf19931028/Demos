@@ -14,7 +14,7 @@ import java.io.IOException;
  * Email:zhangjin
  * gfang@jeejio.com
  * Date: 2021/2/4 14:26
- * Description: 录音管理类
+ * Description: MediaRecorder录音管理类
  */
 public enum MediaRecorderManager {
     SINGLETON;

@@ -19,7 +19,7 @@ import java.io.IOException;
  * Author: JfangZ
  * Email:zhangjingfang@jeejio.com
  * Date: 2021/2/3 20:41
- * Description: 录音管理类
+ * Description: AudioRecord录音管理类
  */
 public enum AudioRecordManager {
     SINGLETON;

@@ -1,4 +1,4 @@
-package com.awesome.audiorecorddemo;
+package com.awesome.audiorecorddemo.activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,15 +14,19 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 
+import com.awesome.audiorecorddemo.R;
 import com.awesome.audiorecorddemo.app.App;
-import com.awesome.audiorecorddemo.util.ShowLogUtil;
+import com.awesome.audiorecorddemo.util.AudioRecordHelper;
+import com.awesome.audiorecorddemo.widget.AudioRecordView;
+import com.awesome.sdk.base.BaseActivity;
 
 import java.io.File;
 
-import static com.awesome.audiorecorddemo.constant.Constant.RECORD_AUDIO_CODE;
-import static com.awesome.audiorecorddemo.constant.Constant.RECORD_AUDIO_PERMISSION;
+import static com.awesome.sdk.constant.Constant.RECORD_AUDIO_CODE;
+import static com.awesome.sdk.constant.Constant.RECORD_AUDIO_PERMISSION;
 
-public class AudioRecordActivity extends AppCompatActivity {
+
+public class AudioRecordActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -87,20 +91,4 @@ public class AudioRecordActivity extends AppCompatActivity {
     }
 
 
-    public void requestPermission(int code, String... permissions) {
-        ActivityCompat.requestPermissions(this, permissions, code);
-    }
-
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        switch (requestCode) {
-            case RECORD_AUDIO_CODE:
-                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED)
-                    doRecord();
-                break;
-        }
-    }
-
-    private void doRecord() {
-    }
 }

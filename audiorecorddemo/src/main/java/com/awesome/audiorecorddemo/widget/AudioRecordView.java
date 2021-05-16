@@ -1,4 +1,4 @@
-package com.awesome.audiorecorddemo;
+package com.awesome.audiorecorddemo.widget;
 
 import android.content.Context;
 import android.graphics.Rect;
@@ -14,6 +14,8 @@ import android.widget.ImageView;
 import androidx.annotation.AttrRes;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+
+import com.awesome.audiorecorddemo.R;
 
 import net.qiujuer.genius.ui.widget.FloatActionButton;
 
