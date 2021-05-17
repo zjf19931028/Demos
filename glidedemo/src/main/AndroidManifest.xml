@@ -17,8 +17,8 @@
         android:theme="@style/Theme.AwesomeDemos">
 <!--        <activity android:name=".MainActivity"></activity>-->
 <!--        <activity android:name=".AlbumActivity"></activity>-->
-<!--        <activity android:name=".PickPictureActivity"></activity>-->
-        <activity android:name=".PickPictureActivity">
+        <activity android:name=".PickPictureActivity"></activity>
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

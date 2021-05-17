@@ -1,7 +1,6 @@
 package com.awesome.glidedemo;
 
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.database.Cursor;
@@ -10,15 +9,11 @@ import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 
 import com.awesome.glidedemo.pickpicture.BaseActivity;
-import com.awesome.sdk.BaseApplication;
 import com.awesome.sdk.util.ShowLogUtil;
-
-import java.io.FileNotFoundException;
 
 import static com.awesome.glidedemo.pickpicture.Constant.WRITE_EXTERNAL_CODE;
 import static com.awesome.glidedemo.pickpicture.Constant.WRITE_EXTERNAL_PERMISSION;
@@ -30,13 +25,13 @@ import static com.awesome.glidedemo.pickpicture.Constant.WRITE_EXTERNAL_PERMISSI
  * Date: 2021/5/7 14:35
  * Description:选择相册文件
  */
-public class AlbumActivity extends BaseActivity {
+public class PickOneActivity extends BaseActivity {
     private ImageView imageView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_album);
+        setContentView(R.layout.activity_pick_one);
         if (!hasPermission(WRITE_EXTERNAL_PERMISSION)) {
             requestPermission(WRITE_EXTERNAL_CODE, WRITE_EXTERNAL_PERMISSION);
         }

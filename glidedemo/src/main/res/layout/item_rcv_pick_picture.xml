@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="73dp"
     android:layout_height="73dp">
 
@@ -9,11 +11,34 @@
         android:layout_height="73dp"
         android:background="#ccc" />
 
-    <ImageView
+    <View
+        android:id="@+id/view_shade"
+        android:layout_width="73dp"
+        android:layout_height="73dp"
+        android:background="@color/black_alpha_112" />
+
+    <CheckBox
+        android:id="@+id/cb_select"
+        android:layout_width="22dp"
+        android:layout_height="22dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:button="@drawable/sel_cb_circle"
+        android:enabled="false"
+        app:buttonTint="@color/cb_gallery" />
+
+    <TextView
+        android:id="@+id/tv_duration"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
-        android:layout_marginTop="10dp"
-        android:layout_marginRight="10dp"/>
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:text="00:00"
+        android:textColor="@color/white"
+        android:visibility="gone"
+        tools:visibility="visible" />
 
 </RelativeLayout>

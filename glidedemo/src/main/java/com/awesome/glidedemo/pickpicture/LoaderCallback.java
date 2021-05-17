@@ -25,17 +25,23 @@ public class LoaderCallback implements LoaderManager.LoaderCallbacks<Cursor> {
     public static final int LOADER_ID = 0x0100;
 
     private Context mContext;
+    private IMediaPickStrategy mMediaPickStrategy;
     private IOnImageList mIOnImageList;
 
-    public LoaderCallback(Context context, IOnImageList IOnImageList) {
+    public LoaderCallback(Context context,IMediaPickStrategy mediaPickStrategy, IOnImageList IOnImageList) {
         mContext = context;
+        mMediaPickStrategy = mediaPickStrategy;
         mIOnImageList = IOnImageList;
     }
 
     private final String[] IMAGE_PROJECTION = new String[]{
             MediaStore.Images.Media._ID, // Id
             MediaStore.Images.Media.DATA, // 图片路径
-            MediaStore.Images.Media.DATE_ADDED // 图片的创建时间ø
+            MediaStore.Images.Media.DATE_ADDED, // 图片的创建时间
+            MediaStore.Files.FileColumns.MIME_TYPE, // 文件类型
+            MediaStore.Files.FileColumns.DURATION, // 文件时长
+            MediaStore.Images.Media.BUCKET_ID, // 相册Id
+            MediaStore.Images.Media.ALBUM // 相册名称
     };
 
     @Override
@@ -46,10 +52,11 @@ public class LoaderCallback implements LoaderManager.LoaderCallbacks<Cursor> {
             return new CursorLoader(mContext,
                     MediaStore.Images.Media.EXTERNAL_CONTENT_URI,
                     IMAGE_PROJECTION,
-                    null,
+                    mMediaPickStrategy.getSelection(),
                     null,
                     null); // 倒序查询
         }
+
         return null;
     }
 
@@ -60,37 +67,44 @@ public class LoaderCallback implements LoaderManager.LoaderCallbacks<Cursor> {
         // 判断是否有数据
         if (data != null) {
             int count = data.getCount();
-            ShowLogUtil.info("count="+count);
             if (count > 0) {
                 // 移动游标到开始
                 data.moveToFirst();
-
                 // 得到对应的列的Index坐标
                 int indexId = data.getColumnIndexOrThrow(IMAGE_PROJECTION[0]);
                 int indexPath = data.getColumnIndexOrThrow(IMAGE_PROJECTION[1]);
                 int indexDate = data.getColumnIndexOrThrow(IMAGE_PROJECTION[2]);
+                int indexType = data.getColumnIndexOrThrow(IMAGE_PROJECTION[3]);
+                int indexDuration = data.getColumnIndexOrThrow(IMAGE_PROJECTION[4]);
+                int indexBucketID = data.getColumnIndexOrThrow(IMAGE_PROJECTION[5]);
+                int indexBucketDisplayName = data.getColumnIndexOrThrow(IMAGE_PROJECTION[6]);
+
                 do {
                     // 循环读取，直到没有下一条数据
                     int id = data.getInt(indexId);
                     String path = data.getString(indexPath);
                     long dateTime = data.getLong(indexDate);
+                    int bucketID = data.getInt(indexBucketID);
+                    String bucketDisplayName = data.getString(indexBucketDisplayName);
+                    String fileType = data.getString(indexType);
+                    long duration = data.getLong(indexDuration);
 
                     File file = new File(path);
                     if (!file.exists() || file.length() < MIN_IMAGE_FILE_SIZE) {
                         // 如果没有图片，或者图片大小太小，则跳过
                         continue;
                     }
-
-
                     // 添加一条新的数据
                     Image image = new Image();
                     image.id = id;
                     image.path = path;
                     image.date = dateTime;
-                    ShowLogUtil.info(image.toString());
+                    image.bucketId = bucketID;
+                    image.bucketDisplayName = bucketDisplayName;
+                    image.fileType = fileType;
+                    image.duration = duration;
+//                    ShowLogUtil.info(image.toString());
                     images.add(image);
-
-
                 } while (data.moveToNext());
             }
         }

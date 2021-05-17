@@ -10,7 +10,11 @@ public class Image {
     public int id; // 数据的ID
     public String path; // 图片的路径
     public long date; // 图片的创建日期
+    public String fileType; // 文件类型
+    public long duration; // 文件时长
     public boolean isSelect; // 是否选中
+    public int bucketId;
+    public String bucketDisplayName;
 
     @Override
     public boolean equals(Object o) {
@@ -31,9 +35,10 @@ public class Image {
     public String toString() {
         return "Image{" +
                 "id=" + id +
-                ", path='" + path + '\'' +
-                ", date=" + date +
-                ", isSelect=" + isSelect +
+                ", fileType='" + fileType + '\'' +
+                ", bucketDisplayName='" + bucketDisplayName + '\'' +
                 '}';
     }
+
+
 }
