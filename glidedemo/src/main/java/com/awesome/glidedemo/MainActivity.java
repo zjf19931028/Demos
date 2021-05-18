@@ -14,6 +14,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.awesome.glidedemo.pickpicture.BaseActivity;
 import com.awesome.glidedemo.pickpicture.IMediaPickStrategy;
 import com.awesome.glidedemo.pickpicture.Image;
 import com.awesome.glidedemo.pickpicture.LoaderCallback;
@@ -25,6 +26,7 @@ import com.awesome.sdk.util.ShowLogUtil;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.Priority;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.google.android.material.shape.CornerTreatment;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -33,9 +35,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import static com.awesome.glidedemo.pickpicture.Constant.WRITE_EXTERNAL_CODE;
+import static com.awesome.glidedemo.pickpicture.Constant.WRITE_EXTERNAL_PERMISSION;
 import static com.awesome.glidedemo.pickpicture.LoaderCallback.LOADER_ID;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
     //    public static final String URL="https://www.shuimuchangxiang.com/appapi/images/personal/bill.png";
     public static final String URL = "http://img.mukewang.com/55249cf30001ae8a06000338-300-170.jpg";
     private ImageView mIvNet;
@@ -47,6 +51,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         mIvNet = findViewById(R.id.iv_net);
         mIvLocal = findViewById(R.id.iv_local);
+        if (!hasPermission(WRITE_EXTERNAL_PERMISSION)) {
+            requestPermission(WRITE_EXTERNAL_CODE, WRITE_EXTERNAL_PERMISSION);
+        }
+
         LinearLayout llAlbum = findViewById(R.id.ll_album);
 
         Glide.with(this)
