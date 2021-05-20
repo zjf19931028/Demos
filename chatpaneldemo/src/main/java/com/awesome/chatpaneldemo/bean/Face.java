@@ -67,10 +67,10 @@ public class Face {
                     if (tab2 != null) {
                         faceTabs.add(tab2);
                     }
-//                    tab = initAssetsFace(context);
-//                    if (tab != null) {
-//                        faceTabs.add(tab);
-//                    }
+                    tab = initAssetsFace(context);
+                    if (tab != null) {
+                        faceTabs.add(tab);
+                    }
                     // init map
                     for (FaceTab faceTab : faceTabs) {
                         faceTab.copyToMap(FACE_MAP);

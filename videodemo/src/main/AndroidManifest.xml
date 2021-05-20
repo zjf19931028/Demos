@@ -1,31 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    package="com.awesome.chatpaneldemo">
+    package="com.awesome.videodemo">
 
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
     <application
-        android:name=".activitys.App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AwesomeDemos"
-        tools:replace="android:name">
-<!--        <activity android:name=".jeejio.activitys.ChatInputActivity"></activity>-->
-        <activity android:name=".activitys.ChatActivity"></activity>
-        <activity
-            android:name=".jeejio.activitys.ChatInputActivity"
-            android:theme="@style/MainStyle">
+        android:requestLegacyExternalStorage="true"
+        android:theme="@style/Theme.AwesomeDemos">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity> <!-- Android7 FileProvider 适配 -->
+        </activity>
+
         <provider
-            android:name=".util.AppFileProvider"
-            android:authorities="${applicationId}.provider"
+            android:name=".AppFileProvider"
+            android:authorities="${applicationId}.fileprovider"
             android:exported="false"
             android:grantUriPermissions="true">
             <meta-data

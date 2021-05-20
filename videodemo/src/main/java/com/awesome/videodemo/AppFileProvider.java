@@ -1,4 +1,4 @@
-package com.awesome.chatpaneldemo.activitys;
+package com.awesome.videodemo;
 
 
 import androidx.core.content.FileProvider;

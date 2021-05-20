@@ -1,5 +1,6 @@
 package com.awesome.arouterdemo;
 
+import com.alibaba.android.arouter.BuildConfig;
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.awesome.sdk.BaseApplication;
 import com.awesome.sdk.util.ShowLogUtil;
@@ -11,12 +12,10 @@ import com.awesome.sdk.util.ShowLogUtil;
  * Description:
  */
 public class App extends BaseApplication {
-    // ARouter调试开关
-    private boolean isDebug = true;
     @Override
     public void onCreate() {
         super.onCreate();
-        if (isDebug){
+        if (BuildConfig.DEBUG){
             ARouter.openLog();
             ARouter.openDebug();
         }

@@ -1,3 +1,4 @@
+include ':videodemo'
 include ':activitydemo'
 include ':filedemo'
 include ':chatpaneldemo'
