@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">mvvmdemo</string>
+    <string name="cartoon_name">动漫名：%s</string>
+    <string name="cartoon_series">系列：%s</string>
 </resources>

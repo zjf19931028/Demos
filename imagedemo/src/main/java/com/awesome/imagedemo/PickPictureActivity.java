@@ -1,8 +1,12 @@
 package com.awesome.imagedemo;
 
 import android.app.LoaderManager;
+import android.content.CursorLoader;
+import android.content.Loader;
+import android.database.Cursor;
 import android.graphics.Rect;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.TextView;
@@ -22,6 +26,8 @@ import com.awesome.imagedemo.strategy.MediaPickVideo;
 import com.awesome.imagedemo.adpter.PickPictureAdapter;
 import com.awesome.sdk.base.BaseActivity;
 
+import java.io.File;
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
@@ -51,7 +57,7 @@ public class PickPictureActivity extends BaseActivity {
             mMediaPickStrategy = new MediaPickImage();
         } else if (TextUtils.equals(type, IMediaPickStrategy.Type.VIDEO.name())) {
             mMediaPickStrategy = new MediaPickVideo();
-        }else if (TextUtils.equals(type, IMediaPickStrategy.Type.ALL.name())) {
+        } else if (TextUtils.equals(type, IMediaPickStrategy.Type.ALL.name())) {
             mMediaPickStrategy = new MediaPickAll();
         }
 
