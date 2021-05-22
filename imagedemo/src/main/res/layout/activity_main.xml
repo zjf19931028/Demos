@@ -18,10 +18,22 @@
         android:layout_height="100dp" />
 
     <TextView
+        android:id="@+id/tv_select_one_picture"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_marginTop="30dp"
+        android:background="#eee"
+        android:layout_marginLeft="10dp"
+        android:text="选择一张图片" />
+
+    <TextView
         android:id="@+id/tv_select_picture"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="10dp"
+        android:layout_marginTop="30dp"
+        android:background="#eee"
         android:layout_marginLeft="10dp"
         android:text="选择图片" />
 
@@ -30,7 +42,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="10dp"
-        android:layout_marginTop="50dp"
+        android:background="#eee"
+        android:layout_marginTop="30dp"
         android:layout_marginLeft="10dp"
         android:text="选择视频" />
 
@@ -39,7 +52,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="10dp"
-        android:layout_marginTop="50dp"
+        android:background="#eee"
+        android:layout_marginTop="30dp"
         android:layout_marginLeft="10dp"
         android:text="所有图片视频" />
 

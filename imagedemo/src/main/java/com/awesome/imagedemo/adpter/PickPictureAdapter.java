@@ -1,4 +1,4 @@
-package com.awesome.imagedemo.pickpicture;
+package com.awesome.imagedemo.adpter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -12,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.awesome.imagedemo.R;
+import com.awesome.imagedemo.bean.Image;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 

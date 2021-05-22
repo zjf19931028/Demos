@@ -6,14 +6,19 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
-import com.awesome.imagedemo.pickpicture.BaseActivity;
-import com.awesome.imagedemo.pickpicture.IMediaPickStrategy;
+import com.awesome.imagedemo.strategy.IMediaPickStrategy;
+import com.awesome.sdk.base.BaseActivity;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.Priority;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 
-import static com.awesome.imagedemo.pickpicture.Constant.WRITE_EXTERNAL_CODE;
-import static com.awesome.imagedemo.pickpicture.Constant.WRITE_EXTERNAL_PERMISSION;
+import static com.awesome.sdk.constant.Constant.WRITE_EXTERNAL_CODE;
+import static com.awesome.sdk.constant.Constant.WRITE_EXTERNAL_PERMISSION;
+
+/**
+ * 遗留问题：
+ * 1.LoaderCallback查询不同列以及解析不同列
+ */
 
 public class MainActivity extends BaseActivity {
     //    public static final String URL="https://www.shuimuchangxiang.com/appapi/images/personal/bill.png";
@@ -33,11 +38,17 @@ public class MainActivity extends BaseActivity {
 
         LinearLayout llAlbum = findViewById(R.id.ll_album);
 
+        /**
+         * 简单使用glide请求
+         */
         Glide.with(this)
                 .load(URL)
                 .centerCrop()
                 .into(mIvNet);
 
+        /**
+         * 压缩图片
+         */
         Glide.with(this)//创建实例
                 .load(URL)//各种资源的url
                 .placeholder(R.mipmap.ic_launcher)//预加载图片
@@ -49,6 +60,14 @@ public class MainActivity extends BaseActivity {
                 .diskCacheStrategy(DiskCacheStrategy.NONE)//磁盘缓存
                 .priority(Priority.HIGH)
                 .into(mIvLocal);
+
+        findViewById(R.id.tv_select_one_picture).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, PickOneActivity.class);
+                startActivity(intent);
+            }
+        });
 
         findViewById(R.id.tv_select_picture).setOnClickListener(new View.OnClickListener() {
             @Override

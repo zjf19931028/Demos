@@ -1,5 +1,6 @@
 package com.awesome.imagedemo;
 
+import android.app.LoaderManager;
 import android.graphics.Rect;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -11,19 +12,22 @@ import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.awesome.imagedemo.pickpicture.BaseActivity;
-import com.awesome.imagedemo.pickpicture.IMediaPickStrategy;
-import com.awesome.imagedemo.pickpicture.Image;
-import com.awesome.imagedemo.pickpicture.Media;
-import com.awesome.imagedemo.pickpicture.PickPictureAdapter;
+import com.awesome.imagedemo.strategy.IMediaPickStrategy;
+import com.awesome.imagedemo.bean.Image;
+import com.awesome.imagedemo.callback.LoaderCallback;
+import com.awesome.imagedemo.bean.Album;
+import com.awesome.imagedemo.strategy.MediaPickAll;
+import com.awesome.imagedemo.strategy.MediaPickImage;
+import com.awesome.imagedemo.strategy.MediaPickVideo;
+import com.awesome.imagedemo.adpter.PickPictureAdapter;
+import com.awesome.sdk.base.BaseActivity;
 
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import static com.awesome.imagedemo.pickpicture.Constant.WRITE_EXTERNAL_CODE;
-import static com.awesome.imagedemo.pickpicture.Constant.WRITE_EXTERNAL_PERMISSION;
+import static com.awesome.imagedemo.callback.LoaderCallback.LOADER_ID;
 
 /**
  * Author: JfangZ
@@ -43,19 +47,17 @@ public class PickPictureActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pick_picture);
         String type = getIntent().getStringExtra("Type");
-//        if (TextUtils.equals(type, IMediaPickStrategy.Type.IMAGE.name())) {
-//            mMediaPickStrategy = new MediaPickImage();
-//        } else if (TextUtils.equals(type, IMediaPickStrategy.Type.VIDEO.name())) {
-//            mMediaPickStrategy = new MediaPickVideo();
-//        }else if (TextUtils.equals(type, IMediaPickStrategy.Type.ALL.name())) {
-//            mMediaPickStrategy = new MediaPickAll();
-//        }
+        if (TextUtils.equals(type, IMediaPickStrategy.Type.IMAGE.name())) {
+            mMediaPickStrategy = new MediaPickImage();
+        } else if (TextUtils.equals(type, IMediaPickStrategy.Type.VIDEO.name())) {
+            mMediaPickStrategy = new MediaPickVideo();
+        }else if (TextUtils.equals(type, IMediaPickStrategy.Type.ALL.name())) {
+            mMediaPickStrategy = new MediaPickAll();
+        }
+
         mRecyclerView = findViewById(R.id.rv_pick_picture);
         mTvSelectedCount = findViewById(R.id.tv_selected_count);
-        if (!hasPermission(WRITE_EXTERNAL_PERMISSION)) {
-            requestPermission(WRITE_EXTERNAL_CODE, WRITE_EXTERNAL_PERMISSION);
-            return;
-        }
+
         mRecyclerView.setLayoutManager(new GridLayoutManager(this, 4));
         mRecyclerView.addItemDecoration(new RecyclerView.ItemDecoration() {
             @Override
@@ -75,18 +77,20 @@ public class PickPictureActivity extends BaseActivity {
             }
         });
 
-        Set<Map.Entry<String, List<Image>>> entries = Media.MEDIA_MAP.entrySet();
-        for (Map.Entry<String, List<Image>> entry : entries) {
-            if (TextUtils.equals(entry.getKey(),type))
-                mPickPictureAdapter.setImages(entry.getValue());
-        }
+        // 获取当前相册的图片
+//        Set<Map.Entry<String, List<Image>>> entries = Album.MEDIA_MAP.entrySet();
+//        for (Map.Entry<String, List<Image>> entry : entries) {
+//            if (TextUtils.equals(entry.getKey(),type))
+//                mPickPictureAdapter.setImages(entry.getValue());
+//        }
 
-//        LoaderManager loaderManager = getLoaderManager();
-//        loaderManager.initLoader(LOADER_ID, null, new LoaderCallback(this, mMediaPickStrategy, new LoaderCallback.IOnImageList() {
-//            @Override
-//            public void imageList(List<Image> images) {
-//                mPickPictureAdapter.setImages(images);
-//            }
-//        }));
+        // 获取手机系统资源
+        LoaderManager loaderManager = getLoaderManager();
+        loaderManager.initLoader(LOADER_ID, null, new LoaderCallback(this, mMediaPickStrategy, new LoaderCallback.IOnImageList() {
+            @Override
+            public void imageList(List<Image> images) {
+                mPickPictureAdapter.setImages(images);
+            }
+        }));
     }
 }

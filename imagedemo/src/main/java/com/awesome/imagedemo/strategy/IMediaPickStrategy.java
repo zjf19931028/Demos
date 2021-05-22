@@ -1,4 +1,4 @@
-package com.awesome.imagedemo.pickpicture;
+package com.awesome.imagedemo.strategy;
 
 import android.net.Uri;
 
@@ -15,5 +15,6 @@ public interface IMediaPickStrategy {
         ALL;
     }
     Uri getUri();
+    String[] getProjection();
     String getSelection();
 }

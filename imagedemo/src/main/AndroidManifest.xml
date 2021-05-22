@@ -15,10 +15,9 @@
         android:requestLegacyExternalStorage="true"
         android:usesCleartextTraffic="true"
         android:theme="@style/Theme.AwesomeDemos">
-<!--        <activity android:name=".MainActivity"></activity>-->
-<!--        <activity android:name=".PickOneActivity"></activity>-->
-        <activity android:name="com.awesome.imagedemo.PickPictureActivity"></activity>
-        <activity android:name="com.awesome.imagedemo.MainActivity">
+        <activity android:name=".PickOneActivity"></activity>
+        <activity android:name=".PickPictureActivity"></activity>
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
