@@ -1,4 +1,4 @@
-package com.awesome.mvpdemo.main;
+package com.awesome.mvpdemo.mvp1.main;
 
 import com.awesome.mvpdemo.mvp1.BaseContract;
 

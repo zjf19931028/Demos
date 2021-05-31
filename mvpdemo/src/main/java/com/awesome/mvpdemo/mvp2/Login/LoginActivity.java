@@ -1,14 +1,10 @@
-package com.awesome.mvpdemo.Login;
+package com.awesome.mvpdemo.mvp2.Login;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
 import com.awesome.mvpdemo.R;
 import com.awesome.mvpdemo.mvp2.BaseActivity;
-import com.awesome.mvpdemo.mvp2.BaseContract;
 import com.awesome.sdk.util.ToastUtils;
 
 public class LoginActivity extends BaseActivity<LoginContract.Presenter> implements LoginContract.View {

@@ -1,6 +1,4 @@
-package com.awesome.mvpdemo.Login;
-
-import androidx.annotation.StringRes;
+package com.awesome.mvpdemo.mvp2.Login;
 
 import com.awesome.mvpdemo.mvp2.BaseContract;
 

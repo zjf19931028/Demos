@@ -1,4 +1,4 @@
-package com.awesome.mvpdemo.main;
+package com.awesome.mvpdemo.mvp1.main;
 
 
 import android.view.View;
@@ -6,7 +6,6 @@ import android.widget.TextView;
 
 import com.awesome.mvpdemo.R;
 import com.awesome.mvpdemo.mvp1.BaseActivity;
-import com.awesome.sdk.util.ToastUtils;
 
 public class MainActivity extends BaseActivity<MainContract.Presenter> implements MainContract.View {
 

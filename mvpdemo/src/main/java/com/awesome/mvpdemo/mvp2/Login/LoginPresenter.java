@@ -1,6 +1,5 @@
-package com.awesome.mvpdemo.Login;
+package com.awesome.mvpdemo.mvp2.Login;
 
-import com.awesome.mvpdemo.mvp2.BaseContract;
 import com.awesome.mvpdemo.mvp2.BasePresenter;
 
 /**

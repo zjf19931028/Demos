@@ -34,6 +34,11 @@ android {
 }
 
 dependencies {
+    // 依赖协程核心库
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.1"
+    // 依赖当前平台所对应的平台库
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.1"
+
     //statusbar
     implementation 'com.jaeger.statusbarutil:library:1.5.1'
     //lottie

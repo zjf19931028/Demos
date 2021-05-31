@@ -63,17 +63,19 @@ public class MyService extends Service {
     @Override
     public IBinder onBind(Intent intent) {
         ShowLogUtil.info("onBind");
-        return new IMyAidlInterface.Stub() {
-            @Override
-            public void basicTypes(int anInt, long aLong, boolean aBoolean, float aFloat, double aDouble, String aString) throws RemoteException {
-
-            }
-
-            @Override
-            public void showPregress() throws RemoteException {
-                ShowLogUtil.info("当前进度=" + mProgress);
-            }
-        };
+        return new MyBinder();
+        //aidl
+//        return new IMyAidlInterface.Stub() {
+//            @Override
+//            public void basicTypes(int anInt, long aLong, boolean aBoolean, float aFloat, double aDouble, String aString) throws RemoteException {
+//
+//            }
+//
+//            @Override
+//            public void showPregress() throws RemoteException {
+//                ShowLogUtil.info("当前进度=" + mProgress);
+//            }
+//        };
     }
 
     @Override

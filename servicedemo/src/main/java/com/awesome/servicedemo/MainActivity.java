@@ -18,15 +18,16 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onServiceConnected(ComponentName name, IBinder service) {
             ShowLogUtil.info("onServiceConnected");
-//            MyService.MyBinder binder = (MyService.MyBinder) service;
-//            int progress = binder.getProgress();
-//            ShowLogUtil.info("progress=" + progress);
-            IMyAidlInterface iMyAidlInterface = IMyAidlInterface.Stub.asInterface(service);
-            try {
-                iMyAidlInterface.showPregress();
-            } catch (RemoteException e) {
-                e.printStackTrace();
-            }
+            MyService.MyBinder binder = (MyService.MyBinder) service;
+            int progress = binder.getProgress();
+            ShowLogUtil.info("progress=" + progress);
+            //aidl
+//            IMyAidlInterface iMyAidlInterface = IMyAidlInterface.Stub.asInterface(service);
+//            try {
+//                iMyAidlInterface.showPregress();
+//            } catch (RemoteException e) {
+//                e.printStackTrace();
+//            }
         }
 
         @Override

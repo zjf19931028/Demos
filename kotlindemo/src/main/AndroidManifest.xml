@@ -12,12 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:name">
-<!--        <activity android:name=".language.ClassesActivity"></activity>-->
+<!--        <activity android:name=".language.FunctionActivity"></activity>-->
+        <!-- <activity android:name=".language.ClassesActivity"></activity> -->
         <activity android:name=".login.LoginActivity" />
         <activity android:name=".IndexActivity" />
-        <activity android:name=".MainActivity" />
         <activity
-            android:name=".language.ClassesActivity"
+            android:name=".language.FunctionActivity"
             android:configChanges="keyboardHidden">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
