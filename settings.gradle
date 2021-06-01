@@ -1,3 +1,4 @@
+include ':datademo'
 include ':sqlitedemo'
 include ':videodemo'
 include ':activitydemo'
