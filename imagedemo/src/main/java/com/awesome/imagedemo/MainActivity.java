@@ -13,19 +13,6 @@ import android.widget.LinearLayout;
 import com.awesome.imagedemo.strategy.IMediaPickStrategy;
 import com.awesome.sdk.base.BaseActivity;
 import com.awesome.sdk.util.ShowLogUtil;
-import com.bumptech.glide.Glide;
-import com.bumptech.glide.Priority;
-import com.bumptech.glide.load.Transformation;
-import com.bumptech.glide.load.engine.DiskCacheStrategy;
-import com.bumptech.glide.load.engine.Resource;
-import com.bumptech.glide.load.engine.bitmap_recycle.BitmapPool;
-import com.bumptech.glide.load.resource.SimpleResource;
-import com.bumptech.glide.load.resource.bitmap.BitmapTransformation;
-import com.bumptech.glide.load.resource.drawable.GlideDrawable;
-import com.bumptech.glide.load.resource.gifbitmap.GifBitmapWrapper;
-import com.bumptech.glide.request.animation.GlideAnimation;
-import com.bumptech.glide.request.target.SimpleTarget;
-
 import static com.awesome.sdk.constant.Constant.WRITE_EXTERNAL_CODE;
 import static com.awesome.sdk.constant.Constant.WRITE_EXTERNAL_PERMISSION;
 
@@ -51,67 +38,67 @@ public class MainActivity extends BaseActivity {
         }
 
         LinearLayout llAlbum = findViewById(R.id.ll_album);
+//
+//        /**
+//         * 简单使用glide请求
+//         */
+//        Glide.with(this)
+//                .load(URL)
+//                .transform(new BitmapTransformation(this) {
+//                    @Override
+//                    protected Bitmap transform(BitmapPool pool, Bitmap toTransform, int outWidth, int outHeight) {
+//                        ShowLogUtil.info("toTransform.getWidth=" + toTransform.getWidth());
+//                        ShowLogUtil.info("outWidth=" + outWidth);
+//                        ShowLogUtil.info("outHeight=" + outHeight);
+//                        return toTransform;
+//                    }
+//
+//                    @Override
+//                    public String getId() {
+//                        ShowLogUtil.info("getId=" );
+//
+//                        return null;
+//                    }
+//                })
+//                .bitmapTransform(new BitmapTransformation(this) {
+//                    @Override
+//                    protected Bitmap transform(BitmapPool pool, Bitmap toTransform, int outWidth, int outHeight) {
+//                        ShowLogUtil.info("toTransform.getWidth=" + toTransform.getWidth());
+//                        ShowLogUtil.info("outWidth=" + outWidth);
+//                        ShowLogUtil.info("outHeight=" + outHeight);
+//                        return null;
+//                    }
+//
+//                    @Override
+//                    public String getId() {
+//                        ShowLogUtil.info("getId=" );
+//                        return null;
+//                    }
+//                })
+//                .centerCrop()
+//                .into(mIvNet);
 
-        /**
-         * 简单使用glide请求
-         */
-        Glide.with(this)
-                .load(URL)
-                .transform(new BitmapTransformation(this) {
-                    @Override
-                    protected Bitmap transform(BitmapPool pool, Bitmap toTransform, int outWidth, int outHeight) {
-                        ShowLogUtil.info("toTransform.getWidth=" + toTransform.getWidth());
-                        ShowLogUtil.info("outWidth=" + outWidth);
-                        ShowLogUtil.info("outHeight=" + outHeight);
-                        return toTransform;
-                    }
-
-                    @Override
-                    public String getId() {
-                        ShowLogUtil.info("getId=" );
-
-                        return null;
-                    }
-                })
-                .bitmapTransform(new BitmapTransformation(this) {
-                    @Override
-                    protected Bitmap transform(BitmapPool pool, Bitmap toTransform, int outWidth, int outHeight) {
-                        ShowLogUtil.info("toTransform.getWidth=" + toTransform.getWidth());
-                        ShowLogUtil.info("outWidth=" + outWidth);
-                        ShowLogUtil.info("outHeight=" + outHeight);
-                        return null;
-                    }
-
-                    @Override
-                    public String getId() {
-                        ShowLogUtil.info("getId=" );
-                        return null;
-                    }
-                })
-                .centerCrop()
-                .into(mIvNet);
-
-//        BitmapFactory.Options options = new BitmapFactory.Options();
-//        options.inJustDecodeBounds = true;
-//        BitmapFactory.decodeResource(getResources(), R.mipmap.bg_src_morning, options);
-//        int imageHeight = options.outHeight;
-//        int imageWidth = options.outWidth;
-//        String iamgeType = options.outMimeType;
+        BitmapFactory.Options options = new BitmapFactory.Options();
+        options.inJustDecodeBounds = true;
+        BitmapFactory.decodeResource(getResources(), R.mipmap.bg_src_morning, options);
+        int imageHeight = options.outHeight;
+        int imageWidth = options.outWidth;
+        String iamgeType = options.outMimeType;
 //        ShowLogUtil.info("imageHeight=" + imageHeight);
 //        ShowLogUtil.info("imageWidth=" + imageWidth);
 //        ShowLogUtil.info("iamgeType=" + iamgeType);
-//
-//        int inSampleSize = 1;
-//        if (imageHeight > 100 || imageWidth > 100) {
-//            int heightRatio = Math.round(imageHeight / 100);
-//            int widthRatio = Math.round(imageWidth / 100);
-//            inSampleSize = heightRatio < widthRatio ? heightRatio : widthRatio;
-//        }
-//        options.inSampleSize = inSampleSize;
-//        options.inJustDecodeBounds = false;
-//        Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.mipmap.bg_src_morning,options);
-//        mIvNet.setImageBitmap(bitmap);
-//
+
+        int inSampleSize = 1;
+        if (imageHeight > 100 || imageWidth > 100) {
+            int heightRatio = Math.round(imageHeight / 100);
+            int widthRatio = Math.round(imageWidth / 100);
+            inSampleSize = heightRatio < widthRatio ? heightRatio : widthRatio;
+        }
+        options.inSampleSize = inSampleSize;
+        options.inJustDecodeBounds = false;
+        Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.mipmap.bg_src_morning,options);
+        mIvNet.setImageBitmap(bitmap);
+
 //        Bitmap bitmap2 = BitmapFactory.decodeResource(getResources(), R.mipmap.bg_src_morning);
 //        mIvLocal.setImageBitmap(bitmap2);
 

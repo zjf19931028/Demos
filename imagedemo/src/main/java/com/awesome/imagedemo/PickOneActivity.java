@@ -12,9 +12,11 @@ import android.provider.MediaStore;
 import android.view.View;
 import android.widget.ImageView;
 
+import com.awesome.imagedemo.util.PicturesCompressor;
 import com.awesome.sdk.base.BaseActivity;
 import com.awesome.sdk.util.ShowLogUtil;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 
 
@@ -34,7 +36,7 @@ public class PickOneActivity extends BaseActivity {
         setContentView(R.layout.activity_pick_one);
         mIvPath = findViewById(R.id.iv_image_path);
         mIvStream = findViewById(R.id.iv_image_stream);
-        mIvPath.setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.tv_image_path).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // 查看手机相册
@@ -71,7 +73,7 @@ public class PickOneActivity extends BaseActivity {
             cursor.moveToFirst();
             // 获取列的指针
             int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
-            ShowLogUtil.info("columnIndex: " + columnIndex);
+//            ShowLogUtil.info("columnIndex: " + columnIndex);
             // 根据指针获取图片路径
             String picturePath = cursor.getString(columnIndex);
             ShowLogUtil.info("picturePath: " + picturePath);
@@ -80,15 +82,23 @@ public class PickOneActivity extends BaseActivity {
             Bitmap bitmap = BitmapFactory.decodeFile(picturePath);
             mIvPath.setImageBitmap(bitmap);
 
-            // 第二种方式
-            Bitmap bitmapStream = null;
-            try {
-                // 使用流创建图片
-                bitmapStream = BitmapFactory.decodeStream(getContentResolver().openInputStream(uri));
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
-            }
-            mIvStream.setImageBitmap(bitmapStream);
+//            // 第二种方式
+//            Bitmap bitmapStream = null;
+//            try {
+//                // 使用流创建图片
+//                bitmapStream = BitmapFactory.decodeStream(getContentResolver().openInputStream(uri));
+//            } catch (FileNotFoundException e) {
+//                e.printStackTrace();
+//            }
+//            mIvStream.setImageBitmap(bitmapStream);
+
+            String savePath=getCacheDir().getAbsolutePath()+System.currentTimeMillis()+"aaa.jpg";
+            PicturesCompressor.compressImage(picturePath,savePath,100*1024);
+            File saveFile=new File(savePath);
+            ShowLogUtil.info("saveFile: " + saveFile.length());
+            Bitmap saveBitmap = BitmapFactory.decodeFile(savePath);
+            ShowLogUtil.info("saveBitmap: " + saveBitmap.getWidth()+","+saveBitmap.getHeight());
+            mIvStream.setImageBitmap(saveBitmap);
         }
     }
 }
