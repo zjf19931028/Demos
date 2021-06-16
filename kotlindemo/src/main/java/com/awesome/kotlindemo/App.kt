@@ -1,6 +1,7 @@
 package com.awesome.kotlindemo
 
 import android.app.Application
+import com.awesome.sdk.BaseApplication
 
 /**
  * Author: JfangZ
@@ -9,7 +10,7 @@ import android.app.Application
  * Description:
  */
 
-class App : Application() {
+class App : BaseApplication() {
     override fun onCreate() {
         super.onCreate()
     }

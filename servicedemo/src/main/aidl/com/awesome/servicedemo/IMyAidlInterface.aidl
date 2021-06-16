@@ -13,5 +13,5 @@ interface IMyAidlInterface {
 
 
             //定义自己所需要的方法,显示当前服务进度
-            void showPregress();
+            void showProgress();
 }

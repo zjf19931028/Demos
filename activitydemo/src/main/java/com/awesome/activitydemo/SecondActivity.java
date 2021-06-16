@@ -19,12 +19,14 @@ public class SecondActivity extends AppCompatActivity {
         setContentView(R.layout.activity_second);
         Intent intent = getIntent();
         ArrayList<Fruit> fruits = intent.getParcelableArrayListExtra("fruits");
+        // 打印传递的集合数据
         for (Fruit f : fruits) {
             ShowLogUtil.info(f.toString());
         }
         findViewById(R.id.tv).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // 回传到上一个页面信息
                 Intent intent = new Intent(SecondActivity.this,MainActivity.class);
                 intent.putExtra("fruits", "fruits");
                 setResult(1,intent);

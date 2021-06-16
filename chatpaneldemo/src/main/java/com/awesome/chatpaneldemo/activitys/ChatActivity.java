@@ -9,12 +9,14 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.awesome.chatpaneldemo.R;
 import com.awesome.chatpaneldemo.util.KeyboardUtil;
+import com.awesome.sdk.base.BaseActivity;
+import com.awesome.sdk.constant.Constant;
 import com.awesome.sdk.util.ShowLogUtil;
 
 import net.qiujuer.widget.airpanel.AirPanelFrameLayout;
 
 
-public class ChatActivity extends AppCompatActivity implements PanelFragment.PanelCallback  {
+public class ChatActivity extends BaseActivity implements PanelFragment.PanelCallback {
     private PanelFragment mPanelFragment;
     private EditText mEditText;
 //    private AirPanelFrameLayout airPanelSubLayout;
@@ -27,6 +29,10 @@ public class ChatActivity extends AppCompatActivity implements PanelFragment.Pan
         mEditText = findViewById(R.id.edit_content);
 //        airPanelSubLayout = findViewById(R.id.airPanelSubLayout);
 
+        if (!hasPermission(Constant.WRITE_EXTERNAL_PERMISSION)) {
+            requestPermission(Constant.WRITE_EXTERNAL_CODE, Constant.WRITE_EXTERNAL_PERMISSION);
+        }
+
         mPanelFragment = (PanelFragment) getSupportFragmentManager().findFragmentById(R.id.frag_panel);
         mPanelFragment.setup(this);
         findViewById(R.id.btn_face).setOnClickListener(new View.OnClickListener() {
@@ -34,7 +40,7 @@ public class ChatActivity extends AppCompatActivity implements PanelFragment.Pan
             public void onClick(View v) {
                 mPanelFragment.showFace();
 //                airPanelSubLayout.openPanel();
-                if (KeyboardUtil.isKeyboardShown(ChatActivity.this)){
+                if (KeyboardUtil.isKeyboardShown(ChatActivity.this)) {
                     KeyboardUtil.hideKeyboard(ChatActivity.this);
                 }
             }

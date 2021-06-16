@@ -6,6 +6,9 @@ import android.os.Bundle;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 
+/**
+ * 补间动画,<rotate/>
+ */
 public class TweenedAnimationActivity extends AppCompatActivity {
     private ImageView mIvRotate;
 

@@ -2,12 +2,9 @@ package com.awesome.kotlindemo.language
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.TextView
 import com.awesome.kotlindemo.R
 import com.awesome.kotlindemo.language.classes.Customer
 import com.awesome.kotlindemo.language.classes.Face
-import com.awesome.kotlindemo.language.classes.contructor.abstracts.Fruit
-import com.awesome.kotlindemo.language.classes.contructor.abstracts.Grape
 import com.awesome.sdk.util.ShowLogUtil
 
 class ClassesActivity : AppCompatActivity() {
@@ -17,6 +14,7 @@ class ClassesActivity : AppCompatActivity() {
 
 
         BaseLanguage().main()
+        BaseLanguage().getList()
         // 配置对象的属性
         BaseLanguage().apply {
             x = 9

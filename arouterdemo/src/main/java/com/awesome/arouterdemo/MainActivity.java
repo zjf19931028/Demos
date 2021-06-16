@@ -27,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
                 ARouter.getInstance()
                         .build(Constance.ACTIVITY_URL_SECOND, Constance.GROUP_FIRST)
                         .withString("name", "android")
+                        .withBoolean("flag", true)
                         .navigation(MainActivity.this, 123, new NavCallback() {
                             // 拦截处理之前的方法
                             @Override
@@ -34,15 +35,22 @@ public class MainActivity extends AppCompatActivity {
                                 super.onFound(postcard);
                                 ShowLogUtil.info("onFound:getGroup:" + postcard.getGroup() + ",getPath:" + postcard.getPath());
                             }
+
                             // 拦截处理之后的方法
                             @Override
                             public void onArrival(Postcard postcard) {
                                 ShowLogUtil.info("onArrival:getGroup:" + postcard.getGroup() + ",getPath:" + postcard.getPath());
                             }
                         });
-//                ARouter.getInstance()
-//                        .build(Constance.ACTIVITY_URL_MY)
-//                        .navigation();
+
+            }
+        });
+        findViewById(R.id.tv_jump_fragment).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ARouter.getInstance()
+                        .build(Constance.ACTIVITY_URL_MY)
+                        .navigation();
             }
         });
     }

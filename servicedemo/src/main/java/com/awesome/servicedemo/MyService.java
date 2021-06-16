@@ -17,12 +17,15 @@ import com.awesome.sdk.util.ToastUtils;
  * Author: JfangZ
  * Email: zhangjingfang@jeejio.com
  * Date: 2021/3/25 09:51
- * Description:
+ * Description: 服务，需要继承Service
  */
 public class MyService extends Service {
     private boolean flag;
     private int mProgress;
 
+    /**
+     *  绑定服务需要继承Binder
+     */
     public class MyBinder extends Binder {
         public int getProgress() {
             return mProgress;
@@ -50,7 +53,7 @@ public class MyService extends Service {
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
-                    ShowLogUtil.info("i=" + i);
+                    ShowLogUtil.info("线程i=" + i);
                     if (!flag) break;
                 }
 
@@ -63,19 +66,9 @@ public class MyService extends Service {
     @Override
     public IBinder onBind(Intent intent) {
         ShowLogUtil.info("onBind");
+        // 返回一个Binder对象
         return new MyBinder();
-        //aidl
-//        return new IMyAidlInterface.Stub() {
-//            @Override
-//            public void basicTypes(int anInt, long aLong, boolean aBoolean, float aFloat, double aDouble, String aString) throws RemoteException {
-//
-//            }
-//
-//            @Override
-//            public void showPregress() throws RemoteException {
-//                ShowLogUtil.info("当前进度=" + mProgress);
-//            }
-//        };
+
     }
 
     @Override

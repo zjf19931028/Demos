@@ -1,6 +1,7 @@
 package com.awesome.chatpaneldemo.app;
 
-import com.awesome.sdk.BaseApplication;
+
+import com.awesome.sdk.base.BaseApplication;
 
 /**
  * Created by Alice on 2021/5/12

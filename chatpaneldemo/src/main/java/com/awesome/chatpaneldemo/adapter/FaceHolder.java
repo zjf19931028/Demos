@@ -31,8 +31,13 @@ public class FaceHolder extends RecyclerAdapter.ViewHolder<Face.Bean> {
                 (bean.source instanceof Integer)
                 // face zip包资源路径
                 || bean.preview instanceof String) {
+//            Glide.with(itemView.getContext())
+//                    .load(bean.preview)
+//                    .format(DecodeFormat.PREFER_ARGB_8888) //设置解码格式8888，保证清晰度
+//                    .placeholder(R.drawable.default_face)
+//                    .into(mFace);
             Glide.with(itemView.getContext())
-                    .load(bean.preview)
+                    .load("/data/user/0/com.awesome.chatpaneldemo/files/face/tf/f-66fix.png")
                     .format(DecodeFormat.PREFER_ARGB_8888) //设置解码格式8888，保证清晰度
                     .placeholder(R.drawable.default_face)
                     .into(mFace);

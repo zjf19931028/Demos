@@ -11,6 +11,9 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
+/**
+ * 跑马灯,<translate/>
+ */
 public class ViewAnimatorActivity extends AppCompatActivity {
 
     private ViewAnimator mViewAnimator;

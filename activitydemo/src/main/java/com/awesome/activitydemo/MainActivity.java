@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Parcelable;
+import android.view.View;
 
 import com.awesome.sdk.util.ShowLogUtil;
 
@@ -19,12 +20,19 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        // 构建集合数据
         List<Fruit> fruits = new ArrayList<>();
         Fruit fruit = new Fruit("apple", Color.RED);
         fruits.add(fruit);
-        Intent intent = new Intent(this,SecondActivity.class);
-        intent.putParcelableArrayListExtra("fruits", (ArrayList<? extends Parcelable>) fruits);
-        startActivityForResult(intent,0);
+        findViewById(R.id.tv).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // 有返回信息的跳转页面
+                Intent intent = new Intent(MainActivity.this,SecondActivity.class);
+                intent.putParcelableArrayListExtra("fruits", (ArrayList<? extends Parcelable>) fruits);
+                startActivityForResult(intent,0);
+            }
+        });
     }
 
     @Override

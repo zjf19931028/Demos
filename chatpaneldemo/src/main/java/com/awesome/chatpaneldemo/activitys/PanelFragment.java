@@ -80,6 +80,7 @@ public class PanelFragment extends Fragment {
         viewPager.setAdapter(new PagerAdapter() {
             @Override
             public int getCount() {
+                ShowLogUtil.info("Face.all(getContext()).size()="+Face.all(getContext()).size());
                 return Face.all(getContext()).size();
             }
 

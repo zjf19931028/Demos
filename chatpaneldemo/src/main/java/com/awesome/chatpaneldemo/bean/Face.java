@@ -59,17 +59,17 @@ public class Face {
             synchronized (Face.class) {
                 if (FACE_TABS == null) {
                     ArrayList<FaceTab> faceTabs = new ArrayList<>();
-                    FaceTab tab = initEmoji(context);
-                    if (tab != null) {
-                        faceTabs.add(tab);
-                    }
-                    FaceTab tab2 = initSExpression(context);
-                    if (tab2 != null) {
-                        faceTabs.add(tab2);
-                    }
-                    tab = initAssetsFace(context);
-                    if (tab != null) {
-                        faceTabs.add(tab);
+//                    FaceTab tab = initEmoji(context);
+//                    if (tab != null) {
+//                        faceTabs.add(tab);
+//                    }
+//                    FaceTab tab2 = initSExpression(context);
+//                    if (tab2 != null) {
+//                        faceTabs.add(tab2);
+//                    }
+                    FaceTab tab3 = initAssetsFace(context);
+                    if (tab3 != null) {
+                        faceTabs.add(tab3);
                     }
                     // init map
                     for (FaceTab faceTab : faceTabs) {
@@ -127,7 +127,7 @@ public class Face {
         return new FaceTab("小表情", faces.get(0).preview, faces);
     }
 
-    // tip:处理解压文件
+
     // 从face-t.zip包解析我们的表情
     private static FaceTab initAssetsFace(Context context) {
         String faceAsset = "face-t.zip";
@@ -139,7 +139,7 @@ public class Face {
             if (faceFolder.mkdirs()) {
                 try {
                     InputStream inputStream = context.getAssets().open(faceAsset);
-                    // 存储文件
+                    //x 存储文件
                     File faceSource = new File(faceFolder, "source.zip");
                     // copy
                     StreamUtil.copy(inputStream, faceSource);
@@ -175,60 +175,13 @@ public class Face {
         for (Bean face : tab.faces) {
             face.preview = String.format("%s/%s", faceCacheDir, face.preview);
             face.source = String.format("%s/%s", faceCacheDir, face.source);
+            ShowLogUtil.info("face.preview="+face.preview);
         }
 
         return tab;
-
-
-//        String faceAsset = "face-t.zip";
-//        // /data/data/包名/files/face/ft/*
-//        String faceCacheDir = String.format("%s/face/tf", context.getFilesDir());
-//        File faceFolder = new File(faceCacheDir);
-//        ShowLogUtil.info("(!faceFolder.exists())=" + (!faceFolder.exists()));
-//        if (!faceFolder.exists()) {
-//            // 不存在进行初始化
-//            if (faceFolder.mkdirs()) {
-//                try {
-//                    // 输入流
-//                    InputStream inputStream = context.getAssets().open(faceAsset);
-//                    // 存储文件
-//                    File faceSource = new File(faceFolder, "source.zip");
-//                    //copy
-//                    StreamUtil.copy(inputStream, faceSource);
-//
-//                    // 解压
-//                    unZipFile(faceSource, faceFolder);
-//
-//                    //清理文件
-//                    StreamUtil.delete(faceSource.getAbsolutePath());
-//                } catch (IOException e) {
-//                    e.printStackTrace();
-//                }
-//            }
-//        }
-//        ShowLogUtil.info("info.json");
-//        // info.json
-//        File infoFile = new File(faceCacheDir, "info.json");
-//        // Gson
-//        Gson gson = new Gson();
-//        JsonReader reader;
-//        try {
-//            reader = gson.newJsonReader(new FileReader(infoFile));
-//        } catch (FileNotFoundException e) {
-//            e.printStackTrace();
-//            return null;
-//        }
-//        // 解析
-//        FaceTab tab = gson.fromJson(reader, FaceTab.class);
-//        ShowLogUtil.info("tab");
-//        // 相对路径到绝对路径
-//        for (Bean face : tab.faces) {
-//            face.preview = String.format("%s/%s", faceCacheDir, face.preview);
-//            face.source = String.format("%s/%s", faceCacheDir, face.source);
-//        }
-//        return tab;
     }
 
+    // 把zipFile解压到desDir目录
     private static void unZipFile(File zipFile, File desDir) throws IOException {
         final String folderPath = desDir.getAbsolutePath();
 
@@ -252,28 +205,6 @@ public class Face {
             // 输出文件
             StreamUtil.copy(in, desFile);
         }
-//        final String folderPath = desDir.getAbsolutePath();
-//
-//        ZipFile zf = new ZipFile(zipFile);
-//        // 判断节点进行循环
-//        for (Enumeration<?> entries = zf.entries(); entries.hasMoreElements(); ) {
-//            ZipEntry entry = (ZipEntry) entries.nextElement();
-//            // 过滤缓存的文件
-//            String name = entry.getName();
-//            if (name.startsWith("."))
-//                continue;
-//
-//            // 输入流
-//            InputStream in = zf.getInputStream(entry);
-//            String str = folderPath + File.separator + name;
-//
-//            // 防止名字错乱
-//            str = new String(str.getBytes("8859_1"), "GB2312");
-//
-//            File desFile = new File(str);
-//            // 输出文件
-//            StreamUtil.copy(in, desFile);
-//        }
     }
 
 

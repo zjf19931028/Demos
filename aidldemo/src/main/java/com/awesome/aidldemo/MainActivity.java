@@ -19,19 +19,19 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public void onServiceConnected(ComponentName name, IBinder service) {
-            ShowLogUtil.info("conn onServiceConnected");
+            ShowLogUtil.info("aidl onServiceConnected");
 
-//            IMyAidlInterface iMyAidlInterface = IMyAidlInterface.Stub.asInterface(service);
-//            try {
-//                iMyAidlInterface.showPregress();
-//            } catch (RemoteException e) {
-//                e.printStackTrace();
-//            }
+            IMyAidlInterface iMyAidlInterface = IMyAidlInterface.Stub.asInterface(service);
+            try {
+                iMyAidlInterface.showProgress();
+            } catch (RemoteException e) {
+                e.printStackTrace();
+            }
         }
 
         @Override
         public void onServiceDisconnected(ComponentName name) {
-            ShowLogUtil.info("conn onServiceDisconnected");
+            ShowLogUtil.info("aidl onServiceDisconnected");
 
         }
     };
@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //远程启动服务
-                Intent intent = new Intent("com.awesome.myservice");
+                Intent intent = new Intent("com.awesome.aidlservice");
                 intent.setPackage("com.awesome.servicedemo");
                 startService(intent);
             }
@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.btn_stop_service).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent("com.awesome.myservice");
+                Intent intent = new Intent("com.awesome.aidlservice");
                 intent.setPackage("com.awesome.servicedemo");
                 stopService(intent);
             }
@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.bind_service).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent("com.awesome.myservice");
+                Intent intent = new Intent("com.awesome.aidlservice");
                 intent.setPackage("com.awesome.servicedemo");
                 bindService(intent,conn,FLAG_SERVICE_CONNECTION);
             }
@@ -69,7 +69,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 unbindService(conn);
-
             }
         });
     }

@@ -1,7 +1,6 @@
 package com.awesome.kotlindemo.language
 
 import com.awesome.sdk.util.ShowLogUtil
-import java.lang.Exception
 
 /**
  * Author: JfangZ
@@ -126,5 +125,9 @@ class BaseLanguage {
             }
 
 
+    fun getList(){
+        val dataList = mutableListOf<String>("1","b")
+        ShowLogUtil.info("dataList.size=${dataList.size}")
+    }
 
 }

@@ -3,6 +3,9 @@ package com.awesome.servicedemo;
 
 // Declare any non-default types here with import statements
 
+    /**
+     * 定义的包名要和启用的服务包名相同
+     */
 interface IMyAidlInterface {
     /**
      * Demonstrates some basic types that you can use as parameters
@@ -13,5 +16,5 @@ interface IMyAidlInterface {
 
 
             //定义自己所需要的方法,显示当前服务进度
-            void showPregress();
+            void showProgress();
 }

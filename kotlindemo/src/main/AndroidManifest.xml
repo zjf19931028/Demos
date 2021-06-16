@@ -17,7 +17,7 @@
         <activity android:name=".login.LoginActivity" />
         <activity android:name=".IndexActivity" />
         <activity
-            android:name=".language.FunctionActivity"
+            android:name=".language.ClassesActivity"
             android:configChanges="keyboardHidden">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

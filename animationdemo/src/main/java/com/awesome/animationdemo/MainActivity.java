@@ -1,6 +1,8 @@
 package com.awesome.animationdemo;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -29,15 +31,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         Intent intent=new Intent();
         switch (v.getId()) {
+            // ？帧动画，补间动画,<rotate/>
             case R.id.tv_tweenedAnimation:
                 intent.setClass(this, TweenedAnimationActivity.class);
                 startActivity(intent);
                 break;
+                //属性动画,ObjectAnimator,AnimatorSet
             case R.id.tv_objectAnimator:
                 intent.setClass(this, ObjectAnimatorActivity.class);
                 startActivity(intent);
                 break;
             case R.id.tv_viewAnimator:
+                // 跑马灯,<translate/>
                 intent.setClass(this, ViewAnimatorActivity.class);
                 startActivity(intent);
                 break;
@@ -46,7 +51,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //                intent.putExtra("transition", "slide");
 //                startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(this).toBundle());
 //                break;
-
         }
     }
 }

@@ -88,6 +88,7 @@ public final class BitmapUtil {
             Bitmap.CompressFormat compressFormat = bitmap.hasAlpha() ?
                     Bitmap.CompressFormat.PNG : Bitmap.CompressFormat.JPEG;
 
+            ShowLogUtil.info("compressFormat="+compressFormat);
             // 质量压缩
             boolean isOk = false;
             for (int i = 1; i <= 10; i++) {

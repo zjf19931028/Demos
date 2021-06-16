@@ -1,7 +1,7 @@
 package com.awesome.tinkerdemo;
 
 
-import com.awesome.sdk.BaseApplication;
+import com.awesome.sdk.base.BaseApplication;
 
 /**
  * Author: JfangZ

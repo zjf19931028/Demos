@@ -30,7 +30,7 @@
         <!-- <activity android:name=".activitys.MainActivity"></activity> -->
         <!-- <activity android:name=".LottieActivity"></activity> -->
         <!-- Android7 FileProvider 适配 -->
-        <activity android:name=".VectorActivity">
+        <activity android:name=".activitys.LayoutActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
