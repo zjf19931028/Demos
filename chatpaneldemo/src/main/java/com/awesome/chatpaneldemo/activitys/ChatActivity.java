@@ -5,6 +5,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.EditText;
 
+import androidx.annotation.InspectableProperty;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.awesome.chatpaneldemo.R;
@@ -20,6 +21,9 @@ public class ChatActivity extends BaseActivity implements PanelFragment.PanelCal
     private PanelFragment mPanelFragment;
     private EditText mEditText;
 //    private AirPanelFrameLayout airPanelSubLayout;
+
+    @InspectableProperty.EnumEntry(value = 1)
+    private int a;
 
 
     @Override

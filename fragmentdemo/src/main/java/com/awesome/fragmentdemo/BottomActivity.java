@@ -4,10 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 
 import android.os.Bundle;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
 public class BottomActivity extends AppCompatActivity {
-
 
     private RadioGroup mRadioGroup;
 
@@ -15,7 +15,7 @@ public class BottomActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bottom);
-        // TODO底部导航功能
+        // 底部导航功能
         mRadioGroup = findViewById(R.id.rg_bottom);
 
         TitleFragment homeFragment = TitleFragment.newInstance("首页");
@@ -27,7 +27,6 @@ public class BottomActivity extends AppCompatActivity {
         fm.beginTransaction()
                 .replace(R.id.ll_container,homeFragment)
                 .commit();
-
         mRadioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {

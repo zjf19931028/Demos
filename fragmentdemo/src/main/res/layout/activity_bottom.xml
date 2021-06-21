@@ -11,8 +11,8 @@
         android:id="@+id/ll_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_weight="1" />
+        android:layout_weight="1"
+        android:orientation="horizontal" />
 
     <RadioGroup
         android:id="@+id/rg_bottom"
@@ -27,8 +27,13 @@
             android:layout_weight="1"
             android:background="#ffcccc"
             android:button="@null"
+            android:checked="true"
+            android:clickable="true"
+            android:drawableTop="@drawable/sel_comui_tab_home"
             android:gravity="center"
-            android:text="首页" />
+            android:paddingTop="10dp"
+            android:text="首页"
+            android:textColor="@color/sel_comui_tab" />
 
         <RadioButton
             android:id="@+id/rb_moments"
@@ -37,8 +42,11 @@
             android:layout_weight="1"
             android:background="#ccffcc"
             android:button="@null"
+            android:drawableTop="@drawable/sel_comui_tab_message"
             android:gravity="center"
-            android:text="朋友圈" />
+            android:paddingTop="10dp"
+            android:text="朋友圈"
+            android:textColor="@color/sel_comui_tab" />
 
         <RadioButton
             android:id="@+id/rb_me"
@@ -47,8 +55,11 @@
             android:layout_weight="1"
             android:background="#ccccff"
             android:button="@null"
+            android:drawableTop="@drawable/sel_comui_tab_person"
             android:gravity="center"
-            android:text="我的" />
+            android:paddingTop="10dp"
+            android:text="我的"
+            android:textColor="@color/sel_comui_tab" />
     </RadioGroup>
 
 </LinearLayout>

@@ -24,7 +24,7 @@ public class MainActivity extends BaseActivity {
             requestPermission(Constant.WRITE_EXTERNAL_CODE,Constant.WRITE_EXTERNAL_PERMISSION);
         }else {
             PluginManager.getInstance().setContext(this);
-            PluginManager.getInstance().loadApk(Environment.getExternalStorageDirectory().getAbsolutePath()+"/otherapk-debug.apk")
+            PluginManager.getInstance().loadApk(Environment.getExternalStorageDirectory().getAbsolutePath()+"/otherapk-debug.apk");
         }
 
     }

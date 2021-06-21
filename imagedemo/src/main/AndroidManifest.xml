@@ -16,9 +16,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AwesomeDemos"
-        tools:replace="android:name"
-        android:usesCleartextTraffic="true">
-        <activity android:name=".LruCacheActivity"></activity>
+        android:usesCleartextTraffic="true"
+        tools:replace="android:name">
+        <activity android:name=".BitmapActivity"></activity>
+        <activity android:name=".GlideActivity" />
+        <activity android:name=".LruCacheActivity" />
         <activity android:name=".PickOneActivity" />
         <activity android:name=".PickPictureActivity" />
         <activity android:name=".MainActivity">
