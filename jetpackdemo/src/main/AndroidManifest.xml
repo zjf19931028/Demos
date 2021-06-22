@@ -9,9 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AwesomeDemos">
-        <activity android:name=".MainActivity"/>
-        <activity android:name=".component.livedata.LiveDataActivity">
-        <intent-filter>
+        <activity android:name=".MainActivity" />
+        <activity android:name=".component.databinding.TestActivity"/>
+            <activity android:name=".component.livedata.LiveDataActivity">
+            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
