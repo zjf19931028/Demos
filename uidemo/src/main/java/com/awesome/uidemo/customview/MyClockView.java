@@ -44,8 +44,8 @@ public class MyClockView extends View {
 
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
-
+//        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+        ShowLogUtil.info("====onMeasure");
         int viewWidth = 0;
         int viewHeight = 0;
 
@@ -61,6 +61,7 @@ public class MyClockView extends View {
             case MeasureSpec.EXACTLY:
                 ShowLogUtil.info("widthMode EXACTLY");
                 viewWidth = widthSize;
+                break;
             case MeasureSpec.UNSPECIFIED:
                 ShowLogUtil.info("widthMode UNSPECIFIED");
                 break;
@@ -80,6 +81,7 @@ public class MyClockView extends View {
             case MeasureSpec.EXACTLY:
                 ShowLogUtil.info("heightMode EXACTLY");
                 viewHeight = heightSize;
+                break;
             case MeasureSpec.UNSPECIFIED:
                 ShowLogUtil.info("heightMode UNSPECIFIED");
                 break;
@@ -92,6 +94,13 @@ public class MyClockView extends View {
         int minSize = Math.min(viewWidth, viewHeight);
         radius = (int) (14f / 30f * minSize);
         ShowLogUtil.info("radius=" + radius);
+    }
+
+    @Override
+    protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
+        super.onLayout(changed, left, top, right, bottom);
+        ShowLogUtil.info("====onLayout");
+
     }
 
     @Override

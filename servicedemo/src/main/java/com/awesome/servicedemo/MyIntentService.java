@@ -1,4 +1,4 @@
-package com.awesome.servicedemo.aidl;
+package com.awesome.servicedemo;
 
 import android.app.IntentService;
 import android.content.Intent;
@@ -6,7 +6,10 @@ import android.content.Intent;
 import androidx.annotation.Nullable;
 
 /**
- * Created by Alice on 2021/6/7
+ * Author: zhangjingfang
+ * Email:zhangjingfang@jeejio.com
+ * Date: 2021/6/23 11:59 上午
+ * Description:类描述
  */
 public class MyIntentService extends IntentService {
     /**

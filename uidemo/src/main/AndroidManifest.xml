@@ -18,7 +18,8 @@
         android:theme="@style/Theme.AwesomeDemos"
         android:usesCleartextTraffic="true"
         tools:replace="android:name">
-<!--        <activity android:name=".VectorActivity"></activity>-->
+<!--        <activity android:name=".activitys.KlotskiActivity"></activity>-->
+        <!-- <activity android:name=".VectorActivity"></activity> -->
         <!-- <activity android:name=".activitys.GestureActivity"></activity> -->
         <!-- <activity android:name=".textview.InputActivity"></activity> -->
         <!-- <activity android:name=".customview.CustomViewActivity"></activity> -->
@@ -30,7 +31,7 @@
         <!-- <activity android:name=".activitys.MainActivity"></activity> -->
         <!-- <activity android:name=".LottieActivity"></activity> -->
         <!-- Android7 FileProvider 适配 -->
-        <activity android:name=".activitys.LayoutActivity">
+        <activity android:name=".activitys.KlotskiActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

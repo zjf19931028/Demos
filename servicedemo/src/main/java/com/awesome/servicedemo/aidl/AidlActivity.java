@@ -10,7 +10,6 @@ import android.os.RemoteException;
 import android.view.View;
 import com.awesome.sdk.util.ShowLogUtil;
 import com.awesome.servicedemo.IMyAidlInterface;
-import com.awesome.servicedemo.MyService;
 import com.awesome.servicedemo.R;
 
 public class AidlActivity extends AppCompatActivity {
@@ -42,21 +41,21 @@ public class AidlActivity extends AppCompatActivity {
         findViewById(R.id.btn_start_service).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(AidlActivity.this, MyService.class);
+                Intent intent = new Intent(AidlActivity.this, AidlService.class);
                 startService(intent);
             }
         });
         findViewById(R.id.btn_stop_service).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(AidlActivity.this, MyService.class);
+                Intent intent = new Intent(AidlActivity.this, AidlService.class);
                 stopService(intent);
             }
         });
         findViewById(R.id.bind_service).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(AidlActivity.this, MyService.class);
+                Intent intent = new Intent(AidlActivity.this, AidlService.class);
                 bindService(intent, mServiceConnection, FLAG_SERVICE_CONNECTION);
             }
         });

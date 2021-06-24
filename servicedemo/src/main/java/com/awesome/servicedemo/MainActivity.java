@@ -21,13 +21,6 @@ public class MainActivity extends AppCompatActivity {
             MyService.MyBinder binder = (MyService.MyBinder) service;
             int progress = binder.getProgress();
             ShowLogUtil.info("progress=" + progress);
-            //aidl
-//            IMyAidlInterface iMyAidlInterface = IMyAidlInterface.Stub.asInterface(service);
-//            try {
-//                iMyAidlInterface.showPregress();
-//            } catch (RemoteException e) {
-//                e.printStackTrace();
-//            }
         }
 
         @Override

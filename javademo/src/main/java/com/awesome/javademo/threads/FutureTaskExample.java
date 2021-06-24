@@ -1,5 +1,7 @@
 package com.awesome.javademo.threads;
 
+import com.awesome.sdk.util.ShowLogUtil;
+
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -25,19 +27,19 @@ public class FutureTaskExample {
         while (true) {
             try {
                 if (futureTask1.isDone() && futureTask2.isDone()) {//  两个任务都完成
-                    System.out.println("Done");
+                    ShowLogUtil.info("Done");
                     executor.shutdown();                          // 关闭线程池和服务
                     return;
                 }
 
                 if (!futureTask1.isDone()) { // 任务1没有完成，会等待，直到任务完成
-                    System.out.println("FutureTask1 output=" + futureTask1.get());
+                    ShowLogUtil.info("FutureTask1 output=" + futureTask1.get());
                 }
 
-                System.out.println("Waiting for FutureTask2 to complete");
+                ShowLogUtil.info("Waiting for FutureTask2 to complete");
                 String s = futureTask2.get(200L, TimeUnit.MILLISECONDS);
                 if (s != null) {
-                    System.out.println("FutureTask2 output=" + s);
+                    ShowLogUtil.info("FutureTask2 output=" + s);
                 }
             } catch (InterruptedException | ExecutionException e) {
                 e.printStackTrace();

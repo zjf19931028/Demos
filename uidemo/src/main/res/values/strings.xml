@@ -23,5 +23,18 @@
         ,这样才有效果,xml中的只是默认设置标题颜色一定要设置在CollapsingToolbarLayout上,不然没用,设置这个标题也要设置在CollapsingTool
         barLayout上,这样才有效果,xml中的只是默认设置标题颜色一定要设置在CollapsingToolbarLayout上,不然没用,设置这个标题也要设置在Collap
         singToolbarLayout上,这样才有效果,xml中的只是默认设置标题颜色一定要设置在CollapsingToolbarLayout上,不然没用,设置这个标题也要设</string>
-
+    <string name="txt_step">步数：</string>
+    <string name="txt_tip">请先在手机上点击\n“进入华容道”</string>
+    <string name="level0">横刀立马</string>
+    <string name="level1">指挥若定</string>
+    <string name="level2">将拥曹营</string>
+    <string name="level3">齐头并进</string>
+    <string name="level4">兵分三路</string>
+    <string name="level5">雨声淅沥</string>
+    <string name="level6">左右布兵</string>
+    <string name="level7">桃花园中</string>
+    <string name="level8">一路进军</string>
+    <string name="level9">一路顺风</string>
+    <string name="level10">围而不歼</string>
+    <string name="level11">捷足先登</string>
 </resources>

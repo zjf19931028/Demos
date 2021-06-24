@@ -12,12 +12,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AwesomeDemos"
         tools:replace="android:name">
-        <activity android:name=".activitys.AlgorithmSortActivity"></activity>
+<!--        <activity android:name=".activitys.ThreadActivity"></activity>-->
+        <!-- <activity android:name=".activitys.AlgorithmSortActivity"></activity> -->
         <!-- <activity android:name=".activitys.CollectionActivity"></activity> -->
         <!-- <activity android:name=".activitys.IOActivity"></activity> -->
         <!-- <activity android:name=".activitys.AlgorithmActivity" /> -->
         <!-- <activity android:name=".activitys.MainActivity" /> -->
-        <activity android:name=".activitys.AlgorithmArrayActivity">
+        <activity android:name=".activitys.ThreadActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

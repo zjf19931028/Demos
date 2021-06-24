@@ -4,15 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".customview.CustomViewActivity">
+    tools:context=".activitys.CustomViewActivity">
 
-<!--    <com.awesome.uidemo.customview.MyClockView-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent" />-->
-
-    <com.awesome.uidemo.customview.MyLayout
+    <com.awesome.uidemo.customview.MyClockView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent" />
+
+<!--    <com.awesome.uidemo.customview.MyLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"/>-->
 
 <!--    <com.awesome.uidemo.customview.NoteView-->
 <!--        android:layout_width="match_parent"-->
