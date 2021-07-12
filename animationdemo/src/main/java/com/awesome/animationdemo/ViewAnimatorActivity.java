@@ -22,7 +22,7 @@ public class ViewAnimatorActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_animator);
-        mViewAnimator = findViewById(R.id.va);
+        mViewAnimator = findViewById(R.id.viewAnimator);
         mViewAnimator.setInAnimation(this,R.anim.slide_in_down);
         mViewAnimator.setOutAnimation(this,R.anim.slide_out_up);
         ScheduledExecutorService scheduledExecutor = Executors.newSingleThreadScheduledExecutor();

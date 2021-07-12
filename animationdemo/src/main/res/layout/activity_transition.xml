@@ -6,12 +6,13 @@
     android:layout_height="match_parent"
     android:gravity="center"
     tools:context=".TransitionActivity">
+
     <ImageView
         android:id="@+id/iv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Transition"
+        android:background="#ff00ff"
         android:padding="10dp"
-        android:background="#ff00ff"/>
+        android:text="Transition" />
 
 </LinearLayout>

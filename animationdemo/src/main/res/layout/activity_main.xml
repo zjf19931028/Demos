@@ -16,7 +16,7 @@
         android:layout_marginTop="30dp"
         android:background="#ff00ff"
         android:padding="10dp"
-        android:text="TweenedAnimation帧动画" />
+        android:text="View动画TweenedAnimation" />
 
     <View
         android:layout_width="match_parent"
@@ -25,17 +25,19 @@
         android:background="#ccc" />
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="ViewAnimator属性动画" />
-    <TextView
-        android:id="@+id/tv_objectAnimator"
+        android:id="@+id/tv_xmlAnimator"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
         android:background="#ff00ff"
         android:padding="10dp"
-        android:text="ObjectAnimator" />
+        android:text="XML动画" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="30dp"
+        android:background="#ccc" />
 
     <TextView
         android:id="@+id/tv_viewAnimator"
@@ -44,7 +46,7 @@
         android:layout_marginTop="30dp"
         android:background="#ff00ff"
         android:padding="10dp"
-        android:text="ViewAnimator" />
+        android:text="跑马灯ViewAnimator" />
 
     <View
         android:layout_width="match_parent"
@@ -53,13 +55,59 @@
         android:background="#ccc" />
 
     <TextView
+        android:id="@+id/tv_objectAnimator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:background="#ff00ff"
+        android:padding="10dp"
+        android:text="属性动画ObjectAnimator" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="30dp"
+        android:background="#ccc" />
+
+    <TextView
+        android:id="@+id/tv_valueAnimator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:background="#ff00ff"
+        android:padding="10dp"
+        android:text="数值发生器ValueAnimator" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="30dp"
+        android:background="#ccc" />
+
+    <TextView
+        android:id="@+id/tv_animatorSet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:background="#ff00ff"
+        android:padding="10dp"
+        android:text="组合动画AnimatorSet" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="30dp"
+        android:background="#ccc" />
+
+
+    <TextView
         android:id="@+id/tv_transition"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
         android:background="#ff00ff"
         android:padding="10dp"
-        android:text="transition" />
+        android:text="（弃用）transition" />
 
 
 </LinearLayout>

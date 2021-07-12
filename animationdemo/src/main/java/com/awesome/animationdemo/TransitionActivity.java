@@ -25,9 +25,8 @@ public class TransitionActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_transition);
-
-//        mImageView = findViewById(R.id.iv);
-//        String transition=getIntent().getStringExtra("transition");
+        mImageView = findViewById(R.id.iv);
+        String transition=getIntent().getStringExtra("transition");
 //        switch (transition) {
 //            case "explode":
 //                mImageView.setBackgroundColor(Color.RED);
