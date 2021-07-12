@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activitys.CustomScrollViewActivity">
+
+    <LinearLayout
+        android:id="@+id/ll_flow_layout"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:orientation="vertical">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.awesome.uidemo.customview.FlowLayout
+                android:id="@+id/flow_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#ccc" />
+
+            <!--        <com.awesome.uidemo.customview.CustomScrollView-->
+            <!--            android:id="@+id/custom_scroll_view"-->
+            <!--            android:layout_width="match_parent"-->
+            <!--            android:layout_height="500dp"-->
+            <!--            android:text="CustomScrollViewCustomScrollViewCustomScrollViewCustomScrollViewCustomScrollView-->
+            <!--1CustomScrollViewCustomScrollViewCustomScrollViewCustomScrollViewCustomScrollViewCustomScrollView-->
+            <!--2CustomScrollViewCustomScrollViewCustomScrollViewCustomScrollViewCustomScrollViewCustomScrollView-->
+            <!--3CustomScrollViewCustomScrollViewCustomScrollViewCustomScrollViewCustomScrollViewCustomScrollView-->
+            <!--4CustomScrollViewCustomScrollViewCustomScrollViewCustomScrollViewCustomScrollViewCustomScrollView-->
+            <!--5CustomScrollViewCustomScrollViewCustomScrollViewCustomScrollViewCustomScrollViewCustomScrollView-->
+            <!--6CustomScrollViewCustomScrollViewCustomScrollViewCustomScrollViewCustomScrollViewCustomScrollView-->
+            <!--7CustomScrollViewCustomScrollViewCustomScrollViewCustomScrollViewCustomScrollViewCustomScrollView-->
+            <!--8CustomScrollViewCustomScrollViewCustomScrollViewCustomScrollViewCustomScrollViewCustomScrollView-->
+            <!--9CustomScrollViewCustomScrollViewCustomScrollViewCustomScrollViewCustomScrollViewCustomScrollView-->
+            <!--1CustomScrollViewCustomScrollViewCustomScrollViewCustomScrollViewCustomScrollViewCustomScrollView-->
+            <!--2CustomScrollViewCustomScrollViewCustomScrollViewCustomScrollViewCustomScrollViewCustomScrollView-->
+            <!--3CustomScrollViewCustomScrollViewCustomScrollViewCustomScrollViewCustomScrollViewCustomScrollView-->
+            <!--4CustomScrollViewCustomScrollViewCustomScrollViewCustomScrollViewCustomScrollViewCustomScrollView-->
+            <!--5CustomScrollViewCustomScrollViewCustomScrollViewCustomScrollViewCustomScrollViewCustomScrollView-->
+            <!--6CustomScrollViewCustomScrollViewCustomScrollViewCustomScrollViewCustomScrollViewCustomScrollView-->
+            <!--7CustomScrollViewCustomScrollViewCustomScrollViewCustomScrollViewCustomScrollViewCustomScrollView"-->
+            <!--            app:layout_constraintLeft_toLeftOf="parent"-->
+            <!--            app:layout_constraintTop_toTopOf="parent" />-->
+        </ScrollView>
+    </LinearLayout>
+    <com.awesome.uidemo.customview.FlowLayout
+        android:id="@+id/flow_layout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ccc" />
+    <Button
+        android:id="@+id/btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:text="按钮" />
+</LinearLayout>

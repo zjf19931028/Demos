@@ -1,8 +1,10 @@
-package com.awesome.uidemo;
+package com.awesome.uidemo.activitys;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.awesome.uidemo.R;
 
 public class VectorActivity extends AppCompatActivity {
 

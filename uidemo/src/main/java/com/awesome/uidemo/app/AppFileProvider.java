@@ -1,4 +1,4 @@
-package com.awesome.uidemo.util;
+package com.awesome.uidemo.app;
 
 import androidx.core.content.FileProvider;
 

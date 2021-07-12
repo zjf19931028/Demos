@@ -4,12 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activitys.KlotskiActivity">
+    android:orientation="vertical"
+    tools:context=".activitys.CustomScrollViewActivity">
 
-    <com.awesome.uidemo.customview.KlotskiView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginLeft="21dp"/>
-
+    <com.awesome.uidemo.customview.CustomScrollView
+        android:id="@+id/view"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="#CCC"/>
 
 </LinearLayout>
